@@ -26,7 +26,7 @@ Your program is going to be stored in a different location when it is deployed o
 
 add code block
 
-Then you can save your data into a file underneath this base_folder: 
+Then you can save your data into a file underneath this 'base_folder': 
 
 add code block 
 
@@ -35,6 +35,7 @@ add code block
 Make sure to check the [Mission Space Lab Rulebook](https://astro-pi.org/mission-space-lab/guidelines/program-checklist) for the rules on files and filenames.
 
 --- /hint --- 
+
 
 ### Closing resources 
 
@@ -83,17 +84,20 @@ add code block
 
 --- /collapse ---
 
+
 --- hint ---
 
 Note: If you are writing bytes to a file (with argument `"wb"`) then you should tell Python to not use a buffer at all and to write the data to disk immediately. You can do this by setting the `buffering` argument to `0`.
 
 --- /hint ---
 
+
 --- task --- 
 
 Review your program and consider if you need to set the buffering mode when writing to a file.
 
 --- /task --- 
+
 
 --- collapse ---
 ---
