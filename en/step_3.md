@@ -107,11 +107,11 @@ The following is an example of a program that will, when run using the Astro-Pi-
 
 add code block
 
---- hint ---
-
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
 Note that the latitude and longitude are `Angle` objects while the elevation is a `Distance`. The skyfield documentation describes [how to switch between different angle representations](https://rhodesmill.org/skyfield/api-units.html#skyfield.units.Angle) and [how to express distance in different units](https://rhodesmill.org/skyfield/api-units.html#skyfield.units.Distance).
 
---- /hint --- 
+</p>
 
 ### Machine Learning with the Coral Accelerator 
 
@@ -136,8 +136,8 @@ Update your `main.py` file so that it writes a file called `result.txt` when it 
 
 --- /task --- 
 
---- hint --- 
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
 Make sure to check the [Mission Space Lab Official Guidelines](https://astro-pi.org/mission-space-lab/guidelines/program-checklist) for rules on files and filenames.
 
---- /hint --- 
+</p>
