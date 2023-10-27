@@ -28,6 +28,7 @@ You can use our Astro Pi Replay plugin to simulate your code running live on the
 
 We will also give you information on how to improve the program to make sure it runs smoothly on the ISS in space, while also following the security regulations. 
 
+![A sequence of photos of the earth's surface taken by the Astro Pi computers](images/photo-sequence.gif)
 
 ### What you will need
 
