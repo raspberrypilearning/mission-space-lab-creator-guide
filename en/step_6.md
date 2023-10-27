@@ -34,7 +34,7 @@ Many Mission Space Lab teams have not had their programs run on the ISS due to s
 
 --- collapse ---
 ---
-title: "[Opening and closing the camera repeatedly]"
+title: "Opening and closing the camera repeatedly"
 ---
 
 If you close and re-open the camera multiple times, for example in a loop, you are likely to make the Raspberry Pi run out of memory and be rejected by Mission Control.
@@ -43,7 +43,7 @@ If you close and re-open the camera multiple times, for example in a loop, you a
 
 --- collapse ---
 ---
-title: "[Not using full resolution images]"
+title: "Not using full resolution images"
 ---
 
 Beware that the ground sampling distance, or GSD, can change with the final resolution of the image.
@@ -54,7 +54,7 @@ The value used in the [Calculate the speed of the ISS with photos](https://proje
 
 --- collapse ---
 ---
-title: "[Storing more than 42 images]"
+title: "Storing more than 42 images"
 ---
 
 Your program is not allowed to retain more than 42 images at the end of the 10 minutes - though it can store more than that while it is running. 
@@ -63,7 +63,7 @@ Your program is not allowed to retain more than 42 images at the end of the 10 m
 
 --- collapse ---
 ---
-title: "[User input]"
+title: "User input"
 ---
 
 Your program cannot rely on interaction with an astronaut to work.
@@ -72,7 +72,7 @@ Your program cannot rely on interaction with an astronaut to work.
 
 --- collapse ---
 ---
-title: "[Using the LED matrix]"
+title: "Using the LED matrix"
 ---
 
 Your program is not allowed to use the LED matrix.
@@ -81,7 +81,7 @@ Your program is not allowed to use the LED matrix.
 
 --- collapse ---
 ---
-title: "[Poor documentation]"
+title: "Poor documentation"
 ---
 
 When you’ve created a useful piece of software and you want to share it with other people, a crucial step is creating documentation that helps people understand what the program does, how it works, and how they can use it. Make sure your program contains comments and the method used to determine the speed of the ISS is well explained
@@ -94,7 +94,7 @@ Note: Any attempt to hide, or make it difficult to understand, what a piece of c
 
 --- collapse ---
 ---
-title: "[Overfitting to the replayed data]"
+title: "Overfitting to the replayed data"
 ---
 
 Your code must be responsive to the images and sensor data on the ISS and not rely on specific landmarks or geographic areas shown in the sequence(s) used in Astro Pi Replay.
@@ -103,7 +103,7 @@ Your code must be responsive to the images and sensor data on the ISS and not re
 
 --- collapse ---
 ---
-title: "[Use of absolute file paths]"
+title: "Use of absolute file paths"
 ---
 
 Make sure that you don’t use any specific paths for your data files. Use the __file__ variable.
@@ -112,7 +112,7 @@ Make sure that you don’t use any specific paths for your data files. Use the _
 
 --- collapse ---
 ---
-title: "[Not saving data immediately]"
+title: "Not saving data immediately"
 ---
 
 Make sure that any experimental data is written to a file as soon as it is recorded. Avoid saving data to an internal list or dictionary as you go along and then writing it all to a file at the end of the experiment, because if your experiment ends abruptly due to an error or exceeding the 10 minute time limit, you won’t get any data.
@@ -121,7 +121,7 @@ Make sure that any experimental data is written to a file as soon as it is recor
 
 --- collapse ---
 ---
-title: "[Running out of space]"
+title: "Running out of space"
 ---
 
 You are allowed to produce up to 250MB of data. Remember that the size of an image file will depend not only on the resolution, but also on how much detail is in the picture: a photo of a blank white wall will be smaller than a photo of a landscape. Using Astro Pi Replay will give you a good idea of how many pictures you will be able to take.
@@ -130,7 +130,7 @@ You are allowed to produce up to 250MB of data. Remember that the size of an ima
 
 --- collapse ---
 ---
-title: "[Forgetting to call your function]"
+title: "Forgetting to call your function"
 --- 
 
 We’ve seen cases where teams have written a function only to forget to call it in their `main.py` — oops!
@@ -139,7 +139,7 @@ We’ve seen cases where teams have written a function only to forget to call it
 
 --- collapse ---
 ---
-title: "[Saving into directories that don't exist]"
+title: "Saving into directories that don't exist"
 --- 
 
 A number of teams want to organise their data into directories such as data, images, etc. This in and of itself is a really good thing, but it’s easy to forget to make these directories before writing to them.
@@ -148,7 +148,7 @@ A number of teams want to organise their data into directories such as data, ima
 
 --- collapse ---
 ---
-title: "[Networking]"
+title: "Networking"
 --- 
 
 For security reasons, your program is not allowed to access the network on the ISS. It should not attempt to open a socket, access the internet, or make a network connection of any kind. This includes local network connections back to the Astro Pi itself. As part of testing your program, you should disable your network connection to make sure that your program runs successfully without an internet connection.
@@ -157,7 +157,7 @@ For security reasons, your program is not allowed to access the network on the I
 
 --- collapse ---
 ---
-title: "[Trying to run another program]"
+title: "Trying to run another program"
 --- 
 
 In addition to not being able to use any networking, your program is not allowed to run another program or any command that you would normally type into the terminal window of the Raspberry Pi, such as `vcgencmd`.
@@ -166,7 +166,7 @@ In addition to not being able to use any networking, your program is not allowed
 
 --- collapse ---
 ---
-title: "[Multiple threads]"
+title: "Multiple threads"
 --- 
 
 If you need to do more than one thing at a time, you can use a multithreaded process. There are a number of Python libraries that allow this type of multitasking to be included in your code. However, to do this on the Astro Pis, you’re only permitted to use the threading library.
@@ -177,7 +177,7 @@ Only use the threading library if absolutely necessary. Managing threads can be 
 
 --- collapse ---
 ---
-title: "[Setting the program execution time too short]"
+title: "Setting the program execution time too short"
 --- 
 
 Some teams set their program execution time to a small value (e.g. 1 minute) for testing and then forget to switch it back to an appropriate value. Make sure to use as much of your allocated time slot as possible.
