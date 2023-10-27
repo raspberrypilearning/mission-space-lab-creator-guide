@@ -10,9 +10,13 @@ Don’t know about Mission Space Lab? Don’t panic! Head over to the [Astro Pi 
 </p>
 
 Answers to many of the questions that arise can probably be found by searching online, and we encourage you to do some research and try out different solutions if you get stuck. We’ll also be running a couple of scheduled online webinars where you can ask questions of the team at Astro Pi Mission Control, or you can email us at enquires@astro-pi.org. Don’t be shy - we’d love to hear from you. 
+
 There are a wealth of resources available to help you succeed at every stage of your Astro Pi journey.
 
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
 If you get stuck, please [contact us](enquiries@astro-pi.org) and we will do our best to help you!
+</p>
 
 ### What you will need to make
 
