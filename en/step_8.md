@@ -2,11 +2,11 @@
 
 There are a wealth of resources available to help you succeed at every stage of your Astro Pi journey.
 
+
 --- hint ---
-
 Stuck? Please [contact us](enquiries@astro-pi.org) and we will do our best to help you!
-
 --- /hint ---
+
 
 - The [Coral example](https://coral.ai/examples/) projects and the [Coral camera examples](https://github.com/google-coral/examples-camera) give a good overview of what’s possible with the Coral ML accelerator.
 - The [OpenCV Python tutorials](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) explain how to do all sorts of cool things like machine learning, edge detection, and object tracking.
