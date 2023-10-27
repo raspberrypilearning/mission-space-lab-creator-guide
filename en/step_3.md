@@ -71,7 +71,7 @@ You may also wish to use the camera module to take photos of the Earth to use in
 
 This will simulate taking a picture on the ISS and save it in a file called image1.jpg. If you open this file, you should see the exact photo below. 
 
-add image 
+![Image of clouds above the sea outputted by the Astro Pi Replay tool](images/image1.jpg)
 
 The picamera library offers a huge number of features and camera settings. You can see some more advanced examples by going to the [Basic Recipes](https://picamera.readthedocs.io/en/release-1.13/recipes1.html) page on the picamera website, but be mindful that if your code is run on the ISS then it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. 
 
