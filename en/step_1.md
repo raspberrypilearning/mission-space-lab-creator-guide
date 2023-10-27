@@ -18,6 +18,8 @@ There are a wealth of resources available to help you succeed at every stage of 
 If you get stuck, please [contact us](enquiries@astro-pi.org) and we will do our best to help you!
 </p>
 
+ ![Two views of the Astro Pi, showing the front panel (with some of the sensors) and the camera.](images/astro-pi-double.png) 
+
 ### What you will need to make
 
 Your challenge is to design a program that will have 10 minutes aboard the ISS in which to gather data to estimate the speed. At the end of the 10 minutes, your program must have written a file containing your estimate for the speed of the orbit of the ISS in kilometres per second.
