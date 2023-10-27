@@ -13,12 +13,11 @@ If your program calculates multiple estimates for the speed of the ISS (for exam
 There is a lot of scope for being creative when improving the accuracy of your estimates. One method is to be selective about which photos or data that you use to calculate your estimate. If you can determine that a specific sequence of data is the most reliable, then you could weight these data more highly in your final estimate.
 
 
---- hint --- 
-
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
 Be cautious about training your program to be over sensitive to the exact sequence shown by the Astro Pi Replay - the sequence on the ISS will be different, and you want your program to be accurate on the ISS most of all! 
 
---- /hint ---
-
+</p>
 
 If your method of calculating the speed is based on the [Calculate the speed of the ISS with photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project, then perhaps you could use techniques from computer-vision or machine learning to classify photos that are easier to estimate from. For example, you could perform machine learning inference in real time to evaluate the accuracy of your estimate, or the conditions below the ISS. 
 
@@ -26,4 +25,4 @@ If your method of calculating the speed is based on the [Calculate the speed of 
 
 Evaluate the accuracy of the estimate of the ISS speed that your program outputs using `Astro-Pi-Replay`.
 
---- /task --- 
+--- /task ---
