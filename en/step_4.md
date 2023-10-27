@@ -83,11 +83,9 @@ add code block
 
 --- /collapse ---
 
-
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
 Note: If you are writing bytes to a file (with argument `"wb"`) then you should tell Python to not use a buffer at all and to write the data to disk immediately. You can do this by setting the `buffering` argument to `0`.
-
 </p>
 
 --- task --- 
@@ -95,7 +93,6 @@ Note: If you are writing bytes to a file (with argument `"wb"`) then you should 
 Review your program and consider if you need to set the buffering mode when writing to a file.
 
 --- /task --- 
-
 
 --- collapse ---
 ---
@@ -115,7 +112,6 @@ The two main types of log entry you can use are `logger.info()` to log informati
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
 We recommend that you always use the `logzero` library (for logging important events that take place during your experiment), even if you also write sensor data to a file..
-Once you've finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it's crucial to thoroughly test your program using Astro Pi Replay.
 </p>
 
 Once you've finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it's crucial to thoroughly test your program using Astro Pi Replay.
