@@ -5,8 +5,10 @@ The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitt
 With an understanding of what the available sensors on the Astro Pis can do, think creatively about how to use them to find the ISS speed. Don't worry about getting everything perfect at first. Try to think of different ways, even if they seem unusual. Either by yourself or as a team, how many ways can you think of to calculate the speed using these tools?
 
 --- task ---
+
 Come up with several different ways of calculating the speed of the ISS using the Astro Pi hardware. Be creative, and try to think out of the box. 
 Once you have a few options, discuss them as a team and choose the one you think will give the most accurate result.
+
 --- /task --- 
 
 In the next section, you'll learn about the different Python libraries available that can help you with your project, and also about some which you can’t use for security reasons.
