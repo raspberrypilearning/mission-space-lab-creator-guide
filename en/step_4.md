@@ -95,9 +95,10 @@ Review your program and consider if you need to set the buffering mode when writ
 
 --- /task --- 
 
---- /collapse ---
-
 --- collapse ---
+---
+title: "Logzero"
+---
 
 If your program fails then it’s always helpful to have a record of what happened, so that you can fix it for next time. The `logzero` Python library (documentation [here](https://logzero.readthedocs.io/en/latest/) makes it easy to make notes about what’s going on in your program. You can log as much information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`).
 
@@ -106,6 +107,8 @@ Here’s a basic example of how logzero can be used to keep track of loop iterat
 add code block 
 
 The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when you experience an unexpected error or handle an exception. There’s also `logger.warning()` and `logger.debug()`.
+
+--- /collapse ---
 
 
 --- hint --- 
