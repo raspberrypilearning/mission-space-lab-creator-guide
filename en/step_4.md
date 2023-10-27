@@ -30,12 +30,11 @@ Then you can save your data into a file underneath this 'base_folder':
 
 add code block 
 
---- hint --- 
-
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
 Make sure to check the [Mission Space Lab Rulebook](https://astro-pi.org/mission-space-lab/guidelines/program-checklist) for the rules on files and filenames.
 
---- /hint --- 
-
+</p>
 
 ### Closing resources 
 
@@ -85,12 +84,11 @@ add code block
 --- /collapse ---
 
 
---- hint ---
-
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
 Note: If you are writing bytes to a file (with argument `"wb"`) then you should tell Python to not use a buffer at all and to write the data to disk immediately. You can do this by setting the `buffering` argument to `0`.
 
---- /hint ---
-
+</p>
 
 --- task --- 
 
@@ -114,12 +112,10 @@ The two main types of log entry you can use are `logger.info()` to log informati
 
 --- /collapse ---
 
-
---- hint --- 
-
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
 We recommend that you always use the `logzero` library (for logging important events that take place during your experiment), even if you also write sensor data to a file..
 Once you've finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it's crucial to thoroughly test your program using Astro Pi Replay.
-
---- /hint --- 
+</p>
 
 Once you've finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it's crucial to thoroughly test your program using Astro Pi Replay.
