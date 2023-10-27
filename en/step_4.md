@@ -81,6 +81,8 @@ When you write to a file using the open function, Python normally doesn’t save
 
 add code block 
 
+--- /collapse ---
+
 --- hint ---
 
 Note: If you are writing bytes to a file (with argument `"wb"`) then you should tell Python to not use a buffer at all and to write the data to disk immediately. You can do this by setting the `buffering` argument to `0`.
