@@ -16,24 +16,13 @@ In the next section, you'll learn about the different Python libraries available
 ### The Astro Pi Python environment
 
 The Astro Pi computers have Python version 3.9.2 installed, so you will need to be using at least this version, or greater. If you are using a higher version than this, just be aware that there may be some new functions that work on your machine but not on the Astro Pis.
+
 There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them your program will not be accepted:
 
 [Disallowed libraries](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit)
 
 Apart from the Python standard environment, the Astro Pis have extra libraries installed to help you complete the challenge. Each one is explained briefly below with examples. There are also links for more details if you need them. Don’t forget to bookmark this page for later!
 
-
-### Python libraries
-
---- collapse ---
----
-title: What is a Python library?
----
-A 'library' or 'package' is a collection of program 'blocks' that solve a specific problem or achieve a specific goal. You use them by 'importing' them into your Python program: `import numpy as np`, for example. Using libraries avoids having to solve the same problem twice, and makes the process of programming easier.
-
---- /collapse ---
-
-Take some time now to familiarise yourself with the libraries available to use on the Astro Pis, which are listed below. Each library is briefly described and is presented with an example of how to use it, together with links to external documentation where you can learn more. Remember to bookmark this page for later.
 
 --- collapse ---
 ---
