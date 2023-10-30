@@ -10,7 +10,23 @@ One way to stop a Python program after a specific length of time is using the `d
 
 By recording and storing the time at the start of the experiment, we can then check repeatedly to see if the current time is greater than that start time plus a certain number of minutes, seconds, or hours. In the program below, this is used to print “Hello from the ISS” every second for 1 minutes: 
 
-add code block
+```Python
+from datetime import datetime, timedelta
+from time import sleep
+
+# Create a variable to store the start time
+start_time = datetime.now()
+# Create a variable to store the current time
+# (these will be almost the same at the start)
+now_time = datetime.now()
+# Run a loop for 1 minute
+while (now_time < start_time + timedelta(minutes=1)):
+    print("Hello from the ISS")
+    sleep(1)
+    # Update the current time
+    now_time = datetime.now()
+# out of the loop - stopping
+```
 
 --- task ---
 
@@ -24,11 +40,19 @@ Note: When deciding on the runtime for your program make sure you take into acco
 
 Your program is going to be stored in a different location when it is deployed on the ISS, so it’s really important to avoid using absolute file paths when writing your `result.txt` (or any other file you might want to write). Use the code below to work out which folder the `main.py` file is currently stored in, which is called the `base_folder`:
 
-add code block
+```Python
+from pathlib import Path
+base_folder = Path(__file__).parent.resolve()
+```
 
 Then you can save your data into a file underneath this 'base_folder': 
 
-add code block 
+```Python
+data_file = base_folder / "data.csv"
+for i in range(10):
+    with open(data_file, "w", buffering=1) as f:
+        f.write(f"Some data: {i}")
+```
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
@@ -40,11 +64,19 @@ Make sure to check the [Mission Space Lab Rulebook](https://astro-pi.org/mission
 
 At the end of the experiment it’s a good idea to close all resources you have open. This might mean closing any files you have open: 
 
-add code block 
+```Python
+file = open(file)
+file.close()
+```
 
 or closing the camera: 
 
-add code block 
+```Python
+from picamera import PiCamera
+
+cam = PiCamera()
+cam.close()
+```
 
 <p style="border-left: solid; border-width:10px; border-color: #d17500; #ff8f00; background-color: #ff8f00; padding: 10px;">
 Avoid closing and re-opening the camera in a loop - this may cause the Raspberry Pi to run out of memory and prevent your program from being allowed to run on the ISS. Only close the camera after you have finished taking photos.
@@ -79,7 +111,10 @@ title: "File buffering"
 
 When you write to a file using the open function, Python normally doesn’t save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer’s memory called a buffer. Python does this so that it can choose the best time to write to the disk - something that normally we don’t care about. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, we can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
 
-add code block 
+```Python
+with open("some_file.txt", "w", buffering=1) as f:
+    f.write("example data")
+```
 
 --- /collapse ---
 
@@ -96,14 +131,24 @@ Review your program and consider if you need to set the buffering mode when writ
 
 --- collapse ---
 ---
-title: "Logzero"
+title: "Logging"
 ---
 
 If your program fails then it’s always helpful to have a record of what happened, so that you can fix it for next time. The `logzero` Python library (documentation [here](https://logzero.readthedocs.io/en/latest/) makes it easy to make notes about what’s going on in your program. You can log as much information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`).
 
 Here’s a basic example of how logzero can be used to keep track of loop iterations:
 
-add code block 
+```Python
+from logzero import logger, logfile
+from time import sleep
+
+logfile("events.log")
+
+for i in range(10):
+    logger.info(f"Loop number {i+1} started")
+    ...
+    sleep(60)
+```
 
 The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when you experience an unexpected error or handle an exception. There’s also `logger.warning()` and `logger.debug()`.
 
