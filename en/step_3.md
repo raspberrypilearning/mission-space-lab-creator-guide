@@ -83,8 +83,23 @@ Using a **for** loop, it’s very simple to take a sequence of pictures by repea
 
 Create a new file called camera-sequence.py and in it type the following lines:
 
-add code block
+```
+# Import the PiCamera class from the picamera module
+from picamera import PiCamera
 
+# Create an instance of the PiCamera class
+cam = PiCamera()
+
+# Set the resolution of the camera to 4056x3040 pixels
+cam.resolution = (4056, 3040)
+
+# Capture three images using a loop
+for i in range(3):
+    # Capture an image and save it 
+    # with a filename like 
+    # "image0.png", "image1.png", etc.
+    cam.capture(f"image{i}.png")
+```
 Run this code using the Astro-Pi-Replay plugin by clicking **Run > Astro-Pi-Replay**.
 
 ### Numbering plans for images and files
