@@ -120,7 +120,47 @@ You will be able to download up to 42 pictures that you take on the ISS. It can 
 
 The following is an example of a program that will, when run using the Astro-Pi-Replay plugin, create a new image called `gps_image1.jpg`. The `custom_capture` function will have set the EXIF metadata for the image to include the current latitude and longitude of the ISS. There are several ways of formatting [latitude and longitude](https://www.britannica.com/science/latitude) angles, and using the custom_capture function. You will have to adapt this code to suit your particular program.
 
-add code block
+```Python
+from orbit import ISS
+from picamera import PiCamera
+
+cam = PiCamera()
+cam.resolution = (4056,3040)
+
+def convert(angle):
+
+    # Convert a `skyfield` Angle to an EXIF-appropriate
+    # representation (positive rationals)
+    # e.g. 98° 34' 58.7 to "98/1,34/1,587/10"
+
+    # Return a tuple containing a boolean and the converted angle,
+    # with the boolean indicating if the angle is negative.
+ 
+    sign, degrees, minutes, seconds = angle.signed_dms()
+    exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
+    return sign < 0, exif_angle
+
+def custom_capture(iss, camera, image):
+    # Use `camera` to capture an `image` file with lat/long EXIF data.
+    point = iss.coordinates()
+
+    # Convert the latitude and longitude to EXIF-appropriate 
+    # representations
+    south, exif_latitude = convert(point.latitude)
+    west, exif_longitude = convert(point.longitude)
+
+    # Set the EXIF tags specifying the current location
+    camera.exif_tags['GPS.GPSLatitude'] = exif_latitude
+    camera.exif_tags['GPS.GPSLatitudeRef'] = "S" if south else "N"
+    camera.exif_tags['GPS.GPSLongitude'] = exif_longitude
+    camera.exif_tags['GPS.GPSLongitudeRef'] = "W" if west else "E"
+
+    # Capture the image
+    camera.capture(image)
+
+
+capture(ISS(), cam, "gps_image1.jpg")
+```
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
@@ -138,13 +178,30 @@ Once you’ve completed this project you may want to look at the [Coral examples
 
 For your submission to pass testing by Mission Control your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five decimal points. Please do not include any other data in this file.
 
-**7.12345**
+```Python
+7.12345
+```
 *Example result.txt for an average speed estimate.*
 
 The following is an example of a program that will write a txt file called "`result.txt`" with an estimated speed value in km/s (kilometers per second) to 5 decimal places. You will have to adapt this code to suit your particular program.
 
-add code block
+```Python
+estimate_kmps = 7.1234567890  # Replace with your estimate
 
+# Format the estimate_kmps to have a precision 
+# of 5 significant figures
+estimate_kmps_formatted = "{:.5f}".format(estimate_kmps)
+
+# Create a string to write to the file
+output_string = estimate_kmps_formatted
+
+# Write to the file
+file_path = "result.txt"  # Replace with your desired file path
+with open(file_path, 'w') as file:
+    file.write(output_string)
+
+print("Data written to", file_path)
+```
 --- task --- 
 
 Update your `main.py` file so that it writes a file called `result.txt` when it is executed.
