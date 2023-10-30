@@ -26,15 +26,15 @@ Create a new file in Thonny and ‘Save As’ `main.py` in your project folder
 
 Next you will install the Astro Pi Replay tool, which allows us to simulate using an Astro Pi Sense HAT or camera to capture data from space.
 
-![Screenshot of the Plugin Manager in Thonny, showing search results for the  "thonny-astro-pi-replay" library](images/Install Replay 1.png)
+![Screenshot of the Plugin Manager in Thonny, showing search results for the  "thonny-astro-pi-replay" library](images/install_replay_1.png)
  
-![Screenshot of the Plugin Manager in Thonny, showing the  "thonny-astro-pi-replay" library](images/Install Replay 2.png)
+![Screenshot of the Plugin Manager in Thonny, showing the  "thonny-astro-pi-replay" library](images/install_replay_2.png)
 
 To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Manage Plugins**, and search for **thonny-astro-pi-replay**. Select the correct plugin and press install. 
 
-![Screenshot of the Package Manager in Thonny, showing search results for the  "astro-pi-replay" library](images/Install Replay 3.png)
+![Screenshot of the Package Manager in Thonny, showing search results for the  "astro-pi-replay" library](images/install_replay_3.png)
 
-![Screenshot of the Package Manager in Thonny, showing the  "astro-pi-replay" library](images/Install Replay 4.png) 
+![Screenshot of the Package Manager in Thonny, showing the  "astro-pi-replay" library](images/install_replay_4.png) 
 
 Next, click **Tools > Manage Packages**, and search for **astro-pi-replay**. Select the correct package and press install. 
 
@@ -43,7 +43,7 @@ Next, click **Tools > Manage Packages**, and search for **astro-pi-replay**. Sel
 <p style="border-left: solid; border-width:10px; border-color: #d17500; #ff8f00; background-color: #ff8f00; padding: 10px;">
 The `Astro Pi Replay` tool works by replaying a set of old pictures taken on the ISS. When your code asks to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and pretends that it has just been captured “live”.
 
-![Screenshot of the "Run" menu in Thonny, showing how to run using the "astro-pi-replay" plugin](images/Use Replay.png)
+![Screenshot of the "Run" menu in Thonny, showing how to run using the "astro-pi-replay" plugin](images/use_replay.png)
 
 **How to use the Astro Pi Replay Plugin**
 
