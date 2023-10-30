@@ -84,6 +84,9 @@ Using a **for** loop, it’s very simple to take a sequence of pictures by repea
 Create a new file called camera-sequence.py and in it type the following lines:
 
 ```
+s = "Python syntax highlighting"
+print s
+
 # Import the PiCamera class from the picamera module
 from picamera import PiCamera
 
