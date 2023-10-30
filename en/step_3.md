@@ -110,7 +110,7 @@ If you need more help with using the picamera, then check out the [Take still pi
 
 --- task --- 
 
-Can you update your main.py file to capture images or SenseHAT data in real-time?
+Update your main.py file to capture images or SenseHAT data in real-time
 
 --- /task --- 
 
