@@ -28,7 +28,7 @@ Next you will install the Astro Pi Replay tool, which allows us to simulate usin
 
 ![Screenshot of the Plugin Manager in Thonny, showing search results for the  "thonny-astro-pi-replay" library](images/install_replay_1.png)
  
-![Screenshot of the Plugin Manager in Thonny, showing the  "thonny-astro-pi-replay" library](images/install_replay_2.png){: width="50%"}
+![Screenshot of the Plugin Manager in Thonny, showing the  "thonny-astro-pi-replay" library](images/install_replay_2.png)
 
 To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Manage Plugins**, and search for **thonny-astro-pi-replay**. Select the correct plugin and press install. 
 
