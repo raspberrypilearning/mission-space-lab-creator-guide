@@ -1,6 +1,6 @@
 ## The Astro Pi computers
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with extra sensors, cameras, and processors, and packed into a custom aluminium flight case. The onboard v2 Sense HAT provides temperature, humidity, gyroscope, magnetometer, and light/colour sensors, allowing you to measure things like the magnetic field and acceleration. There is also a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral ML accelerators.
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with extra sensors and cameras, and packed into a custom aluminium flight case. The onboard v2 Sense HAT provides temperature, humidity, gyroscope, magnetometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. There is also a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral ML accelerators.
 
 ![Animation of the Astro Pi computers being taken apart](images/AstroPi2-animation.gif)
 
@@ -450,8 +450,9 @@ Because there are lots of security restrictions when running a program on board 
 
 We recommend using Thonny to create your Program.
 
-- [Install Thonny](https://projects.raspberrypi.org/en/projects/thonny-install)
-- [Change the theme and format in Thonny](https://projects.raspberrypi.org/en/projects/change-theme-thonny)
+[[[thonny-install]]]
+
+[[[change-theme-thonny]]]
 
 To install any of the Python libraries you may need libraries, open Thonny and click **Tools > Manage Packages**
 
