@@ -12,7 +12,11 @@ Your zip file must not be more than 3 MB in size, unless it includes a .tflite m
 
 Both `de421.bsp` and `de440s.bsp` files are available on the Astro Pis. If your program needs them, you can access them via the `orbit` library, as seen in the following code:
 
-add code block
+```Python
+from orbit import de421, de440s
+print(de440)
+print(de440s)
+```
 
 --- task ---
 
