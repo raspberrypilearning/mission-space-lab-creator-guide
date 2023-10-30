@@ -456,7 +456,7 @@ We recommend using Thonny to create your Program.
 
 To install any of the Python libraries you may need libraries, open Thonny and click **Tools > Manage Packages**
 
-![Screenshot of the "tools" menu in Thonny, selecting "Manage Packages"](images/skyfield_0.png)
+![Screenshot of the "tools" menu in Thonny, selecting "Manage Packages"](images/skyfield_0.png){: width="50%"}
 
 To install any of these libraries, open Thonny and click **Tools > Manage Packages.**
 
