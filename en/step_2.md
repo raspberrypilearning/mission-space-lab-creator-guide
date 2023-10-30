@@ -460,7 +460,7 @@ To install any of the Python libraries you may need libraries, open Thonny and c
 
 To install any of these libraries, open Thonny and click **Tools > Manage Packages.**
 
-![Screenshot of the Package Manager in Thonny, showing search results for the  "Skyfield" library](images/Skyfield 1.png)
+![Screenshot of the Package Manager in Thonny, showing search results for the  "Skyfield" library](images/skyfield_1.png)
 ![Screenshot of the Package Manager in Thonny, showing "Skyfield" library, "install" button highlighted](images/Skyfield 1.png)
 
 Search for the library you want by typing its name into the search bar, selecting the correct file from the search results, and then pressing install when you find the one you need.
