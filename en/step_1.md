@@ -22,11 +22,11 @@ If you get stuck, please [contact us](enquiries@astro-pi.org) and we will do our
 
 ### What you will need to make
 
-Your challenge is to design a program that will have 10 minutes aboard the ISS in which to gather data to estimate the speed. At the end of the 10 minutes, your program must have written a file containing your estimate for the speed of the orbit of the ISS in kilometres per second.
+Your challenge is to design a program that will have 10 minutes aboard the ISS in which to gather data to estimate the speed of the Space Station. At the end of the 10 minutes, your program must have written a file containing your estimate for the speed of the ISS in kilometres per second.
 
 You can use our Astro Pi Replay plugin to simulate your code running live on the Astro Pis on the ISS, and change the program to work in real-time. 
 
-We will also give you information on how to improve the program to make sure it runs smoothly on the ISS in space, while also following the security regulations. 
+We will also give you information on how to improve the program to make sure it runs smoothly on the ISS while also following the security regulations. 
 
 ![A sequence of photos of the earth's surface taken by the Astro Pi computers](images/photo-sequence.gif)
 
