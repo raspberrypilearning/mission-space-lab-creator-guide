@@ -26,28 +26,31 @@ Create a new file in Thonny and ‘Save As’ `main.py` in your project folder
 
 Next you will install the Astro Pi Replay tool, which allows us to simulate using an Astro Pi Sense HAT or camera to capture data from space.
 
+To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Manage Plugins**, and search for **thonny-astro-pi-replay**. Select the correct plugin and press install. 
+
 ![Screenshot of the Plugin Manager in Thonny, showing search results for the  "thonny-astro-pi-replay" library](images/install_replay_1.png)
  
 ![Screenshot of the Plugin Manager in Thonny, showing the  "thonny-astro-pi-replay" library](images/install_replay_2.png)
 
-To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Manage Plugins**, and search for **thonny-astro-pi-replay**. Select the correct plugin and press install. 
 
 ![Screenshot of the Package Manager in Thonny, showing search results for the  "astro-pi-replay" library](images/install_replay_3.png)
 
 ![Screenshot of the Package Manager in Thonny, showing the  "astro-pi-replay" library](images/install_replay_4.png) 
 
-Next, click **Tools > Manage Packages**, and search for **astro-pi-replay**. Select the correct package and press install. 
 
 **You will need to close and restart Thonny for the installation to complete.**
 
 <p style="border-left: solid; border-width:10px; border-color: #d17500; #ff8f00; background-color: #ff8f00; padding: 10px;">
+
 The `Astro Pi Replay` tool works by replaying a set of old pictures taken on the ISS. When your code asks to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and pretends that it has just been captured “live”.
 
 ![Screenshot of the "Run" menu in Thonny, showing how to run using the "astro-pi-replay" plugin](images/use_replay.png){: width="50%"}
 
 **How to use the Astro Pi Replay Plugin**
 
+
 To run your code using the Astro Pi Replay plugin, do **not** press the green **“Run”** button. Instead, click **Run>Astro-Pi-Replay**. This will run your code as if it was running on Astro Pi hardware.
+
 
 Although all of the functions of the `picamera` library are available, many of the `picamera` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using `Astro Pi Replay`. Additionally, most attributes on the `PiCamera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on `Astro Pi Replay` but would change the resolution when run on the Astro Pi in space. 
 </p>
@@ -71,6 +74,22 @@ Remember that you will need to run your code using the **Astro-Pi-Replay** plugi
 ### Taking photos with the Camera Module 
 
 You may also wish to use the camera module to take photos of the Earth to use in your program. You can complete the activity “[Getting started with the Camera Module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)" to learn how to do this. However, if you do not have a Raspberry Pi and camera module to test your code on, you can still run the same code through the Astro-Pi-Replay plugin.
+
+
+Here is an example of a simple program to test the Astro Pi Replay plugin. 
+```Python
+# Import the PiCamera class from the picamera module
+from picamera import PiCamera
+
+# Create an instance of the PiCamera class
+cam = PiCamera()
+
+# Set the resolution of the camera to 4056x3040 pixels
+cam.resolution = (4056, 3040)
+
+# Capture an image
+cam.capture("image1.png")
+```
 
 This will simulate taking a picture on the ISS and save it in a file called image1.jpg. If you open this file, you should see the exact photo below. 
 
@@ -179,7 +198,7 @@ Once you’ve completed this project you may want to look at the [Coral examples
 
 ### Writing a your result file 
 
-For your submission to pass testing by Mission Control your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five decimal points. Please do not include any other data in this file.
+For your submission to pass testing by Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five decimal points. Please do not include any other data in this file.
 
 ```Python
 7.12345

@@ -3,6 +3,8 @@ In this project, you will learn how to enter this year’s Mission Space Lab cha
 
 This is not a complete step-by-step guide on how to create a program that will solve the problem posed by the challenge. You and your team will need to come up with ideas and solutions and work out how to implement them.
 
+![A sequence of photos of the earth's surface taken by the Astro Pi computers](images/photo-sequence.gif)
+
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
 Don’t know about Mission Space Lab? Don’t panic! Head over to the [Astro Pi website](https://astro-pi.org/mission-space-lab/) for more information.
@@ -28,7 +30,6 @@ You can use our Astro Pi Replay plugin to simulate your code running live on the
 
 We will also give you information on how to improve the program to make sure it runs smoothly on the ISS while also following the security regulations. 
 
-![A sequence of photos of the earth's surface taken by the Astro Pi computers](images/photo-sequence.gif)
 
 ### What you will need
 
