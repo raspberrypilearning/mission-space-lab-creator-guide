@@ -40,7 +40,7 @@ To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Ma
 
 **You will need to close and restart Thonny for the installation to complete.**
 
-<p style="border-left: solid; border-width:10px; border-color: #d17500; #ff8f00; background-color: #ff8f00; padding: 10px;">
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
 The `Astro Pi Replay` tool works by replaying a set of old pictures taken on the ISS. When your code asks to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and pretends that it has just been captured “live”.
 
