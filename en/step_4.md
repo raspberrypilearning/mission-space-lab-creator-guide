@@ -78,7 +78,7 @@ cam = PiCamera()
 cam.close()
 ```
 
-<p style="border-left: solid; border-width:10px; border-color: #d17500; #ff8f00; background-color: #ff8f00; padding: 10px;">
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 Avoid closing and re-opening the camera in a loop - this may cause the Raspberry Pi to run out of memory and prevent your program from being allowed to run on the ISS. Only close the camera after you have finished taking photos.
 </p>
 
