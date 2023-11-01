@@ -26,13 +26,13 @@ Create a new file in Thonny and ‘Save As’ `main.py` in your project folder
 
 Next you will install the Astro Pi Replay tool, which allows us to simulate using an Astro Pi Sense HAT or camera to capture data from space.
 
-To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Manage Plugins**, and search for **thonny-astro-pi-replay**. Select the correct plugin and press install. 
+To install the Astro-Pi-Replay tool, open up Thonny, and then click **Tools > Manage plug-ins...**, and search for **thonny-astro-pi-replay**. Select the correct plugin and press install. 
 
 ![Screenshot of the Plugin Manager in Thonny, showing search results for the  "thonny-astro-pi-replay" library](images/install_replay_1.png)
  
 ![Screenshot of the Plugin Manager in Thonny, showing the  "thonny-astro-pi-replay" library](images/install_replay_2.png)
 
-Then, click **Tools > Manage Packages**, and search for **astro-pi-replay**. Select the correct package and press install.
+Then, click **Tools > Manage packages...**, and search for **astro-pi-replay**. Select the correct package and press install.
 
 ![Screenshot of the Package Manager in Thonny, showing search results for the  "astro-pi-replay" library](images/install_replay_3.png)
 
