@@ -1,6 +1,6 @@
 ## Submitting your work
 
-If you are happy with your program and have run it using Astro Pi Replay, have read the guidelines on the Astro Pi website, and have checked and double-checked the MSL program checklist, all that remains to be done is to zip up your work and get your mentor to submit it to us.
+If you are happy with your program and have run it using Astro Pi Replay, have read the rulebook on the Astro Pi website, and have checked and double-checked the MSL program checklist, all that remains to be done is to zip up your work and get your mentor to submit it to us.
 
 ### Preparing a zip 
 
