@@ -46,7 +46,7 @@ The Astro Pi Replay tool works by replaying a set of old pictures taken on the I
 
 ![Screenshot of the 'Run' menu in Thonny, with 'Astro-Pi-Replay' highlighted in the menu.](images/use_replay.png){: width="50%"}
 
-#### How to use the Astro Pi Replay plug-in
+**How to use the Astro Pi Replay plug-in**
 
 To run your code using the Astro Pi Replay plug-in, do **not** press the green **Run** button. Instead, open the **Run** menu, then click on **Astro-Pi-Replay**. This will run your code as if it was running on Astro Pi hardware.
 
