@@ -20,11 +20,11 @@ Test your program with `Astro-Pi-Replay` and check the output for any problems o
 
 ### Program Checklist
 
-Your program will also be analysed to make sure that it adheres to the guidelines. Take the time now to read them again and re-review your program to ensure it fits the bill.
+Your program will also be analysed to make sure that it adheres to the rulebook. Take the time now to read it and re-review your program to ensure it fits the bill.
 
 --- task ---
 
-Check your program against the [Mission Space Lab Program Checklist](https://astro-pi.org/mission-space-lab/guidelines/program-checklist).
+Check your program against the [Mission Space Lab Rulebook](https://astro-pi.org/mission-space-lab/rulebook).
 
 --- /task ---
 
