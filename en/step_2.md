@@ -1,10 +1,10 @@
 ## The Astro Pi computers
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with extra sensors and cameras, and packed into a custom aluminium flight case. The onboard v2 Sense HAT provides temperature, humidity, gyroscope, magnetometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. There is also a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral ML accelerators.
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral machine learning accelerators. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
-![Animation of the Astro Pi computers being taken apart](images/AstroPi2-animation.gif)
+![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
-With an understanding of what the available sensors on the Astro Pis can do, think creatively about how to use them to find the ISS speed. Don't worry about getting everything perfect at first. Try to think of different ways, even if they seem unusual. Either by yourself or as a team, how many ways can you think of to calculate the speed using these tools?
+With an understanding of what the available sensors on the Astro Pis can do, think creatively about how to use them to find the speed of the ISS. Don't worry about getting everything perfect at first. Try to think of different ways, even if they seem unusual. Either by yourself or as a team, how many ways can you think of to calculate the speed using these tools?
 
 --- task ---
 
@@ -13,17 +13,17 @@ Once you have a few options, discuss them as a team and choose the one you think
 
 --- /task --- 
 
-In the next section, you'll learn about the different Python libraries available that can help you with your project, and also about some which you can’t use for security reasons.
+In the next section, you will learn about the different Python libraries available that can help you with your project, and also about some that you cannot use for security reasons.
 
 ### The Astro Pi Python environment
 
-The Astro Pi computers have Python version 3.9.2 installed, so you will need to be using at least this version, or greater. If you are using a higher version than this, just be aware that there may be some new functions that work on your machine but not on the Astro Pis.
+The Astro Pi computers on the ISS have Python version 3.9.2 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer but not on the Astro Pis.
 
-There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them your program will not be accepted:
+There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them, your program will not be accepted:
 
 [Disallowed libraries](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit)
 
-Apart from the Python standard environment, the Astro Pis have extra libraries installed to help you complete the challenge. Each one is explained briefly below with examples. There are also links for more details if you need them. Don’t forget to bookmark this page for later!
+Alongside the Python standard environment, the Astro Pis have extra libraries installed to help you complete the Mission. Each one is explained briefly below with examples. There are also links for more details if you need them. Remember to bookmark this page for later!
 
 
 --- collapse ---
@@ -48,7 +48,7 @@ In the [How to find the location of the ISS](6) section you can find out how to 
 title: picamera
 ---
 
-The Python library for controlling the Raspberry Pi Camera Module is `picamera`. To get started, check out [this project](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4) for a handy walkthrough of how to use it.
+The Python library for controlling the Raspberry Pi Camera Module is `picamera`. To get started, check out [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4) for a handy walkthrough of how to use it.
 
 #### Usage
 
@@ -108,7 +108,7 @@ for color in start.gradient(end, steps=100):
 title: GPIO Zero
 ---
 
-GPIO Zero is a simple but powerful GPIO (General Purpose Input Output) library. Most of its functionality is restricted aboard the ISS — for example, the only pin you are allowed to access is GPIO pin 12, where the motion sensor is connected. However, some of its other features can be handy in your experiment, such as the internal device `CPUTemperature`.
+GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. Most of its functionality is restricted aboard the ISS — for example, the only pin you are allowed to access is GPIO pin 12, where the motion sensor is connected. However, some of its other features can be handy in your experiment, such as the internal device `CPUTemperature`.
 
 #### Usage
 
@@ -137,7 +137,7 @@ while True:
 title: NumPy
 ---
 
-`numpy` is a general purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrixes) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
+`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrixes) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
 
 #### Usage
 
@@ -168,7 +168,7 @@ camera.capture(output, 'rgb')
 title: SciPy
 ---
 
-SciPy is a free open-source Python library used for scientific computing and technical computing. SciPy contains modules for optimisation, linear algebra, integration, interpolation, special functions, FFT (Fast Fourrier Transform), signal and image processing, ODE (Ordinary Differential Equations) solvers, and other tasks common in science and engineering. You may need to use this library to solve a particular equation.
+SciPy is a free, open-source Python library used for scientific computing and technical computing. SciPy contains modules for optimisation, linear algebra, integration, interpolation, special functions, FFT (Fast Fourrier Transform), signal and image processing, ODE (Ordinary Differential Equations) solvers, and other tasks common in science and engineering. You may need to use this library to solve a particular equation.
 
 #### Documentation
 
@@ -181,11 +181,11 @@ SciPy is a free open-source Python library used for scientific computing and tec
 title: TensorFlow Lite and PyCoral
 ---
 
-TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML Accelerator (Edge TPU). Note that Tensorflow (as opposed to TensorFlow Lite) is not supported by the Kit OS because Tensorflow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine Learning and computer vision](7) section.
+TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Kit OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine Learning and computer vision](7) section.
 
 #### Documentation
 
-- [Tensorflow Lite](https://www.tensorflow.org/lite/api_docs/python/tf/lite)
+- [TensorFlow Lite](https://www.tensorflow.org/lite/api_docs/python/tf/lite)
 - [PyCoral](https://coral.ai/docs/edgetpu/tflite-python/)
 --- /collapse ---
 
@@ -295,7 +295,7 @@ The core image library is designed for fast access to data stored in a few basic
 title: OpenCV
 ---
 
-`opencv` is an open-source computer vision library. The Astro Pi units specifically have the `opencv-contrib-python-headless` package installed, which includes all of `opencv` plus additional modules (listed in the [opencv docs](https://docs.opencv.org/master/)), and excludes all GUI functionality. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
+`opencv` is an open-source computer vision library. The Astro Pi units specifically have the `opencv-contrib-python-headless` package installed, which includes all of `opencv` plus additional modules (listed in the [OpenCV documentation](https://docs.opencv.org/master/)), and excludes all GUI functionality. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
 
 #### Documentation
 
@@ -308,7 +308,7 @@ title: OpenCV
 title: exif
 ---
 
-`exif` allows you to read and modify image EXIF metadata using Python. You may want to use it to embed GPS data into any images you take, or to [analyse photos taken aboard the ISS](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/1).
+`exif` allows you to read and modify image Exif metadata using Python. You may want to use it to embed GPS data into any images you take, or to [analyse photos taken aboard the ISS](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/1).
 
 #### Documentation
 
@@ -321,7 +321,7 @@ title: exif
 title: scikit-learn
 ---
 
-`scikit-learn` is a set of simple and efficient tools for data mining and data analysis that are accessible to everybody, and reusable in various contexts. It's designed to interoperate with `numpy`, `scipy`, and `matplotlib`.
+`scikit-learn` is a set of simple and efficient tools for data mining and data analysis that are accessible to everybody, and reusable in various contexts. It is designed to interoperate with `numpy`, `scipy`, and `matplotlib`.
 
 #### Documentation
 
@@ -364,7 +364,7 @@ coordinate_pair = (
 location = reverse_geocoder.search(coordinate_pair)
 print(location)
 ```
-This output shows the ISS is currently over Hamilton, New York:
+This output shows that the ISS is currently over Hamilton, New York:
 
 ```
 [OrderedDict([
@@ -387,7 +387,7 @@ This output shows the ISS is currently over Hamilton, New York:
 ---
 title: sense_hat
 ---
-The `sense_hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
+The `sense_hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
 
 #### Usage
 
@@ -448,32 +448,34 @@ Because there are lots of security restrictions when running a program on board 
 
 ### Setting up your programming environment 
 
-We recommend using Thonny to create your Program.
+We recommend using Thonny to create your program.
 
 [[[thonny-install]]]
 
 [[[change-theme-thonny]]]
 
-To install any of the Python libraries you may need libraries, open Thonny and click **Tools > Manage Packages**
+To install any of the Python libraries, open Thonny and click on **Tools > Manage packages...**.
 
-![Screenshot of the "tools" menu in Thonny, selecting "Manage Packages"](images/skyfield_0.png){: width="50%"}
+![Screenshot of the 'Tools' menu in Thonny, with 'Manage packages...' highlighted.](images/skyfield_0.png){: width="50%"}
 
-To install any of these libraries, open Thonny and click **Tools > Manage Packages.**
+Search for the library you want by typing its name into the search bar.
 
-![Screenshot of the Package Manager in Thonny, showing search results for the  "Skyfield" library](images/skyfield_1.png)
-![Screenshot of the Package Manager in Thonny, showing "Skyfield" library, "install" button highlighted](images/skyfield_2.png)
+![Screenshot of the package manager in Thonny, showing search results for the "skyfield" library.](images/skyfield_1.png)
 
-Search for the library you want by typing its name into the search bar, selecting the correct file from the search results, and then pressing install when you find the one you need.
+Select the correct file from the search results, then press **Install**.
 
-### The Astro Pi Replay plugin
+![Screenshot of the package manager in Thonny, showing the "skyfield" library and the 'Install' button.](images/skyfield_2.png)
 
-This acts as a kind of simulator you can use on Earth that will make your program act as if it is running on the Astro Pi onboard the ISS. It allows you to test your code before it goes to space without needing to have a real Raspberry Pi, camera, or Sense HAT module. The simulation is not perfect, however, and will only produce photos and sensor data from within its own dataset, but should still mean that you can test that your program would work when on board the ISS.
 
-Instructions for downloading and using the Astro Pi Replay tool can be found later in the guide.
+### The Astro Pi Replay plug-in
+
+The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still mean that you can test that your program would work when running on board the ISS.
+
+You can find instructions for downloading and using the Astro Pi Replay tool later in this creator guide.
 
 ### Looking ahead
 
-Now it’s time to think about how your team is going to approach this challenge. Discuss how you will choose your method, divide up the tasks and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
+Now it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
 
 
 
