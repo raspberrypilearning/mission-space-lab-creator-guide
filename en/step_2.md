@@ -8,8 +8,7 @@ With an understanding of what the available sensors on the Astro Pis can do, thi
 
 --- task ---
 
-Come up with several different ways of calculating the speed of the ISS using the Astro Pi hardware. Be creative, and try to think out of the box. 
-Once you have a few options, discuss them as a team and choose the one you think will give the most accurate result.
+Come up with several different ways of calculating the speed of the ISS using the Astro Pi hardware. Be creative, and try to think out of the box. Once you have a few options, discuss them as a team and choose the one you think will give the most accurate result.
 
 --- /task --- 
 
@@ -181,7 +180,7 @@ SciPy is a free, open-source Python library used for scientific computing and te
 title: TensorFlow Lite and PyCoral
 ---
 
-TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Kit OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine Learning and computer vision](7) section.
+TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine Learning and computer vision](7) section.
 
 #### Documentation
 
@@ -299,7 +298,7 @@ title: OpenCV
 
 #### Documentation
 
-- [docs.opencv.org](https://docs.opencv.org/4.4.0/)
+- [docs.opencv.org](https://docs.opencv.org/master/)
 
 --- /collapse ---
 
@@ -402,7 +401,7 @@ sense.show_message(str(sense.get_humidity()))
 #### Documentation
 
 - [https://sense-hat.readthedocs.io/en/latest/](https://sense-hat.readthedocs.io/en/latest/)
-- [Additional documentation for the colour sensor](https://gist.github.com/boukeas/e46ab3558b33d2f554192a9b4265b85f)
+- [Additional documentation for the light and colour sensor](https://gist.github.com/boukeas/e46ab3558b33d2f554192a9b4265b85f)
 
 --- /collapse ---
 
@@ -469,7 +468,7 @@ Select the correct file from the search results, then press **Install**.
 
 ### The Astro Pi Replay plug-in
 
-The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still mean that you can test that your program would work when running on board the ISS.
+The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
 
 You can find instructions for downloading and using the Astro Pi Replay tool later in this creator guide.
 

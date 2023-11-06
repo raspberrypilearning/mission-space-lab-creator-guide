@@ -30,7 +30,7 @@ while (now_time < start_time + timedelta(minutes=1)):
 
 --- task ---
 
-Update your `main.py` to make use of the `datetime` library to stop your program before the 10-minute time slot has finished.
+Update your `main.py` file to make use of the `datetime` library to stop your program before the 10-minute time slot has finished.
 
 --- /task ---
 
@@ -109,7 +109,7 @@ Visit Ada Computer Science to learn more about [exception handling](https://adac
 title: "File buffering"
 ---
 
-When you write to a file using the open function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, we can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
+When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, we can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
 
 ```Python
 with open("some_file.txt", "w", buffering=1) as f:

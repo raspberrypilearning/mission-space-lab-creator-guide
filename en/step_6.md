@@ -10,7 +10,7 @@ Your code should run for less than 10 minutes and then stop.
 
 When it has finished, double-check that it created a `result.txt` file in your project folder with a valid structure. Additionally, observe any other output files created by your project. Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? Finally, check your logs for any errors.
 
-If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to ensure that you have a chance of achieving 'flight status'. You can repeatedly call `Astro-Pi-Replay` to rerun your experiment as many times as needed until you are confident that your program works.
+If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to make sure you have the best chance of achieving 'flight status'. You can repeatedly call `Astro-Pi-Replay` to rerun your experiment as many times as needed until you are confident that your program works.
 
 --- task ---
 
@@ -169,9 +169,9 @@ In addition to not being able to use any networking, your program is not allowed
 title: "Multiple threads"
 --- 
 
-If you need to do more than one thing at a time, you can use a multithreaded process. There are a number of Python libraries that allow this type of multitasking to be included in your code. However, to do this on the Astro Pis, you are only permitted to use the threading library.
+If you need to do more than one thing at a time, you can use a multithreaded process. There are a number of Python libraries that allow this type of multitasking to be included in your code. However, to do this on the Astro Pis, you are only permitted to use the `threading` library.
 
-Only use the threading library if absolutely necessary. Managing threads can be tricky, and as your program will be run as part of a sequence of many other programs, we need to make sure that the previous one has ended smoothly before starting the next. Rogue threads can behave in an unexpected manner and take up too much of the system resources. If you do use threads in your code, you should make sure that they are all managed carefully and closed cleanly at the end of your program. You should also make sure that comments in your code clearly explain how this is achieved.
+Only use the `threading` library if absolutely necessary. Managing threads can be tricky, and as your program will be run as part of a sequence of many other programs, we need to make sure that the previous one has ended smoothly before starting the next. Rogue threads can behave in an unexpected manner and take up too much of the system resources. If you do use threads in your code, you should make sure that they are all managed carefully and closed cleanly at the end of your program. You should also make sure that comments in your code clearly explain how this is achieved.
 
 --- /collapse ---
 
