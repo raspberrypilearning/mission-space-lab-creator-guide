@@ -1,6 +1,7 @@
 ## Writing your program and resources to help
 
-This section will help you get started with writing your program, and provide links to other project guides that will give you some of the coding skills you need. You can choose which project guides you want to look at depending on which sensors or camera you are going to use in your program. At this point, you should have already spent some time with your team to plan your program with your mentor, and have decided what data you are going to collect to make your calculations.
+This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which sensors or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
+
 
 ### Getting started
 
@@ -24,7 +25,7 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 ### Installing Astro Pi Replay
 
-Next, you will install the Astro Pi Replay tool, which allows you to simulate using an Astro Pi Sense HAT or camera to capture data from space.
+Next, you will install the Astro Pi Replay tool, which allows you to simulate using an Astro Pi Sense HAT or camera to capture data from space. 
 
 To install the Astro Pi Replay tool, open Thonny, then click on **Tools > Manage plug-ins...**, and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
 
@@ -42,9 +43,10 @@ Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
-The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code asks to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and pretends that it has just been captured 'live'.
+The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.
 
 ![Screenshot of the 'Run' menu in Thonny, with 'Astro-Pi-Replay' highlighted in the menu.](images/use_replay.png){: width="50%"}
+
 
 **How to use the Astro Pi Replay plug-in**
 
