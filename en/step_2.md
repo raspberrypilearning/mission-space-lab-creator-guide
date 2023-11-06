@@ -267,7 +267,7 @@ plt.legend(['Sense HAT temperature sensor', 'Raspberry Pi CPU temperature'], loc
 plt.show()
 ```
 
-![The output of the program is a temperature plot generated using matplotlib.](images/Figure_1.png)
+![The output of the program is a temperature plot generated using matplotlib.](images/matplotlib_Figure_1.png)
 
 #### Documentation
 
@@ -299,7 +299,7 @@ title: OpenCV
 
 #### Documentation
 
-- [docs.opencv.org](https://docs.opencv.org/4.4.0/)
+- [docs.opencv.org](https://docs.opencv.org/master/)
 
 --- /collapse ---
 
