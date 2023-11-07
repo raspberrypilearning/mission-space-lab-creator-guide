@@ -1,6 +1,6 @@
 ## Writing your program and resources to help
 
-This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which sensors or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
+This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which of the sensors and/or camera you are going to use in your program. 
 
 ### Getting started
 
@@ -46,10 +46,11 @@ The Astro Pi Replay tool works by replaying a set of old pictures taken on the I
 
 ![Screenshot of the 'Run' menu in Thonny, with 'Astro-Pi-Replay' highlighted in the menu.](images/use_replay.png){: width="50%"}
 
+<br>
 
-**How to use the Astro Pi Replay plug-in**
+#### How to use the Astro Pi Replay plug-in
 
-
+</br>
 To run your code using the Astro Pi Replay plug-in, do **not** press the green **Run** button. Instead, open the **Run** menu, then click on **Astro-Pi-Replay**. This will run your code as if it was running on Astro Pi hardware.
 
 **Note:** Although all of the functions of the `picamera` library are available, many of the `picamera` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `PiCamera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
