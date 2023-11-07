@@ -34,7 +34,7 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 --- /task ---
 
-**Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be `10-2 = 8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
+**Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be **10-2 =** `8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
 
 ### Using relative paths
 
