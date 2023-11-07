@@ -69,38 +69,6 @@ for i in range(3*60):
 
 --- /collapse ---
 
---- collapse ---
----
-title: colorzero
----
-
-`colorzero` is a colour manipulation library that aims to be simple to use.
-
-#### Usage
-
-`colorzero` makes it easy to transition between two colours:
-
-```python
-from colorzero import Color
-from sense_hat import SenseHat
-from time import sleep
-
-sense = SenseHat()
-
-start = Color('yellow')
-end = Color('cyan')
-
-# Slowly transition the Sense HAT from the `start` to the `end` color
-for color in start.gradient(end, steps=100):
-    sense.clear(color.rgb_bytes)
-    sleep(0.1)
-```
-
-#### Documentation
-
-- [colorzero.readthedocs.io](https://colorzero.readthedocs.io)
-
---- /collapse ---
 
 --- collapse ---
 ---
@@ -405,41 +373,6 @@ sense.show_message(str(sense.get_humidity()))
 
 --- /collapse ---
 
---- collapse ---
----
-title: pisense
----
-
-`pisense` is an alternative interface to the Raspberry Pi Sense HAT. The major difference to `sense_hat` is that in `pisense` the various components of the Sense HAT (the screen, the joystick, the environment sensors, etc.) are each represented by separate classes that can be used individually or by the main class that comprises them all.
-
-The screen has a few more tricks including support for any fonts that PIL supports, representation as a numpy array (which makes scrolling by assigning slices of a larger image very simple), and several rudimentary animation functions. The joystick, and all sensors, have an iterable interface too.
-
-#### Usage
-
-```python
-from pisense import SenseHAT, array
-from colorzero import Color
-
-hat = SenseHAT(emulate=True)
-hat.screen.clear()
-
-B = Color('black')
-r = Color('red')
-w = Color('white')
-b = Color('blue')
-
-black_line = [B, B, B, B, B, B, B, B]
-flag_line = [B, b, b, w, w, r, r, B]
-flag = array(black_line * 2 + flag_line * 4 + black_line * 2)
-
-hat.screen.fade_to(flag)
-```
-
-#### Documentation
-
-- [pisense.readthedocs.io](https://pisense.readthedocs.io/en/latest/)
-
---- /collapse ---
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 Because there are lots of security restrictions when running a program on board the ISS, these are the only third-party libraries that you will be allowed to use if your program runs on the Astro Pis. Please [contact us](enquiries@astro-pi.org) if you think anything is missing or have any suggestions.
