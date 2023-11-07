@@ -34,7 +34,7 @@ title: Skyfield
 
 Skyfield is an astronomy package that computes the positions of stars, planets, and satellites in orbit around the Earth.
 
-In the [How to find the location of the ISS](6) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth.
+In the [Finding the location of the ISS](3) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth.
 
 #### Documentation
 
@@ -104,7 +104,7 @@ while True:
 title: NumPy
 ---
 
-`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrixes) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
+`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrices) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
 
 #### Usage
 
@@ -148,7 +148,7 @@ SciPy is a free, open-source Python library used for scientific computing and te
 title: TensorFlow Lite and PyCoral
 ---
 
-TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine Learning and computer vision](7) section.
+TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine learning with the Coral accelerator](3) section.
 
 #### Documentation
 

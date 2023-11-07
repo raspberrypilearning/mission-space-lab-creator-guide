@@ -13,7 +13,7 @@ There is a lot of scope for being creative when improving the accuracy of your e
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
-Be cautious about training your program to be oversensitive to the exact sequence shown by the Astro Pi Replay — the sequence on the ISS will be different, and you want your program to be accurate on the ISS most of all!
+Be cautious about training your program to be oversensitive to the exact sequence shown when using Astro Pi Replay — the sequence on the ISS will be different, and you want your program to be accurate on the ISS most of all!
 
 </p>
 

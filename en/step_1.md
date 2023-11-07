@@ -35,5 +35,5 @@ We will also give you information on how to improve your program to make sure it
 
 To complete this project, you will need:
 - **A computer running Python 3.9.2 or above.** You can use any Microsoft Windows, macOS, or Linux computer. You can find [instructions for installing Python here](https://projects.raspberrypi.org/en/projects/generic-python-install-python3). A full description of the Python requirements for Mission Space Lab appears later in this guide.
-- **Thonny integrated development environment (IDE).** We recommend you use Thonny, as it is easy to use, and it is available for Microsoft Windows, macOS, Linux, and Raspberry Pi OS operating systems. You can find instructions for installing Thonny [here](https://thonny.org/).
+- **Thonny integrated development environment (IDE).** We recommend you use Thonny, as it is easy to use, and it is available for Microsoft Windows, macOS, Linux, and Raspberry Pi OS operating systems. You can find [instructions for installing Thonny here](https://thonny.org/).
 - **An internet connection.** You will need to access the internet to install the Python packages and to use the Astro Pi Replay plug-in, and to submit your program.
