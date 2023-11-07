@@ -14,6 +14,6 @@ Stuck? Please [contact us](mailto:enquiries@astro-pi.org) and we will do our bes
 - This [list of annotated satellite data sets](https://github.com/Seyed-Ali-Ahmadi/Awesome_Satellite_Benchmark_Datasets) can be used to train any machine learning models.
 - Teams wanting a greater challenge will find a [comprehensive resource on using machine learning with aerial and satellite imagery here](https://github.com/robmarkcole/satellite-image-deep-learning#datasets) — be aware that it is quite advanced.
 
-Finally, don't forget that links to the documentation for each library are available in the [Astro Pi Python environment](2) section if you need specific information on how to use a particular library.
+Finally, don't forget that links to the documentation for each library are available in the [Astro Pi Python environment](1) section if you need specific information on how to use a particular library.
 
 **Good luck!** 
