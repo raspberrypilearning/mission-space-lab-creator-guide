@@ -199,10 +199,10 @@ Once you have completed this project, you may want to look at the [Coral example
 
 ### Writing your result file 
 
-For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five decimal places. Please do not include any other data in this file.
+For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five significant figures. Please do not include any other data in this file.
 
 ```Python
-7.12345
+7.1234
 ```
 *Example result.txt for an average speed estimate.*
 
