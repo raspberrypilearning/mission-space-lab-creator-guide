@@ -34,7 +34,7 @@ title: Skyfield
 
 Skyfield is an astronomy package that computes the positions of stars, planets, and satellites in orbit around the Earth.
 
-In the [How to find the location of the ISS](6) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth and how to determine whether the ISS is sunlit.
+In the [How to find the location of the ISS](6) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth.
 
 #### Documentation
 
@@ -193,7 +193,7 @@ TensorFlow Lite and the PyCoral library can be used to use or re-train existing 
 title: pandas
 ---
 
-`pandas` is an open-source library providing high-performance, easy-to-use data structures and data analysis tools. You may want to use it when you are analysing the results of your program test runs.
+`pandas` is an open-source library providing high-performance, easy-to-use data structures and data analysis tools.
 
 #### Usage
 
