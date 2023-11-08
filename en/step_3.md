@@ -206,7 +206,7 @@ For your submission to pass testing by Astro Pi Mission Control, your program ne
 ```
 *Example result.txt for an average speed estimate.*
 
-The following is an example of a program that will write a .txt file called `result.txt` with an estimated speed value in kilometres per second (km/s) to 5 decimal places. You will have to adapt this code to suit your particular program.
+The following is an example of a program that will write a .txt file called `result.txt` with an estimated speed value in kilometres per second (km/s) to 5 significant figures. You will have to adapt this code to suit your particular program.
 
 ```Python
 estimate_kmps = 7.1234567890  # Replace with your estimate
