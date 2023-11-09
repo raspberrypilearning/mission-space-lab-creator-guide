@@ -1,16 +1,16 @@
 ## Testing your program
 
-You should now test your program using **Astro Pi Replay**. Doing this gives your entry the best chance of success and confidence that it will work aboard the ISS. When Astro Pi Mission Control receives your program, it will be tested and evaluated using Astro Pi Replay, and if it succeeds, on an actual Astro Pi. Hundreds of teams submit programs to the challenge each year and, unfortunately, there is not enough time to check for mistakes or debug complex code errors. If your program has errors when we test it, your program will not be eligible to run on the ISS.
+You should now test your program using **Astro Pi Replay**. Doing this gives your entry the best chance of success and of ensuring that it will work aboard the ISS. When Astro Pi Mission Control receives your program, it will be tested and evaluated using Astro Pi Replay, and if it succeeds, on an Astro Pi on Earth. Hundreds of teams submit programs to Mission Space Lab each year and, unfortunately, there is not enough time to check for mistakes or debug code errors. If your program has errors when we test it, your program will not be eligible to run on the ISS.
 
 If you have been following this creator guide from the start, you should have Astro Pi Replay already installed. The installation instructions can be found earlier in this guide and in the Astro Pi Replay documentation.
 
-To test your program and simulate it running aboard the ISS, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
+To test your program and simulate it running aboard the ISS, open Thonny and run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
 Your code should run for less than 10 minutes and then stop.
 
 When it has finished, double-check that it created a `result.txt` file in your project folder with a valid structure. Additionally, observe any other output files created by your project. Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? Finally, check your logs for any errors.
 
-If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to make sure you have the best chance of achieving 'flight status'. You can repeatedly call `Astro-Pi-Replay` to rerun your experiment as many times as needed until you are confident that your program works.
+If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to make sure you have the best chance of achieving 'flight status'. You can rerun your experiment with the **Astro Pi Replay** tool as many times as needed until you are confident that your program works.
 
 --- task ---
 
@@ -133,7 +133,7 @@ You are allowed to produce up to 250MB of data. Remember that the size of an ima
 title: "Forgetting to call your function"
 --- 
 
-We have seen cases where teams have written a function only to forget to call it in their `main.py` — oops!
+We have seen cases where teams have written a function but forgotten to call it in their `main.py` program — watch out!
 
 --- /collapse ---
 

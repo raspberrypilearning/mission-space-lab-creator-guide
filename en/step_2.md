@@ -34,7 +34,7 @@ title: Skyfield
 
 Skyfield is an astronomy package that computes the positions of stars, planets, and satellites in orbit around the Earth.
 
-In the [How to find the location of the ISS](6) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth and how to determine whether the ISS is sunlit.
+In the [Finding the location of the ISS](2) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth.
 
 #### Documentation
 
@@ -69,38 +69,6 @@ for i in range(3*60):
 
 --- /collapse ---
 
---- collapse ---
----
-title: colorzero
----
-
-`colorzero` is a colour manipulation library that aims to be simple to use.
-
-#### Usage
-
-`colorzero` makes it easy to transition between two colours:
-
-```python
-from colorzero import Color
-from sense_hat import SenseHat
-from time import sleep
-
-sense = SenseHat()
-
-start = Color('yellow')
-end = Color('cyan')
-
-# Slowly transition the Sense HAT from the `start` to the `end` color
-for color in start.gradient(end, steps=100):
-    sense.clear(color.rgb_bytes)
-    sleep(0.1)
-```
-
-#### Documentation
-
-- [colorzero.readthedocs.io](https://colorzero.readthedocs.io)
-
---- /collapse ---
 
 --- collapse ---
 ---
@@ -136,7 +104,7 @@ while True:
 title: NumPy
 ---
 
-`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrixes) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
+`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrices) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
 
 #### Usage
 
@@ -180,7 +148,7 @@ SciPy is a free, open-source Python library used for scientific computing and te
 title: TensorFlow Lite and PyCoral
 ---
 
-TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine Learning and computer vision](7) section.
+TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine learning with the Coral accelerator](2) section.
 
 #### Documentation
 
@@ -193,7 +161,7 @@ TensorFlow Lite and the PyCoral library can be used to use or re-train existing 
 title: pandas
 ---
 
-`pandas` is an open-source library providing high-performance, easy-to-use data structures and data analysis tools. You may want to use it when you are analysing the results of your program test runs.
+`pandas` is an open-source library providing high-performance, easy-to-use data structures and data analysis tools.
 
 #### Usage
 
@@ -405,41 +373,6 @@ sense.show_message(str(sense.get_humidity()))
 
 --- /collapse ---
 
---- collapse ---
----
-title: pisense
----
-
-`pisense` is an alternative interface to the Raspberry Pi Sense HAT. The major difference to `sense_hat` is that in `pisense` the various components of the Sense HAT (the screen, the joystick, the environment sensors, etc.) are each represented by separate classes that can be used individually or by the main class that comprises them all.
-
-The screen has a few more tricks including support for any fonts that PIL supports, representation as a numpy array (which makes scrolling by assigning slices of a larger image very simple), and several rudimentary animation functions. The joystick, and all sensors, have an iterable interface too.
-
-#### Usage
-
-```python
-from pisense import SenseHAT, array
-from colorzero import Color
-
-hat = SenseHAT(emulate=True)
-hat.screen.clear()
-
-B = Color('black')
-r = Color('red')
-w = Color('white')
-b = Color('blue')
-
-black_line = [B, B, B, B, B, B, B, B]
-flag_line = [B, b, b, w, w, r, r, B]
-flag = array(black_line * 2 + flag_line * 4 + black_line * 2)
-
-hat.screen.fade_to(flag)
-```
-
-#### Documentation
-
-- [pisense.readthedocs.io](https://pisense.readthedocs.io/en/latest/)
-
---- /collapse ---
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 Because there are lots of security restrictions when running a program on board the ISS, these are the only third-party libraries that you will be allowed to use if your program runs on the Astro Pis. Please [contact us](enquiries@astro-pi.org) if you think anything is missing or have any suggestions.

@@ -1,6 +1,6 @@
 ## Writing your program and resources to help
 
-This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which sensors or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
+This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which of the sensors and/or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
 
 ### Getting started
 
@@ -46,10 +46,11 @@ The Astro Pi Replay tool works by replaying a set of old pictures taken on the I
 
 ![Screenshot of the 'Run' menu in Thonny, with 'Astro-Pi-Replay' highlighted in the menu.](images/use_replay.png){: width="50%"}
 
+<br>
 
 **How to use the Astro Pi Replay plug-in**
-
-
+<br>
+<br>
 To run your code using the Astro Pi Replay plug-in, do **not** press the green **Run** button. Instead, open the **Run** menu, then click on **Astro-Pi-Replay**. This will run your code as if it was running on Astro Pi hardware.
 
 **Note:** Although all of the functions of the `picamera` library are available, many of the `picamera` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `PiCamera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
@@ -93,11 +94,11 @@ cam.capture("image1.jpg")
 
 This will simulate taking a picture on the ISS and save it in a file called `image1.jpg`. If you open this file, you should see the exact photo below. 
 
-![Image of clouds above the sea.](images/image1.jpg)
+![Photo of clouds above land.](images/image1.jpg)
 
 The `picamera` library offers a huge number of features and camera settings. You can see some more advanced examples by going to the ['Basic Recipes' page](https://picamera.readthedocs.io/en/release-1.13/recipes1.html) on the picamera website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting.
 
-While all features of the `picamera` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay plug-in. More information is available here.
+While all features of the `picamera` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay plug-in.
 
 ### Capturing sequences
 
@@ -192,20 +193,20 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 ### Machine learning with the Coral accelerator
 
-If you have access to a Coral machine learning accelerator, check out our [Image classification](https://projects.raspberrypi.org/en/projects/image-id-coral/2) project guide. You will walk through the process of training a machine learning model to classify images, and experience using the TensorFlow Lite library. You can then use a similar approach to classify images played back when you run your program using Astro Pi Replay, or on the ISS.
+If you have access to a Coral machine learning accelerator, check out our [Image classification with Google Coral](https://projects.raspberrypi.org/en/projects/image-id-coral/2) project guide. You will walk through the process of training a machine learning model to classify images, and experience using the TensorFlow Lite library. You can then use a similar approach to classify images played back when you run your program using Astro Pi Replay, or on the ISS.
 
 Once you have completed this project, you may want to look at the [Coral examples page](https://coral.ai/examples/) and [this GitHub page](https://github.com/robmarkcole/satellite-image-deep-learning#datasets) for some inspiration on how to apply machine learning techniques to your own experiment. 
 
 ### Writing your result file 
 
-For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five decimal places. Please do not include any other data in this file.
+For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five significant figures. Please do not include any other data in this file.
 
 ```Python
-7.12345
+7.1234
 ```
 *Example result.txt for an average speed estimate.*
 
-The following is an example of a program that will write a .txt file called `result.txt` with an estimated speed value in kilometres per second (km/s) to 5 decimal places. You will have to adapt this code to suit your particular program.
+The following is an example of a program that will write a .txt file called `result.txt` with an estimated speed value in kilometres per second (km/s) to 5 significant figures. You will have to adapt this code to suit your particular program.
 
 ```Python
 estimate_kmps = 7.1234567890  # Replace with your estimate

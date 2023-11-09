@@ -34,7 +34,7 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 --- /task ---
 
-**Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be `10-2 = 8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
+**Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be **10-2 =** `8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
 
 ### Using relative paths
 
@@ -90,7 +90,7 @@ Review your `main.py` file and update it so that it closes all resources appropr
 
 ### Preparing for the unexpected
 
-A program can fail for many reasons, but with some foresight and planning, it is possible to deal with these failures instead of crashing and losing the chance to capture data and images aboard the ISS. In this section, you are going to try to find ways to improve your program so that it stands the best chance of working as intended if something unexpected happens.
+A program can fail for many reasons, but with some foresight and planning, it is possible for your program to deal with these issues instead of crashing and losing the chance to capture data and images aboard the ISS. In this section, you are going to try to find ways to improve your program so that it stands the best chance of working as intended if something unexpected happens.
 
 
 --- collapse ---
@@ -134,7 +134,7 @@ Review your program and consider if you need to set the buffering mode when writ
 title: "Logging"
 ---
 
-If your program fails, then it is always helpful to have a record of what happened, so that you can fix it for next time. The `logzero` Python library ([documentation here](https://logzero.readthedocs.io/en/latest/)) makes it easy to make notes about what's going on in your program. You can log as much information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`).
+If your program fails, then it is always helpful to have a record of what happened, so that you can fix it for next time. The `logzero` Python library ([documentation here](https://logzero.readthedocs.io/en/latest/)) makes it easy to make notes about what's going on in your program. You can log lots of information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`). But remember that you cannot download more than 250MB of data from the ISS.
 
 Here is a basic example of how `logzero` can be used to keep track of loop iterations:
 
@@ -150,7 +150,7 @@ for i in range(10):
     sleep(60)
 ```
 
-The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when you experience an unexpected error or handle an exception. There is also `logger.warning()` and `logger.debug()`.
+The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when your program experiences an unexpected error or handles an exception. There is also `logger.warning()` and `logger.debug()`.
 
 --- /collapse ---
 
