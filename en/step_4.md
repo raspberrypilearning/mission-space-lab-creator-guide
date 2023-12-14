@@ -4,7 +4,7 @@ For astronauts, working in space means working under some very strict constraint
 
 ### Running an experiment for 10 minutes 
 
-Every program run on the Astro Pis has a 10-minute time slot to estimate the speed of the ISS. Your program will need to keep track of the time and shut down gracefully before the 10 minutes are over to make sure no data is lost.
+Every program run on the Astro Pis has a 10-minute time slot in daylight to estimate the speed of the ISS. Your program will need to keep track of the time and shut down gracefully before the 10 minutes are over to make sure no data is lost.
 
 One way to stop a Python program after a specific length of time is using the `datetime` Python library. This library makes it easy to work with times and compare them. Doing so without the library is not always straightforward: it is easy to get it wrong using normal mathematics.
 
