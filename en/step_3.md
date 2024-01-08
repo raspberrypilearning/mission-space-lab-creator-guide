@@ -194,8 +194,10 @@ def custom_capture(iss, camera, image):
     camera.capture(image)
 
 
-capture(ISS(), cam, "gps_image1.jpg")
+custom_capture(ISS(), cam, "gps_image1.jpg")
 ```
+
+You will need to use the Astro Pi Replay tool to run this snippet.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   

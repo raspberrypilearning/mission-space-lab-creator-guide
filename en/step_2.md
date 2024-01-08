@@ -324,7 +324,7 @@ When used with `skyfield`, `reverse-geocoder` can determine where the ISS curren
 import reverse_geocoder
 from orbit import ISS
 
-coordinates = ISS.coordinates()
+coordinates = ISS().coordinates()
 coordinate_pair = (
     coordinates.latitude.degrees,
     coordinates.longitude.degrees)
