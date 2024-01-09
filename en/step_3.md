@@ -216,7 +216,7 @@ Once you have completed this project, you may want to look at the [Coral example
 For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five significant figures. Please do not include any other data in this file.
 
 ```Python
-7.1234
+7.1235
 ```
 *Example result.txt for an average speed estimate.*
 
@@ -227,7 +227,7 @@ estimate_kmps = 7.1234567890  # Replace with your estimate
 
 # Format the estimate_kmps to have a precision 
 # of 5 significant figures
-estimate_kmps_formatted = "{:.5f}".format(estimate_kmps)
+estimate_kmps_formatted = "{:.4f}".format(estimate_kmps)
 
 # Create a string to write to the file
 output_string = estimate_kmps_formatted
