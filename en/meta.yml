@@ -1,6 +1,6 @@
 ---
 title: Astro Pi Mission Space Lab creator guide
-hero_image: images/astro pi banner.png
+hero_image: images/banner.png
 description: The Mission Space Lab creator guide is designed to help teams to write programs that calculate the speed of the ISS. It introduces the task and program requirements, points towards other project guides, and provides guidance on how and what to submit.
 version: 4
 listed: false
