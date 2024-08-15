@@ -22,7 +22,7 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 --- /task --- 
 
-### Using the Astro Pi Replay Tool
+### Test your program with the Astro Pi Replay Tool
 
 Once you have a working program, you will need to test it using the Astro Pi Replay tool. The tool allows you to simulate using an Astro Pi Sense HAT or camera to capture data from space. We recommend you use the online version of the tool. 
 
@@ -86,19 +86,17 @@ Don't forget that you will only be able to use the visual light camera on the IS
 
 ### Simulate running your program in real time
 
-You may prefer to get started by using the `sense_hat` and `picamera` libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool. Using the tool is simple — instead of running your program by pressing the green **Run** button, open the **Run** menu, then click on **Astro-Pi-Replay**.
+You may prefer to get started by using the `sense_hat` and `picamera-zero` libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool online or with Thonny. 
 
 ### Taking measurements with the Sense HAT 
 
 In order to calculate the speed of the ISS, you may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
 
-Remember that you will need to run your code using the **Astro Pi Replay** plug-in on Thonny.
-
 ### Taking photos with the camera
 
-You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay plug-in.
+You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
 
-Here is an example of a simple program to test the Astro Pi Replay plug-in: 
+Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny: 
 ```Python
 # Import the PiCamera class from the picamera module
 from picamera import PiCamera
@@ -117,9 +115,9 @@ This will simulate taking a picture on the ISS and save it in a file called `ima
 
 ![Photo of clouds above land.](images/image1.jpg)
 
-The `picamera` library offers a huge number of features and camera settings. You can see some more advanced examples by going to the ['Basic Recipes' page](https://picamera.readthedocs.io/en/release-1.13/recipes1.html) on the picamera website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
+The `picamera-zero` library offers a huge number of features and camera settings. You can see some more advanced examples by going to the ['Basic Recipes' page](https://picamera.readthedocs.io/en/release-1.13/recipes1.html) on the picamera website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
 
-While all features of the `picamera` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay plug-in.
+While all features of the `picamera-zero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
 
 ### Capturing sequences
 
@@ -129,7 +127,7 @@ Create a new file called `camera-sequence.py`, and in it, type the following lin
 
 ```Python
 # Import the PiCamera class from the picamera module
-from picamera import PiCamera
+from picamera import PiCamera-zero
 
 # Create an instance of the PiCamera class
 cam = PiCamera()
@@ -144,7 +142,7 @@ for i in range(3):
     # "image0.png", "image1.png", etc.
     cam.capture(f"image{i}.png")
 ```
-Run this code using the Astro Pi Replay plug-in by clicking on **Run > Astro-Pi-Replay**.
+Run this code uploading to the [Astro Pi Replay online](astro-pi-replay.org), or with the Thonny plug-in by clicking on **Run > Astro-Pi-Replay**.
 
 ### Numbering plans for images and files
 
@@ -162,11 +160,11 @@ Update your `main.py` file to capture images or Sense HAT data in real time.
 
 You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where exactly an image was taken, and this is something you can do easily with the `orbit` and `exif` libraries available on the Astro Pis.
 
-The following is an example of a program that will, when run using the Astro Pi Replay plug-in, create a new image called `gps_image1.jpg`. The `custom_capture` function will have set the Exif metadata for the image to include the current latitude and longitude of the ISS. There are several ways of formatting [latitude and longitude](https://www.britannica.com/science/latitude) angles, and using the `custom_capture` function. You will have to adapt this code to suit your particular program.
+The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `gps_image1.jpg`. The `custom_capture` function will have set the Exif metadata for the image to include the current latitude and longitude of the ISS. There are several ways of formatting [latitude and longitude](https://www.britannica.com/science/latitude) angles, and using the `custom_capture` function. You will have to adapt this code to suit your particular program.
 
 ```Python
 from orbit import ISS
-from picamera import PiCamera
+from picamera import PiCamera-zero
 
 cam = PiCamera()
 cam.resolution = (4056,3040)
@@ -216,7 +214,7 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 ### Machine learning with the Coral accelerator
 
-If you have access to a Coral machine learning accelerator, check out our [Image classification with Google Coral](https://projects.raspberrypi.org/en/projects/image-id-coral/2) project guide. You will walk through the process of training a machine learning model to classify images, and experience using the TensorFlow Lite library. You can then use a similar approach to classify images played back when you run your program using Astro Pi Replay, or on the ISS.
+If you have access to a Coral machine learning accelerator, check out our [Image classification with Google Coral](https://projects.raspberrypi.org/en/projects/image-id-coral/2) project guide. You will walk through the process of training a machine learning model to classify images, and experience using the TensorFlow Lite library. You can then use a similar approach to classify images played back when you run your program using the Astro Pi Replay Tool, or on the ISS.
 
 Once you have completed this project, you may want to look at the [Coral examples page](https://coral.ai/examples/) and [this GitHub page](https://github.com/robmarkcole/satellite-image-deep-learning#datasets) for some inspiration on how to apply machine learning techniques to your own experiment. 
 
