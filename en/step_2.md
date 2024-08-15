@@ -16,7 +16,7 @@ In the next section, you will learn about the different Python libraries availab
 
 ### The Astro Pi Python environment
 
-The Astro Pi computers on the ISS have Python version 3.9.2 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer but not on the Astro Pis.
+The Astro Pi computers on the ISS have Python version 3.11 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer but not on the Astro Pis.
 
 There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them, your program will not be accepted:
 
@@ -403,11 +403,8 @@ Select the correct file from the search results, then press **Install**.
 
 The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
 
-You can find instructions for downloading and using the Astro Pi Replay tool later in this creator guide.
+You can find instructions for using the Astro Pi Replay tool later in this creator guide.
 
 ### Looking ahead
 
 Now it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
-
-
-
