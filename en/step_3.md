@@ -22,16 +22,23 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 --- /task --- 
 
-### Installing Astro Pi Replay
+### Using the Astro Pi Replay Tool
 
-Next, you will install the Astro Pi Replay tool, which allows you to simulate using an Astro Pi Sense HAT or camera to capture data from space. 
+Once you have a working program, you will need to test it using the Astro Pi Replay tool. The tool allows you to simulate using an Astro Pi Sense HAT or camera to capture data from space. We recommend you use the online version of the tool. 
+
+--- collapse --- 
+---
+title: Accessing the Astro Pi Replay Tool online 
+---
+The easiest way to test if your program will work on the ISS is to uload your main.py file to the online [Astro Pi Replay Tool](astro-pi-replay.org). To upload your program simply, open the link and either drag and drop, or select, your main.py file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs. Make sure you have a output with your estimate. 
+--- /collapse --- 
+
 
 --- collapse ---
 ---
-title: Installing on Raspberry Pi Bookworm
+title: Installing Astro Pi Replay Tool on Raspberry Pi Bookworm
 ---
 If you are on Raspberry Pi OS Bookworm, please follow the instructions on how to configure Thonny to use a virtual environment on the [raspberrypi website](https://www.raspberrypi.com/documentation/computers/os.html#using-the-thonny-editor) before proceeding with the instructions below.
---- /collapse ---
 
 To install the Astro Pi Replay tool, open Thonny, then click on **Tools > Manage plug-ins...**, and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
 
@@ -57,11 +64,13 @@ The Astro Pi Replay tool works by replaying a set of old pictures taken on the I
 
 **How to use the Astro Pi Replay plug-in**
 <br>
-<br>
 To run your code using the Astro Pi Replay plug-in, do **not** press the green **Run** button. Instead, open the **Run** menu, then click on **Astro-Pi-Replay**. This will run your code as if it was running on Astro Pi hardware.
+--- /collapse ---
 
-**Note:** Although all of the functions of the `picamera` library are available, many of the `picamera` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `PiCamera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
+
+**Note:** Although all of the functions of the `picamera-zero` library are available, many of the `picamera-zero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `PiCamera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
+
 
 ### Calculating with historical data
 
