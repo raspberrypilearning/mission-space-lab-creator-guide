@@ -72,7 +72,7 @@ file.close()
 or closing the camera: 
 
 ```Python
-from picamera import PiCamera
+from picamera import PiCamera-zero
 
 cam = PiCamera()
 cam.close()
@@ -159,4 +159,4 @@ The two main types of log entry you can use are `logger.info()` to log informati
 We recommend that you always use the `logzero` library (for logging important events that take place during your experiment), even if you also write sensor data to a file.
 </p>
 
-Once you have finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it is crucial to thoroughly test your program using Astro Pi Replay.
+Once you have finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it is crucial to thoroughly test your program using the Astro Pi Replay Tool.
