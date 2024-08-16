@@ -403,7 +403,7 @@ Select the correct file from the search results, then press **Install**.
 
 The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
 
-You can find instructions for using the Astro Pi Replay tool later in this creator guide.
+You can find instructions for using the Astro Pi Replay plug-in later in this creator guide. There is also an online version for you to test your program, as well as the Thonny plug-in. 
 
 ### Looking ahead
 
