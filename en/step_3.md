@@ -30,7 +30,11 @@ Once you have a working program, you will need to test it using the Astro Pi Rep
 ---
 title: Accessing the Astro Pi Replay Tool online 
 ---
-The easiest way to test if your program will work on the ISS is to uload your main.py file to the online [Astro Pi Replay Tool](astro-pi-replay.org). To upload your program simply, open the link and either drag and drop, or select, your main.py file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs. Make sure you have a output with your estimate. 
+The easiest way to test if your program will work on the ISS is to upload your main.py file to the online [Astro Pi Replay Tool](astro-pi-replay.org). 
+
+To upload your program simply, open the link and either drag and drop, or select, your main.py file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs. 
+
+**Make sure your program has an output with your final speed estimate in kms (kilometres per second).**
 --- /collapse --- 
 
 
