@@ -62,31 +62,28 @@ Make sure to check the [Mission Space Lab rulebook](https://astro-pi.org/mission
 
 ### Closing resources 
 
-At the end of the experiment, it is a good idea to close all resources that you have open. This might mean closing any files that you have open: 
+At the end of the experiment, it is a good idea to close all resources that you have open. For example, close all files that you have open: 
 
 ```Python
 file = open(file)
 file.close()
 ```
-
-or closing the camera: 
-
-```Python
-from picamera import PiCamera-zero
-
-cam = PiCamera()
-cam.close()
-```
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-Avoid closing and reopening the camera in a loop — this may cause the Raspberry Pi to run out of memory and prevent your program from being allowed to run on the ISS. Only close the camera after you have finished taking photos.
-</p>
-
 --- task --- 
 
 Review your `main.py` file and update it so that it closes all resources appropriately.
 
 --- /task --- 
+
+### Using one `Camera` object
+
+Avoid making multiple `Camera` objects at the same time — this may cause the Raspberry Pi to run out of memory and prevent your program from being allowed to run on the ISS. Instead, create a `Camera` object at the start of your program and use it every time you want to take a photo.
+
+--- task --- 
+
+Review your `main.py` file and update it so that only one instance of `picamzero`'s `Camera` object is used.
+
+--- /task --- 
+
 
 ### Preparing for the unexpected
 

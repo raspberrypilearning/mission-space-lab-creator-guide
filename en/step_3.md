@@ -72,7 +72,7 @@ To run your code using the Astro Pi Replay plug-in, do **not** press the green *
 --- /collapse ---
 
 
-**Note:** Although all of the functions of the `picamera-zero` library are available, many of the `picamera-zero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `PiCamera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
+**Note:** Although all of the functions of the `picamera-zero` library are available, many of the `picamera-zero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
 
 
@@ -98,55 +98,44 @@ In order to calculate the speed of the ISS, you may wish to gather data from the
 
 ### Taking photos with the camera
 
-You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
+You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
 
 Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny: 
 ```Python
-# Import the PiCamera class from the picamera module
-from picamera import PiCamera
+# Import the Camera class from the picamera-zero module
+from picamzero import Camera
 
-# Create an instance of the PiCamera class
-cam = PiCamera()
-
-# Set the resolution of the camera to 4056×3040 pixels
-cam.resolution = (4056, 3040)
+# Create an instance of the Camera class
+cam = Camera()
 
 # Capture an image
-cam.capture("image1.jpg")
+cam.take_photo("image1.jpg")
 ```
 
 This will simulate taking a picture on the ISS and save it in a file called `image1.jpg`. If you open this file, you should see the exact photo below. 
 
 ![Photo of clouds above land.](images/image1.jpg)
 
-The `picamera-zero` library offers a huge number of features and camera settings. You can see some more advanced examples by going to the ['Basic Recipes' page](https://picamera.readthedocs.io/en/release-1.13/recipes1.html) on the picamera website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
+The `picamera-zero` library supports a variety of features and camera settings. You can see some examples by going to the ['Recipes' page](https://raspberrypifoundation.github.io/picamera-zero/recipes/) on the picamera-zero website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
 
 While all features of the `picamera-zero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
 
 ### Capturing sequences
 
-Using a `for` loop, it is very simple to take a sequence of pictures by repeatedly calling the `capture` function. The example below takes three pictures in succession. It also saves the images as PNG files instead of JPEG files.
+Using `picamzero` it is very simple to take a sequence of pictures by calling the `capture_sequence` function. The example below takes three pictures in succession, with a 3 second gap between each one.
 
 Create a new file called `camera-sequence.py`, and in it, type the following lines:
 
 ```Python
-# Import the PiCamera class from the picamera module
-from picamera import PiCamera-zero
+# Import the Camera class from the picamzero (picamera-zero) module
+from picamzero import Camera
 
-# Create an instance of the PiCamera class
-cam = PiCamera()
+# Create an instance of the Camera class
+cam = Camera()
 
-# Set the resolution of the camera to 4056×3040 pixels
-cam.resolution = (4056, 3040)
-
-# Capture three images using a loop
-for i in range(3):
-    # Capture an image and save it 
-    # with a file name like 
-    # "image0.png", "image1.png", etc.
-    cam.capture(f"image{i}.png")
+cam.capture_sequence("sequence", num_images=3, interval=3)
 ```
-Run this code uploading to the [Astro Pi Replay online](astro-pi-replay.org), or with the Thonny plug-in by clicking on **Run > Astro-Pi-Replay**.
+Run this code using [Astro Pi Replay online](https://rpf.io/astro-pi-replay-online)), or with the Thonny plug-in by clicking on **Run > Astro-Pi-Replay**.
 
 ### Numbering plans for images and files
 
@@ -168,44 +157,20 @@ The following is an example of a program that will, when run using the Astro Pi 
 
 ```Python
 from orbit import ISS
-from picamera import PiCamera-zero
+from picamzero import Camera
 
-cam = PiCamera()
-cam.resolution = (4056,3040)
+iss = ISS()
 
-def convert(angle):
-
-    # Convert a `skyfield` Angle to an Exif-appropriate
-    # representation (positive rationals)
-    # e.g. 98° 34' 58.7 to "98/1,34/1,587/10"
-
-    # Return a tuple containing a Boolean and the converted angle,
-    # with the Boolean indicating if the angle is negative
- 
-    sign, degrees, minutes, seconds = angle.signed_dms()
-    exif_angle = f'{degrees:.0f}/1,{minutes:.0f}/1,{seconds*10:.0f}/10'
-    return sign < 0, exif_angle
-
-def custom_capture(iss, camera, image):
-    # Use `camera` to capture an `image` file with lat/long Exif data
+def get_gps_coordinates(iss):
+    """
+    Returns a tuple of Skyfield latitude and longitude angles
+    as reported by the orbit library.
+    """
     point = iss.coordinates()
+    return (point.latitude, point.longitude)
 
-    # Convert the latitude and longitude to Exif-appropriate 
-    # representations
-    south, exif_latitude = convert(point.latitude)
-    west, exif_longitude = convert(point.longitude)
-
-    # Set the Exif tags specifying the current location
-    camera.exif_tags['GPS.GPSLatitude'] = exif_latitude
-    camera.exif_tags['GPS.GPSLatitudeRef'] = "S" if south else "N"
-    camera.exif_tags['GPS.GPSLongitude'] = exif_longitude
-    camera.exif_tags['GPS.GPSLongitudeRef'] = "W" if west else "E"
-
-    # Capture the image
-    camera.capture(image)
-
-
-custom_capture(ISS(), cam, "gps_image1.jpg")
+cam = Camera()
+cam.take_photo("gps_image1.jpg", gps_coordinates=get_gps_coordinates(iss))
 ```
 
 You will need to use the Astro Pi Replay tool to run this snippet.
@@ -224,7 +189,7 @@ Once you have completed this project, you may want to look at the [Coral example
 
 ### Writing your result file 
 
-For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (.txt), and will contain your estimate to up to five significant figures. Please do not include any other data in this file.
+For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (`.txt`), and will contain your estimate to up to five significant figures. Please do not include any other data in this file, including units e.g. `km/s`.
 
 ```Python
 7.1235

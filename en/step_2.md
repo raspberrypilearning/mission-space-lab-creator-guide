@@ -44,28 +44,29 @@ In the [Finding the location of the ISS](2) section you can find out how to use 
 
 --- collapse ---
 ---
-title: picamera
+title: picamera-zero
 ---
 
-The Python library for controlling the Raspberry Pi Camera Module is `picamera`. To get started, check out [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4) for a handy walkthrough of how to use it.
+The Python library for controlling the Raspberry Pi Camera Module on the Astro Pis is `picamera-zero`. To get started, check out [this project guide](https://rpf.io/gswpicamera-python) for a handy walkthrough of how to use it.
+
 
 #### Usage
 
 ```python
-from picamera import PiCamera
+from picamzero import Camera
 from time import sleep
 
-camera = PiCamera()
-camera.resolution = (2592, 1944)
+camera = Camera()
 
+# Take a picture every minute for 3 hours
 for i in range(3*60):
-    camera.capture(f'image_{i:03d}.jpg')  # Take a picture every minute for 3 hours
+    camera.take_photo(f'image_{i:03d}.jpg')
     sleep(60)
 ```
 
 #### Documentation
 
-- [picamera.readthedocs.io](https://picamera.readthedocs.io)
+- [https://raspberrypifoundation.github.io/picamera-zero](https://raspberrypifoundation.github.io/picamera-zero)
 
 --- /collapse ---
 
@@ -108,25 +109,20 @@ title: NumPy
 
 #### Usage
 
-`numpy` is particularly handy for capturing camera data for manipulation:
+`numpy` is particularly handy for manipulating raw camera output:
 
 ```python
-from picamera import PiCamera
-from time import sleep
+from picamzero import Camera
 import numpy as np
 
-camera = PiCamera()
-
-camera.resolution = (320, 240)
-camera.framerate = 24
-output = np.empty((240, 320, 3), dtype=np.uint8)
-sleep(2)
-camera.capture(output, 'rgb')
+camera = Camera()
+image_as_array = camera.capture_array()
+red_channel = image_as_array[:, :, 0]
 ```
 
 #### Documentation
 
-- [docs.scipy.org/doc](https://docs.scipy.org/doc/)
+- [https://numpy.org/doc/stable/user/index.html](https://numpy.org/doc/stable/user/index.html)
 
 --- /collapse ---
 
