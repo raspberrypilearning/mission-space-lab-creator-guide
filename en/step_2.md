@@ -42,34 +42,7 @@ In the [Finding the location of the ISS](2) section you can find out how to use 
 
 --- /collapse ---
 
---- collapse ---
----
-title: picamera-zero
----
-
-The Python library for controlling the Raspberry Pi Camera Module on the Astro Pis is `picamera-zero`. To get started, check out [this project guide](https://rpf.io/gswpicamera-python) for a handy walkthrough of how to use it.
-
-
-#### Usage
-
-```python
-from picamzero import Camera
-from time import sleep
-
-camera = Camera()
-
-# Take a picture every minute for 3 hours
-for i in range(3*60):
-    camera.take_photo(f'image_{i:03d}.jpg')
-    sleep(60)
-```
-
-#### Documentation
-
-- [https://raspberrypifoundation.github.io/picamera-zero](https://raspberrypifoundation.github.io/picamera-zero)
-
---- /collapse ---
-
+[[[picam-zero]]]
 
 --- collapse ---
 ---
@@ -100,31 +73,7 @@ while True:
 
 --- /collapse ---
 
---- collapse ---
----
-title: NumPy
----
-
-`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrices) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
-
-#### Usage
-
-`numpy` is particularly handy for manipulating raw camera output:
-
-```python
-from picamzero import Camera
-import numpy as np
-
-camera = Camera()
-image_as_array = camera.capture_array()
-red_channel = image_as_array[:, :, 0]
-```
-
-#### Documentation
-
-- [https://numpy.org/doc/stable/user/index.html](https://numpy.org/doc/stable/user/index.html)
-
---- /collapse ---
+[[[msl-numpy]]]
 
 --- collapse ---
 ---
