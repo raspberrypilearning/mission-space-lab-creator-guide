@@ -1,6 +1,6 @@
 ## The Astro Pi computers
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral machine learning accelerators. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful [Raspberry Pi High Quality Camera](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification) with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral machine learning accelerators. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
@@ -16,7 +16,7 @@ In the next section, you will learn about the different Python libraries availab
 
 ### The Astro Pi Python environment
 
-The Astro Pi computers on the ISS have Python version 3.9.2 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer but not on the Astro Pis.
+The Astro Pi computers on the ISS have Python version 3.11 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer but not on the Astro Pis.
 
 There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them, your program will not be accepted:
 
@@ -42,33 +42,7 @@ In the [Finding the location of the ISS](2) section you can find out how to use 
 
 --- /collapse ---
 
---- collapse ---
----
-title: picamera
----
-
-The Python library for controlling the Raspberry Pi Camera Module is `picamera`. To get started, check out [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/4) for a handy walkthrough of how to use it.
-
-#### Usage
-
-```python
-from picamera import PiCamera
-from time import sleep
-
-camera = PiCamera()
-camera.resolution = (2592, 1944)
-
-for i in range(3*60):
-    camera.capture(f'image_{i:03d}.jpg')  # Take a picture every minute for 3 hours
-    sleep(60)
-```
-
-#### Documentation
-
-- [picamera.readthedocs.io](https://picamera.readthedocs.io)
-
---- /collapse ---
-
+[[[picam-zero]]]
 
 --- collapse ---
 ---
@@ -99,36 +73,7 @@ while True:
 
 --- /collapse ---
 
---- collapse ---
----
-title: NumPy
----
-
-`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrices) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
-
-#### Usage
-
-`numpy` is particularly handy for capturing camera data for manipulation:
-
-```python
-from picamera import PiCamera
-from time import sleep
-import numpy as np
-
-camera = PiCamera()
-
-camera.resolution = (320, 240)
-camera.framerate = 24
-output = np.empty((240, 320, 3), dtype=np.uint8)
-sleep(2)
-camera.capture(output, 'rgb')
-```
-
-#### Documentation
-
-- [docs.scipy.org/doc](https://docs.scipy.org/doc/)
-
---- /collapse ---
+[[[msl-numpy]]]
 
 --- collapse ---
 ---
@@ -403,11 +348,8 @@ Select the correct file from the search results, then press **Install**.
 
 The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
 
-You can find instructions for downloading and using the Astro Pi Replay tool later in this creator guide.
+You can find instructions for using the Astro Pi Replay plug-in later in this creator guide. There is also an online version for you to test your program, as well as the Thonny plug-in. 
 
 ### Looking ahead
 
 Now it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
-
-
-
