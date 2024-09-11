@@ -4,7 +4,7 @@ You should now test your program using **[Astro Pi Replay](https://rpf.io/astro-
 
 If you have been following this creator guide from the start, you should have already seen the online Astro Pi Replay Tool, or installed the offline version as a Thonny plug-in. The installation instructions can be found earlier in this guide and in the Astro Pi Replay documentation.
 
-To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/astro-pi-replay-online+)) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
+To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/astro-pi-replay-online) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
 Your code should run for less than 10 minutes and then stop.
 
@@ -15,7 +15,7 @@ If you see any errors, or the program does not do what you expected it to, you w
 
 --- task ---
 
-Test your program with **[Astro Pi Replay](https://rpf.io/astro-pi-replay-online+)** and check the output for any problems or unexpected behaviour.
+Test your program with **[Astro Pi Replay](https://rpf.io/astro-pi-replay-online)** and check the output for any problems or unexpected behaviour.
 
 --- /task ---
 
