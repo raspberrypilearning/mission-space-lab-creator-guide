@@ -56,6 +56,8 @@ Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`.
 
 ![Screenshot of the package manager in Thonny, showing the "astro-pi-replay" library and the 'Install' button.](images/install_replay_4.png) 
 
+If you have taken part in Mission Space Lab before and have already downloaded the Astro Pi Replay tool, you should re-install the `astro-pi-replay` library to make sure you have the latest version. To do this, remove the `~/.astro_pi_replay` directory in your home folder (e.g. using the command `rm -rf ~/.astro_pi_replay` in a Terminal window) and then follow the instructions above, as if you had not installed `astro-pi-replay` before.
+
 **You will need to close and restart Thonny for the installation to complete.**
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
