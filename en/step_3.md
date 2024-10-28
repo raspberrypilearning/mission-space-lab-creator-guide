@@ -155,7 +155,7 @@ Update your `main.py` file to capture images or Sense HAT data in real time.
 
 You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where exactly an image was taken, and this is something you can do easily with the `orbit` and `exif` libraries available on the Astro Pis.
 
-The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `gps_image1.jpg`. The `custom_capture` function will have set the Exif metadata for the image to include the current latitude and longitude of the ISS. There are several ways of formatting [latitude and longitude](https://www.britannica.com/science/latitude) angles, and using the `custom_capture` function. You will have to adapt this code to suit your particular program.
+The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `gps_image1.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
 
 ```Python
 from orbit import ISS
@@ -165,11 +165,11 @@ iss = ISS()
 
 def get_gps_coordinates(iss):
     """
-    Returns a tuple of Skyfield latitude and longitude angles
-    as reported by the orbit library.
+    Returns a tuple of latitude and longitude coordinates expressed
+    in signed degrees minutes seconds.
     """
     point = iss.coordinates()
-    return (point.latitude, point.longitude)
+    return (point.latitude.signed_dms(), point.longitude.signed_dms())
 
 cam = Camera()
 cam.take_photo("gps_image1.jpg", gps_coordinates=get_gps_coordinates(iss))
