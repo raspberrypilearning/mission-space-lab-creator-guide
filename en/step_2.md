@@ -105,19 +105,6 @@ SciPy is a free, open-source Python library used for scientific computing and te
 
 --- collapse ---
 ---
-title: TensorFlow Lite and PyCoral
----
-
-TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine learning with the Coral accelerator](2) section.
-
-#### Documentation
-
-- [TensorFlow Lite](https://www.tensorflow.org/lite/api_docs/python/tf/lite)
-- [PyCoral](https://coral.ai/docs/edgetpu/tflite-python/)
---- /collapse ---
-
---- collapse ---
----
 title: pandas
 ---
 
