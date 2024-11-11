@@ -34,7 +34,22 @@ title: Skyfield
 
 Skyfield is an astronomy package that computes the positions of stars, planets, and satellites in orbit around the Earth.
 
-In the [Finding the location of the ISS](2) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth.
+For example, you can use Skyfield to calculate the current position of Mars:
+
+```python
+from skyfield.api import Loader
+from pathlib import Path
+
+bsp_file = Path.home() / "de421.bsp"
+load = Loader(bsp_file.parent)
+planets = load(bsp_file.name)
+mars = planets['Mars Barycenter']
+ts = load.timescale()
+barycentric = mars.at(ts.now())
+print(barycentric)
+```
+
+We provide the `orbit` flight library (available in the replay tool and on the Astro Pis) to help with finding the current location of the ISS.
 
 #### Documentation
 
