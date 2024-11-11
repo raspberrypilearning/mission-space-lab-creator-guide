@@ -282,12 +282,22 @@ When used with `skyfield`, `reverse-geocoder` can determine where the ISS curren
 
 ```python
 import reverse_geocoder
-from orbit import ISS
+from skyfield.api import Loader
+from pathlib import Path
 
-coordinates = ISS().coordinates()
+tle_file = Path.home() / "iss.tle"
+load = Loader(tle_file.parent)
+if not tle_file.exists():
+    load.download("http://celestrak.com/NORAD/elements/stations.txt", filename=tle_file.name)
+satellites = load.tle_file(tle_file.name)
+iss = satellites[0]
+ts = load.timescale()
+
+coordinates = iss.at(ts.now()).subpoint()
 coordinate_pair = (
     coordinates.latitude.degrees,
     coordinates.longitude.degrees)
+
 location = reverse_geocoder.search(coordinate_pair)
 print(location)
 ```
@@ -318,12 +328,12 @@ The `sense_hat` library is the main library used to collect data using the Astro
 
 #### Usage
 
-You can log the humidity to the display using the code below:
+You can print the humidity using the code below:
 
 ```python
 from sense_hat import SenseHat
 sense = SenseHat()
-sense.show_message(str(sense.get_humidity()))
+print(str(sense.get_humidity()))
 ```
 
 #### Documentation
