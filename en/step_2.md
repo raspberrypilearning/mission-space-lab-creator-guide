@@ -222,7 +222,7 @@ The core image library is designed for fast access to data stored in a few basic
 title: OpenCV
 ---
 
-`opencv` is an open-source computer vision library. The Astro Pi units specifically have the `opencv-contrib-python-headless` package installed, which includes all of `opencv` plus additional modules (listed in the [OpenCV documentation](https://docs.opencv.org/master/)), and excludes all GUI functionality. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
+`opencv` is an open-source computer vision library. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
 
 #### Documentation
 
