@@ -34,7 +34,22 @@ title: Skyfield
 
 Skyfield is an astronomy package that computes the positions of stars, planets, and satellites in orbit around the Earth.
 
-In the [Finding the location of the ISS](2) section you can find out how to use Skyfield to obtain the position of the International Space Station above the Earth.
+For example, you can use Skyfield to calculate the current position of Mars:
+
+```python
+from skyfield.api import Loader
+from pathlib import Path
+
+bsp_file = Path.home() / "de421.bsp"
+load = Loader(bsp_file.parent)
+planets = load(bsp_file.name)
+mars = planets['Mars Barycenter']
+ts = load.timescale()
+barycentric = mars.at(ts.now())
+print(barycentric)
+```
+
+We provide the `orbit` flight library (available in the replay tool and on the Astro Pis) to help with finding the current location of the ISS.
 
 #### Documentation
 
@@ -86,19 +101,6 @@ SciPy is a free, open-source Python library used for scientific computing and te
 
 - [docs.scipy.org/doc](https://docs.scipy.org/doc/)
 
---- /collapse ---
-
---- collapse ---
----
-title: TensorFlow Lite and PyCoral
----
-
-TensorFlow Lite and the PyCoral library can be used to use or re-train existing machine learning (ML) models for inference. The latter is built on top of TensorFlow Lite but has a simpler, higher-level interface and allows you to easily use the Coral ML accelerator (Edge TPU). Note that TensorFlow (as opposed to TensorFlow Lite) is not supported by the Flight OS because TensorFlow requires a 64-bit operating system. You may want to use these libraries to create object classifiers, for example. For more information, see the [Machine learning with the Coral accelerator](2) section.
-
-#### Documentation
-
-- [TensorFlow Lite](https://www.tensorflow.org/lite/api_docs/python/tf/lite)
-- [PyCoral](https://coral.ai/docs/edgetpu/tflite-python/)
 --- /collapse ---
 
 --- collapse ---
@@ -207,7 +209,7 @@ The core image library is designed for fast access to data stored in a few basic
 title: OpenCV
 ---
 
-`opencv` is an open-source computer vision library. The Astro Pi units specifically have the `opencv-contrib-python-headless` package installed, which includes all of `opencv` plus additional modules (listed in the [OpenCV documentation](https://docs.opencv.org/master/)), and excludes all GUI functionality. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
+`opencv` is an open-source computer vision library. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
 
 #### Documentation
 
@@ -233,7 +235,7 @@ title: exif
 title: scikit-learn
 ---
 
-`scikit-learn` is a set of simple and efficient tools for data mining and data analysis that are accessible to everybody, and reusable in various contexts. It is designed to interoperate with `numpy`, `scipy`, and `matplotlib`.
+`scikit-learn` is a set of simple and efficient tools for data mining and data analysis that are accessible to everybody, and reusable in various contexts. It is designed to work with `numpy`, `scipy`, and `matplotlib`.
 
 #### Documentation
 
@@ -267,12 +269,22 @@ When used with `skyfield`, `reverse-geocoder` can determine where the ISS curren
 
 ```python
 import reverse_geocoder
-from orbit import ISS
+from skyfield.api import Loader
+from pathlib import Path
 
-coordinates = ISS().coordinates()
+tle_file = Path.home() / "iss.tle"
+load = Loader(tle_file.parent)
+if not tle_file.exists():
+    load.download("http://celestrak.com/NORAD/elements/stations.txt", filename=tle_file.name)
+satellites = load.tle_file(tle_file.name)
+iss = satellites[0]
+ts = load.timescale()
+
+coordinates = iss.at(ts.now()).subpoint()
 coordinate_pair = (
     coordinates.latitude.degrees,
     coordinates.longitude.degrees)
+
 location = reverse_geocoder.search(coordinate_pair)
 print(location)
 ```
@@ -303,12 +315,12 @@ The `sense_hat` library is the main library used to collect data using the Astro
 
 #### Usage
 
-You can log the humidity to the display using the code below:
+You can print the humidity using the code below:
 
 ```python
 from sense_hat import SenseHat
 sense = SenseHat()
-sense.show_message(str(sense.get_humidity()))
+print(str(sense.get_humidity()))
 ```
 
 #### Documentation
