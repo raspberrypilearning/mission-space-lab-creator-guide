@@ -1,6 +1,6 @@
 ## The Astro Pi computers
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful [Raspberry Pi High Quality Camera](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification) with a 5mm lens that can take amazing pictures of the Earth. Plus, these computers can do real-time machine learning thanks to the attached Coral machine learning accelerators. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
@@ -12,7 +12,7 @@ Come up with several different ways of calculating the speed of the ISS using th
 
 --- /task --- 
 
-In the next section, you will learn about the different Python libraries available that can help you with your project, and also about some that you cannot use for security reasons.
+In the next section, you will learn about the different Python libraries available that can help you with your project, and also about some that you cannot use for security reasons. You do not have to use all of the Python libraries in this section, only the ones that you decide to use in your program to help it perform the way you want it to. 
 
 ### The Astro Pi Python environment
 
@@ -325,11 +325,9 @@ Because there are lots of security restrictions when running a program on board 
 
 ### Setting up your programming environment 
 
-We recommend using Thonny to create your program.
+We recommend using Thonny to create your program. 
 
 [[[thonny-install]]]
-
-[[[change-theme-thonny]]]
 
 To install any of the Python libraries, open Thonny and click on **Tools > Manage packages...**.
 
@@ -343,13 +341,8 @@ Select the correct file from the search results, then press **Install**.
 
 ![Screenshot of the package manager in Thonny, showing the "skyfield" library and the 'Install' button.](images/skyfield_2.png)
 
-
-### The Astro Pi Replay plug-in
-
-The Astro Pi Replay plug-in acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
-
-You can find instructions for using the Astro Pi Replay plug-in later in this creator guide. There is also an online version for you to test your program, as well as the Thonny plug-in. 
+If you are using a different IDE to write your code, you will need to follow local instructions for downloading the libraries you want from [PyPi](https://pypi.org/).
 
 ### Looking ahead
 
-Now it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
+Now that you have set up your coding environment it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
