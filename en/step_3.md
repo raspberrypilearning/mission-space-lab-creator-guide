@@ -2,8 +2,6 @@
 
 This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which of the sensors and/or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
 
-### Getting started
-
 We recommend that you start writing your program in small steps, and that you do not try to do everything at once. 
 
 --- task ---
@@ -24,7 +22,9 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 ### Test your program with the Astro Pi Replay Tool
 
-Once you have a working program, you will need to test it using the Astro Pi Replay tool. The tool allows you to simulate using an Astro Pi Sense HAT or camera to capture data from space. We recommend you use the online version of the tool. 
+The Astro Pi Replay Tool acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
+
+There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool. 
 
 --- collapse --- 
 ---
