@@ -289,6 +289,8 @@ This output shows that the ISS is currently over Hamilton, New York:
 ])]
 ```
 
+Note: The library `reverse-geocoder` can not be run using the online Replay Tool as it using multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plugin version of the Replay tool
+
 #### Documentation
 
 - [github.com/thampiman/reverse-geocoder](https://github.com/thampiman/reverse-geocoder)
