@@ -6,7 +6,7 @@ For astronauts, working in space means working under some very strict constraint
 
 Every program run on the Astro Pis has a 10-minute time slot in daylight to estimate the speed of the ISS. Your program will need to keep track of the time and shut down gracefully before the 10 minutes are over to make sure no data is lost.
 
-One way to stop a Python program after a specific length of time is using the `datetime` Python library. This library makes it easy to work with times and compare them. Doing so without the library is not always straightforward: it is easy to get it wrong using normal mathematics.
+One way to stop a Python program after a specific length of time is using the `datetime` Python library. This library makes it easy to work with times and compare them. 
 
 By recording and storing the time at the start of the experiment, we can then check repeatedly to see if the current time is greater than that start time plus a certain number of minutes, seconds, or hours. In the program below, this is used to print "Hello from the ISS" every second for 1 minute: 
 
@@ -74,15 +74,6 @@ Review your `main.py` file and update it so that it closes all resources appropr
 
 --- /task --- 
 
-### Using one `Camera` object
-
-Avoid making multiple `Camera` objects at the same time — this may cause the Raspberry Pi to run out of memory and prevent your program from being allowed to run on the ISS. Instead, create a `Camera` object at the start of your program and use it every time you want to take a photo.
-
---- task --- 
-
-Review your `main.py` file and update it so that only one instance of `picamzero`'s `Camera` object is used.
-
---- /task --- 
 
 
 ### Preparing for the unexpected
