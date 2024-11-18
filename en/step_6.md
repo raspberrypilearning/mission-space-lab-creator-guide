@@ -2,11 +2,11 @@
 
 You should now test your program using **[Astro Pi Replay](https://rpf.io/astro-pi-replay-online)**. Doing this gives your entry the best chance of success and of ensuring that it will work aboard the ISS. When Astro Pi Mission Control receives your program, it will be tested and evaluated using Astro Pi Replay, and if it succeeds, on an Astro Pi on Earth. Hundreds of teams submit programs to Mission Space Lab each year and, unfortunately, there is not enough time to check for mistakes or debug code errors. If your program has errors when we test it, your program will not be eligible to run on the ISS.
 
-If you have been following this creator guide from the start, you should have already seen the online Astro Pi Replay Tool, or installed the offline version as a Thonny plug-in. The installation instructions can be found earlier in this guide and in the Astro Pi Replay documentation.
+If you have been following this creator guide from the start, you should have already seen the online [Astro Pi Replay Tool](https://rpf.io/astro-pi-replay-online), or installed the offline version as a Thonny plug-in. The installation instructions can be found earlier in this guide and in the Astro Pi Replay documentation.
 
 To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/astro-pi-replay-online) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
-Your code should run for less than 10 minutes and then stop.
+Your code should complete within 10 minutes.
 
 When it has finished, double-check that it created a `result.txt` file in your project folder with a valid structure. Additionally, observe any other output files created by your project. Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? Finally, check your logs for any errors.
 If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
@@ -152,7 +152,7 @@ A number of teams want to organise their data into directories such as data, ima
 title: "Networking"
 --- 
 
-For security reasons, your program is not allowed to access the network on the ISS. It should not attempt to open a socket, access the internet, or make a network connection of any kind. This includes local network connections back to the Astro Pi itself. As part of testing your program, you should disable your network connection to make sure that your program runs successfully without an internet connection.
+For security reasons, your program is not allowed to access the network on the ISS. It should not attempt to open a socket, access the internet, or make a network connection of any kind. This includes local network connections back to the Astro Pi itself.
 
 --- /collapse ---
 
