@@ -49,11 +49,40 @@ barycentric = mars.at(ts.now())
 print(barycentric)
 ```
 
-We provide the `orbit` flight library (available in the replay tool and on the Astro Pis) to help with finding the current location of the ISS.
+This snippet works but the ephemeris file (`de421.bsp`) is too big to submit in your final payload! To get around this, import the ephemeris from the `astro_pi_orbit` library, which will take care of importing the file for you:
+
+```python
+from skyfield.api import load
+from astro_pi_orbit import de421
+
+planets = de421
+mars = planets['Mars Barycenter']
+ts = load.timescale()
+barycentric = mars.at(ts.now())
+print(barycentric)
+```
 
 #### Documentation
 
 - [rhodesmill.org/skyfield](https://rhodesmill.org/skyfield/)
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: astro_pi_orbit
+---
+#### Usage
+
+The `astro_pi_orbit` library provides a collection of functions to simplify
+certain the code required for certain use cases. It can be used to:
+
+1) Find the current location of the ISS
+2) Access the `de421` or `de440s` ephemeris files (the files are too big to supply by yourself)
+3) Access the Astro Pi's PIR motion sensor
+
+#### Documentation
+- [https://github.com/astro-pi/astro-pi-orbit]
 
 --- /collapse ---
 

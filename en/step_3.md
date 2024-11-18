@@ -153,12 +153,12 @@ Update your `main.py` file to capture images or Sense HAT data in real time.
 
 ### Finding the location of the ISS
 
-You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where exactly an image was taken, and this is something you can do easily with the `orbit` and `exif` libraries available on the Astro Pis.
+You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where exactly an image was taken, and this is something you can do easily with the `astro_pi_orbit` and `exif` libraries available on the Astro Pis.
 
 The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `gps_image1.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
 
 ```Python
-from orbit import ISS
+from astro_pi_orbit import ISS
 from picamzero import Camera
 
 iss = ISS()
