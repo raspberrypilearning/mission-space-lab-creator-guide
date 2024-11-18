@@ -14,7 +14,7 @@ Both `de421.bsp` and `de440s.bsp` files are available on the Astro Pis. If your 
 
 ```Python
 from orbit import de421, de440s
-print(de440)
+print(de421)
 print(de440s)
 ```
 
