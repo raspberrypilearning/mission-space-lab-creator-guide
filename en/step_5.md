@@ -19,8 +19,3 @@ Be cautious about training your program to be oversensitive to the exact sequenc
 
 If your method of calculating the speed is based on the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project, then perhaps you could use techniques from computer vision or machine learning to classify photos that are easier to estimate from. For example, you could perform machine learning inference in real time to evaluate the accuracy of your estimate, or the conditions below the ISS. 
 
---- task ---
-
-Evaluate the accuracy of the estimate of the ISS speed that your program outputs using Astro Pi Replay.
-
---- /task ---
