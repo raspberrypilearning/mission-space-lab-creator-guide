@@ -74,15 +74,14 @@ title: astro_pi_orbit
 ---
 #### Usage
 
-The `astro_pi_orbit` library provides a collection of functions to simplify
-certain the code required for certain use cases. It can be used to:
+The `astro_pi_orbit` library provides The `astro_pi_orbit` library provides functionality to assist Astro Pi Mission Space Lab participants in working with orbital data. It can be used to:
 
 1) Find the current location of the ISS
 2) Access the `de421` or `de440s` ephemeris files (the files are too big to supply by yourself)
-3) Access the Astro Pi's PIR motion sensor
+3) Access the trajectory of the ISS
 
 #### Documentation
-- [https://github.com/astro-pi/astro-pi-orbit]
+- [https://astro-pi.github.io/astro-pi-orbit/]
 
 --- /collapse ---
 
