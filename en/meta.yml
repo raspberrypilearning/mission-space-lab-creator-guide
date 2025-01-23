@@ -10,7 +10,7 @@ steps:
 - title: "Introduction"
 - title: "The Astro Pi computers"
   completion:
-      - engaged
+    - engaged
 - title: "Writing your program and resources to help"
 - title: "Optimising your program for the ISS"
 - title: "Improving the accuracy of your program"
@@ -19,3 +19,5 @@ steps:
   completion:
     - internal
 - title: "Other resources"
+  completion:
+    - external
