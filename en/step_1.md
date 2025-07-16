@@ -36,3 +36,4 @@ We will also give you information on how to improve your program to make sure it
 To complete this project, you will need:
 - **A computer running Python 3.11 or above.** You can use any Microsoft Windows, macOS, or Linux computer. You can find [instructions for installing Python here](https://projects.raspberrypi.org/en/projects/generic-python-install-python3). A full description of the Python requirements for Mission Space Lab appears later in this guide.
 - **An internet connection.** You will need to access the internet to test and submit your program.
+- **A code editor.** This is where you will write and edit your Python code. Any text editor will work, but we recommend using a dedicated code editor like Thonny. In this guide, we will be using instructions for Thonny.
