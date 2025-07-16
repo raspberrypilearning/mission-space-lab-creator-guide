@@ -3,7 +3,7 @@ This guide is designed to help you and your team create your program for Mission
 
 This is not a complete step-by-step guide on how to create a program that will solve the problem posed in this Mission. You and your team will need to come up with ideas and solutions and work out how to implement them.
 
-![A sequence of photos of the Earth's surface taken by an Astro Pi computer.](images/Atlas.mp4)
+![A sequence of photos of the Earth's surface taken by an Astro Pi computer.](images/Atlas.gif)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
