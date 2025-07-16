@@ -99,7 +99,7 @@ GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. 
 Compare the Raspberry Pi's CPU temperature to the Sense HAT's temperature reading:
 
 ```python
-from sense_hat import SenseHat
+from Sense-hat import SenseHat
 from gpiozero import CPUTemperature
 
 sense = SenseHat()
@@ -189,7 +189,7 @@ title: Matplotlib
 #### Usage
 
 ```python
-from sense_hat import SenseHat
+from Sense-hat import SenseHat
 from gpiozero import CPUTemperature
 import matplotlib.pyplot as plt
 from time import sleep
@@ -337,16 +337,16 @@ This output shows that the ISS is currently over Hamilton, New York:
 
 --- collapse ---
 ---
-title: sense_hat
+title: Sense-hat
 ---
-The `sense_hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
+The `Sense-hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
 
 #### Usage
 
 You can print the humidity using the code below:
 
 ```python
-from sense_hat import SenseHat
+from Sense-hat import SenseHat
 sense = SenseHat()
 print(str(sense.get_humidity()))
 ```
