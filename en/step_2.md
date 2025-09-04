@@ -131,7 +131,7 @@ GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. 
 Compare the Raspberry Pi's CPU temperature to the Sense HAT's temperature reading:
 
 ```python
-from sense-hat import SenseHat
+from sense_hat import SenseHat
 from gpiozero import CPUTemperature
 
 sense = SenseHat()
@@ -221,7 +221,7 @@ title: Matplotlib
 #### Usage
 
 ```python
-from sense-hat import SenseHat
+from sense_hat import SenseHat
 from gpiozero import CPUTemperature
 import matplotlib.pyplot as plt
 from time import sleep
@@ -371,16 +371,16 @@ Note: The library `reverse-geocoder` can not be run using the online Replay Tool
 
 --- collapse ---
 ---
-title: sense-hat
+title: sense_hat
 ---
-The `sense-hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
+The `sense_hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
 
 #### Usage
 
 You can print the humidity using the code below:
 
 ```python
-from sense-hat import SenseHat
+from sense_hat import SenseHat
 sense = SenseHat()
 print(str(sense.get_humidity()))
 ```
