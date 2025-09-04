@@ -26,7 +26,7 @@ If you get stuck, please [contact us](mailto:enquiries@astro-pi.org) and we will
 
 Your task is to design a program that will run for 10 minutes aboard the ISS, and in that time, gather data and use it to estimate the speed of the ISS. At the end of the 10 minutes, your program must have written a file containing your estimate for the speed of the ISS in kilometres per second.
 
-You can use our [Astro Pi Replay Tool](https://missions.astro-pi.org/msl/replay-tool) to simulate your code running live on the Astro Pis on the ISS, to test that your program will work in real time.
+You can use our [Astro Pi Replay Tool](https://rpf.io/replay) to simulate your code running live on the Astro Pis on the ISS, to test that your program will work in real time.
 
 We will also give you information on how to improve your program to make sure it runs smoothly on the ISS while also following the security rules.
 
