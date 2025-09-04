@@ -131,7 +131,7 @@ GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. 
 Compare the Raspberry Pi's CPU temperature to the Sense HAT's temperature reading:
 
 ```python
-from Sense-hat import SenseHat
+from sense-hat import SenseHat
 from gpiozero import CPUTemperature
 
 sense = SenseHat()
@@ -221,7 +221,7 @@ title: Matplotlib
 #### Usage
 
 ```python
-from Sense-hat import SenseHat
+from sense-hat import SenseHat
 from gpiozero import CPUTemperature
 import matplotlib.pyplot as plt
 from time import sleep
@@ -361,6 +361,8 @@ This output shows that the ISS is currently over Hamilton, New York:
 ])]
 ```
 
+Note: The library `reverse-geocoder` can not be run using the online Replay Tool as it using multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plugin version of the Replay tool
+
 #### Documentation
 
 - [github.com/thampiman/reverse-geocoder](https://github.com/thampiman/reverse-geocoder)
@@ -369,16 +371,16 @@ This output shows that the ISS is currently over Hamilton, New York:
 
 --- collapse ---
 ---
-title: Sense-hat
+title: sense-hat
 ---
-The `Sense-hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
+The `sense-hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
 
 #### Usage
 
 You can print the humidity using the code below:
 
 ```python
-from Sense-hat import SenseHat
+from sense-hat import SenseHat
 sense = SenseHat()
 print(str(sense.get_humidity()))
 ```
