@@ -85,7 +85,39 @@ The `astro_pi_orbit` library provides The `astro_pi_orbit` library provides func
 
 --- /collapse ---
 
-[[[picam-zero]]]
+--- collapse ---
+---
+title: picamzero
+---
+
+The Python library for controlling the Raspberry Pi Camera Module on the Astro Pis is `picamzero`. To get started, check out this [project guide](https://raspberrypifoundation.github.io/picamera-zero/hello_world/) for a handy walkthrough of how to use it.
+
+#### Usage
+
+```python
+from picamzero import Camera
+from time import sleep
+
+camera = Camera()
+
+# Take a picture every minute for 3 hours
+for i in range(3*60):
+    camera.take_photo(f'image_{i:03d}.jpg')
+    sleep(60)
+```
+
+#### Documentation
+
+- [https://raspberrypifoundation.github.io/picamera-zero](https://raspberrypifoundation.github.io/picamera-zero)
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay tool, either online or offline. To install picamzero on a Raspberry Pi, open the Shell in Thonny and run:
+```
+pip install picamzero
+```
+</p>
+
+--- /collapse ---
 
 --- collapse ---
 ---
@@ -99,7 +131,7 @@ GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. 
 Compare the Raspberry Pi's CPU temperature to the Sense HAT's temperature reading:
 
 ```python
-from sense-hat import SenseHat
+from sense_hat import SenseHat
 from gpiozero import CPUTemperature
 
 sense = SenseHat()
@@ -189,7 +221,7 @@ title: Matplotlib
 #### Usage
 
 ```python
-from sense-hat import SenseHat
+from sense_hat import SenseHat
 from gpiozero import CPUTemperature
 import matplotlib.pyplot as plt
 from time import sleep
@@ -339,16 +371,16 @@ Note: The library `reverse-geocoder` can not be run using the online Replay Tool
 
 --- collapse ---
 ---
-title: sense-hat
+title: sense_hat
 ---
-The `sense-hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
+The `sense_hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
 
 #### Usage
 
 You can print the humidity using the code below:
 
 ```python
-from sense-hat import SenseHat
+from sense_hat import SenseHat
 sense = SenseHat()
 print(str(sense.get_humidity()))
 ```

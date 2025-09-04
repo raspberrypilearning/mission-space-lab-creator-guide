@@ -30,7 +30,7 @@ There is an online version and an offline version, available as a Thonny plug-in
 ---
 title: Accessing the Astro Pi Replay Tool online 
 ---
-The easiest way to test if your program will work on the ISS is to upload your main.py file to the online [Astro Pi Replay Tool](https://missions.astro-pi.org/msl/replay-tool). 
+The easiest way to test if your program will work on the ISS is to upload your main.py file to the online [Astro Pi Replay Tool](https://rpf.io/replay). 
 
 To upload your program simply, open the link and either drag and drop, or select, your main.py file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs. 
 
@@ -137,7 +137,7 @@ cam = Camera()
 
 cam.capture_sequence("sequence", num_images=3, interval=3)
 ```
-Run this code using [Astro Pi Replay online](https://rpf.io/astro-pi-replay-online)), or with the Thonny plug-in by clicking on **Run > Astro-Pi-Replay**.
+Run this code using [Astro Pi Replay online](https://rpf.io/replay)), or with the Thonny plug-in by clicking on **Run > Astro-Pi-Replay**.
 
 ### Numbering plans for images and files
 
