@@ -38,7 +38,7 @@ Many Mission Space Lab teams have not had their programs run on the ISS due to s
 title: "ZeroDivisionError when calculating the speed"
 ---
 
-You'll need to make sure that your program doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as the `datetime_digitized` fields used in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
+You'll need to make sure that your program doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
 
 To stop this, you can add a `sleep` command to your code. This makes sure there is at least a one second gap between each photo:
 
@@ -56,14 +56,12 @@ camera.take_photo("image2.jpg")
 
 --- collapse ---
 ---
-title: "cv2.errors"
+title: "cv2.error when calculating image features"
 ---
 
 Description
 
 --- /collapse ---
-
-
 
 --- collapse ---
 ---
