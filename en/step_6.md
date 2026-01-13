@@ -33,7 +33,25 @@ Many Mission Space Lab teams have not had their programs run on the ISS due to s
 
 ### Common mistakes 
 
-Example
+--- collapse ---
+---
+title: "ZeroDivisionErrors"
+---
+
+Description
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: "cv2.errors"
+---
+
+Description
+
+--- /collapse ---
+
+
 
 --- collapse ---
 ---
