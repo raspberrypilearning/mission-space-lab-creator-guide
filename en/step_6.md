@@ -35,7 +35,7 @@ Many Mission Space Lab teams have not had their programs run on the ISS due to s
 
 --- collapse ---
 ---
-title: "ZeroDivisionErrors"
+title: `ZeroDivisionError` when calculating the speed
 ---
 
 Description
