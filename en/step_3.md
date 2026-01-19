@@ -183,12 +183,6 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 </p>
 
-### Machine learning with the Coral accelerator
-
-If you have access to a Coral machine learning accelerator, check out our [Image classification with Google Coral](https://projects.raspberrypi.org/en/projects/image-id-coral/2) project guide. You will walk through the process of training a machine learning model to classify images, and experience using the TensorFlow Lite library. You can then use a similar approach to classify images played back when you run your program using the Astro Pi Replay Tool, or on the ISS.
-
-Once you have completed this project, you may want to look at the [Coral examples page](https://coral.ai/examples/) and [this GitHub page](https://github.com/robmarkcole/satellite-image-deep-learning#datasets) for some inspiration on how to apply machine learning techniques to your own experiment. 
-
 ### Writing your result file 
 
 For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (`.txt`), and will contain your estimate to up to five significant figures. Please do not include any other data in this file, including units e.g. `km/s`.

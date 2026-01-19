@@ -1,4 +1,4 @@
-# default-project-template
+# Astro Pi Mission Space Lab creator guide
 
 ![default-project-template](banner.png)
 

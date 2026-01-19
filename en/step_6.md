@@ -35,6 +35,63 @@ Many Mission Space Lab teams have not had their programs run on the ISS due to s
 
 --- collapse ---
 ---
+title: "ZeroDivisionError when calculating the speed"
+---
+
+You'll need to make sure that your program doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
+
+To stop this, you can add a `sleep` command to your code. This makes sure there is at least a one second gap between each photo:
+
+```python
+from time import sleep
+from picamzero import Camera
+
+camera = Camera()
+camera.take_photo("image1.jpg")
+sleep(1)
+camera.take_photo("image2.jpg")
+```
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: "cv2.error when calculating image features"
+---
+
+If you are following the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project and the photos you are comparing lack enough contrast, the `calculate_features` function might return `None` instead of the image descriptor data. This is a common cause of bugs, as later functions like `calculate_matches` expect a `numpy` array and will crash if they receive `None` instead.
+
+To stop your program from crashing when this happens, you can wrap your code in a `try-except` statement like this:
+
+```python
+cv_error_count = 0
+max_cv_errors = 5
+
+for i in range(10):
+    try:
+        time_difference = get_time_difference(image_1, image_2) # Get time difference between images
+        image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # Create OpenCV image objects
+        keypoints_1, keypoints_2, descriptors_1, descriptors_2 = calculate_features(image_1_cv, image_2_cv, 1000) # Get keypoints and descriptors
+        matches = calculate_matches(descriptors_1, descriptors_2) # Match descriptors
+        display_matches(image_1_cv, keypoints_1, image_2_cv, keypoints_2, matches) # Display matches
+        coordinates_1, coordinates_2 = find_matching_coordinates(keypoints_1, keypoints_2, matches)
+        average_feature_distance = calculate_mean_distance(coordinates_1, coordinates_2)
+        speed = calculate_speed_in_kmps(average_feature_distance, 12648, time_difference)
+
+        # successfully calculated the speed - reset counts
+        cv_error_count = 0
+    except cv2.error as e:
+        cv_error_count += 1
+        if cv_error_count >= max_cv_errors:
+            raise e
+```
+
+This snippet tries to calculate the features in your images, but instead of crashing when it hits a `cv2.error` it will skip and try again. Because the landscape and lighting are always changing below the ISS, the problem will often fix itself in the next iteration - but this is unfortunately not absolutely guaranteed. For this reason, the snippet counts the number of errors encountered and re-raises the `cv2.error` if more than 4 errors are encountered in a row. Should this happen, Astro Pi Mission Control will do their best to re-run your code in better conditions.
+
+--- /collapse ---
+
+--- collapse ---
+---
 title: "Opening and closing the camera repeatedly"
 ---
 

@@ -393,6 +393,44 @@ print(str(sense.get_humidity()))
 --- /collapse ---
 
 
+--- collapse ---
+---
+title: "ai_edge_rt"
+---
+
+The `ai_edge_litert` library allows you to run machine learning and AI inference on the Astro Pis CPUs. It is the successor library to `tflite` and `pycoral`, both of which are no longer supported by Google.
+
+#### Usage
+
+The example below shows how to load and execute the mobilenet v1 model:
+
+```
+from ai_edge_litert.interpreter import Interpreter
+from PIL import Image
+
+interpreter = Interpreter("mobilenet_v1_0.25_224_quant.tflite")
+interpreter.allocate_tensors()
+
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+
+height = input_details[0]["shape"][1]
+width = input_details[0]["shape"][2]
+img = Image.open("black.jpg").resize((width, height))
+input_data = np.expand_dims(img, axis=0)
+interpreter.set_tensor(input_details[0]["index"], input_data)
+interpreter.invoke()
+output_data = interpreter.get_tensor(output_details[0]["index"])
+print(f"tflite: {np.squeeze(output_data)}")
+```
+#### Documentation
+
+- [https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models]()
+- [https://ai.google.dev/edge/litert/migration#:~:text=Because%20LiteRT%20fully%20supports%20the,migration%20guides%20for%20specific%20platforms.]()
+
+--- /collapse ---
+
+
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 Because there are lots of security restrictions when running a program on board the ISS, these are the only third-party libraries that you will be allowed to use if your program runs on the Astro Pis. Please [contact us](enquiries@astro-pi.org) if you think anything is missing or have any suggestions.
 </p>
