@@ -90,7 +90,7 @@ The `astro_pi_orbit` library provides The `astro_pi_orbit` library provides func
 title: picamzero
 ---
 
-The Python library for controlling the Raspberry Pi Camera Module on the Astro Pis is `picamzero`. To get started, check out this [project guide](https://raspberrypifoundation.github.io/picamera-zero/hello_world/) for a handy walkthrough of how to use it.
+The Python library for controlling the Raspberry Pi Camera Module on the Astro Pis is `picamzero`. To get started, check out this [project guide](https://raspberrypifoundation.github.io/picamzero/hello_world/) for a handy walkthrough of how to use it.
 
 #### Usage
 
@@ -108,7 +108,7 @@ for i in range(3*60):
 
 #### Documentation
 
-- [https://raspberrypifoundation.github.io/picamera-zero](https://raspberrypifoundation.github.io/picamera-zero)
+- [https://raspberrypifoundation.github.io/picamzero](https://raspberrypifoundation.github.io/picamzero)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay tool, either online or offline. To install picamzero on a Raspberry Pi, open the Shell in Thonny and run:
