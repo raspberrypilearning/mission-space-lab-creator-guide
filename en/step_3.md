@@ -74,7 +74,7 @@ To run your code using the Astro Pi Replay plug-in, do **not** press the green *
 --- /collapse ---
 
 
-**Note:** Although all of the functions of the `picamera-zero` library are available, many of the `picamera-zero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
+**Note:** Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
 
 
@@ -92,7 +92,7 @@ Don't forget that you will only be able to use the visual light camera on the IS
 
 ### Simulate running your program in real time
 
-You may prefer to get started by using the `sense_hat` and `picamera-zero` libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool online or with Thonny. 
+You may prefer to get started by using the `sense_hat` and `picamzero` libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool online or with Thonny.
 
 ### Taking measurements with the Sense HAT 
 
@@ -104,7 +104,7 @@ You may also wish to use the camera to take photos of the Earth to use in your p
 
 Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny: 
 ```Python
-# Import the Camera class from the picamera-zero module
+# Import the Camera class from the picamzero module
 from picamzero import Camera
 
 # Create an instance of the Camera class
@@ -118,9 +118,9 @@ This will simulate taking a picture on the ISS and save it in a file called `ima
 
 ![Photo of clouds above land.](images/image1.jpg)
 
-The `picamera-zero` library supports a variety of features and camera settings. You can see some examples by going to the ['Recipes' page](https://raspberrypifoundation.github.io/picamera-zero/recipes/) on the picamera-zero website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
+The `picamzero` library supports a variety of features and camera settings. You can see some examples by going to the ['Recipes' page](https://raspberrypifoundation.github.io/picamzero/recipes/) on the picamzero website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
 
-While all features of the `picamera-zero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
+While all features of the `picamzero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
 
 ### Capturing sequences
 
@@ -129,7 +129,7 @@ Using `picamzero` it is very simple to take a sequence of pictures by calling th
 Create a new file called `camera-sequence.py`, and in it, type the following lines:
 
 ```Python
-# Import the Camera class from the picamzero (picamera-zero) module
+# Import the Camera class from the picamzero (picamzero) module
 from picamzero import Camera
 
 # Create an instance of the Camera class
