@@ -1,7 +1,7 @@
 ## Introduction
-This guide is designed to help you and your team create your program for Mission Space Lab 2025/26. In this Mission, your task is to create a program that will gather data using an Astro Pi computer's sensors and visual light camera and use this data to calculate the speed at which the International Space Station (ISS) is travelling. We will provide you with lots of supporting materials to help you write and develop your program, including an example project using historical photos. We will also help you to adapt and test your program so that it can run for 10 minutes on board the ISS and produce a value for the speed of the ISS, in real time.
+This guide is designed to help you and your team create your program for the Mission Space Lab 2026/27 open challenge. In this Mission, your task is to design an original scientific investigation and create a Python program that will gather data using an Astro Pi computer's sensors and camera modules. We will provide you with supporting materials to help you write and develop your program, including guidance on different experimental approaches. We will also help you to adapt and test your program so that it can run autonomously for 10 minutes on board the International Space Station (ISS) and reliably record your findings in real time.
 
-This is not a complete step-by-step guide on how to create a program that will solve the problem posed in this Mission. You and your team will need to come up with ideas and solutions and work out how to implement them.
+This is not a complete step-by-step guide on how to create your experiment. You and your team will need to come up with unique ideas, define your scientific goals, and work out how to implement them.
 
 ![A sequence of photos of the Earth's surface taken by an Astro Pi computer.](images/Atlas.gif)
 
@@ -20,11 +20,11 @@ There are a wealth of resources available to help you succeed at every stage of 
 If you get stuck, please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
 </p>
 
- ![Two views of an Astro Pi computer, showing the front panel (with some of the sensors) and the camera.](images/astro-pi-double.png) 
+ ![Two views of an Astro Pi computer, showing the front panel (with some of the sensors) and the camera.](images/astro-pi-double.png) 
 
 ### What you will need to make
 
-Your task is to design a program that will run for 10 minutes aboard the ISS, and in that time, gather data and use it to estimate the speed of the ISS. At the end of the 10 minutes, your program must have written a file containing your estimate for the speed of the ISS in kilometres per second.
+Your task is to design an autonomous program that will run for 10 minutes aboard the ISS. During this time, your program must gather data from the Astro Pi's sensors or camera and record this information directly to a data file. The baseline requirement for your experiment is to successfully capture your target data streams and ensure they are saved cleanly to a file before your 10-minute slot concludes.
 
 You can use our [Astro Pi Replay Tool](https://rpf.io/replay) to simulate your code running live on the Astro Pis on the ISS, to test that your program will work in real time.
 
