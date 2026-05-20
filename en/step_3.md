@@ -12,7 +12,7 @@ To keep everything organised, create a folder to store all your project files. F
 
 ### The main.py file
 
-[cite_start]Every submission must include a file named `main.py`. [cite: 60] [cite_start]This is the file from which your program will run, and which will be tested by Astro Pi Mission Control. [cite: 253] When your program is executed, it should autonomously handle your sensor queries, image captures, and file writing routines. Start by making a file for your main program, and add in the code that you get working as you go along.
+Every submission must include a file named `main.py`. This is the file from which your program will run, and which will be tested by Astro Pi Mission Control. When your program is executed, it should autonomously handle your sensor queries, image captures, and file writing routines. Start by making a file for your main program, and add in the code that you get working as you go along.
 
 --- task ---
 
@@ -22,9 +22,9 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 ### Directory structure for your data files
 
-[cite_start]When your code is run on the ISS, it will be started and stopped by an automated system. [cite: 79] [cite_start]Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system). [cite: 78, 207]
+When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system). 
 
-[cite_start]To ensure that your logged data and photos end up in the correct directory, you must find the active folder dynamically using the special `__file__` variable alongside the `pathlib` library: [cite: 80, 81, 208]
+To ensure that your logged data and photos end up in the correct directory, you must find the active folder dynamically using the special `__file__` variable alongside the `pathlib` library:
 
 ```python
 from pathlib import Path
@@ -34,7 +34,66 @@ dir_path = Path(__file__).parent.resolve()
 
 # Create a safe file path inside your project directory
 data_file = dir_path / "data01.csv"
---- task ---Make sure all file creation routines in your main.py use dynamic pathlib resolution instead of hardcoded folder strings.--- /task ---Test your program with the Astro Pi Replay ToolThe Astro Pi Replay Tool acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.   There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool.  --- collapse ---title: Accessing the Astro Pi Replay Tool onlineThe easiest way to test if your program will work on the ISS is to upload your main.py file to the online Astro Pi Replay Tool.To upload your program simply, open the link and either drag and drop, or select, your main.py file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs.Make sure your program executes successfully within the simulator environment and produces cleanly populated output files.--- /collapse ------ collapse ---title: Installing Astro Pi Replay Tool on Raspberry Pi BookwormIf you are on Raspberry Pi OS Bookworm, please follow the instructions on how to configure Thonny to use a virtual environment on the raspberrypi website before proceeding with the instructions below.To install the Astro Pi Replay tool, open Thonny, then click on Tools > Manage plug-ins..., and search for thonny-astro-pi-replay. Select the correct plug-in, then press Install.Then, click on Tools > Manage packages..., and search for astro-pi-replay. Select the correct package, then press Install.If you have taken part in Mission Space Lab before and have already downloaded the Astro Pi Replay tool, you should re-install the astro-pi-replay library to make sure you have the latest version. To do this, remove the ~/.astro_pi_replay directory in your home folder (e.g. using the command rm -rf ~/.astro_pi_replay in a Terminal window) and then follow the instructions above, as if you had not installed astro-pi-replay before.You will need to close and restart Thonny for the installation to complete.The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.  {: width="50%"}  How to use the Astro Pi Replay plug-in  To run your code using the Astro Pi Replay plug-in, do not press the green Run button. Instead, open the Run menu, then click on Astro-Pi-Replay. This will run your code as if it was running on Astro Pi hardware.--- /collapse ---  Note: Although all of the functions of the picamzero library are available, many of the picamzero settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the Camera object are ignored. For example, setting the resolution attribute to anything other than (4056,3040) has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.Exploring alternative project guidesTo help you map out your scientific investigation, you can look at full project guides designed around specific telemetry and imaging methods. Use these resources for inspiration on how to capture, format, and evaluate your data sets:NDVI (Normalized Difference Vegetation Index) Guide: Learn how to process visual light data to analyze plant health, vegetation density, and environmental features across the Earth's surface.ISS Speed Guide: Learn how to track motion across successive image captures to calculate the relative speed of the Space Station in orbit.You can also test your scripts using historical data sets collected during previous challenge cycles:Astro Pi Mission Space Lab photosAstro Pi Mission Space Lab data sheetsSimulate running your program in real timeYou may prefer to get started by using the sense_hat and picamzero libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool online or with Thonny.Taking measurements with the Sense HATIn order to gather experimental metrics, you may wish to gather data from the sensors on the Sense HAT. Check out our Getting started with the Sense HAT project guide to learn how to do this.Taking photos with the cameraYou may also wish to use the camera to take photos of the Earth to use in your program. You can use our Getting started with the Camera Module project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny:Code snippet# Import the Camera class from the picamzero module
+
+--- task ---
+
+Make sure all file creation routines in your main.py use dynamic pathlib resolution instead of hardcoded folder strings.
+
+--- /task ---
+
+### Test your program with the Astro Pi Replay Tool
+
+The Astro Pi Replay Tool acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS. There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool.
+
+--- collapse ---
+---
+title: "Accessing the Astro Pi Replay Tool online"
+---
+
+The easiest way to test if your program will work on the ISS is to upload your `main.py` file to the online [Astro Pi Replay Tool](https://astro-pi-replay-online.astro-pi.org/). To upload your program, open the link and either drag and drop, or select, your `main.py` file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs. Make sure your program executes successfully within the simulator environment and produces cleanly populated output files.
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: "Installing Astro Pi Replay Tool on Raspberry Pi Bookworm"
+---
+
+If you are on Raspberry Pi OS Bookworm, please follow the instructions on how to configure Thonny to use a virtual environment on the [Raspberry Pi website](https://www.raspberrypi.com/documentation/computers/os.html#using-the-thonny-editor) before proceeding with the instructions below.
+
+To install the Astro Pi Replay tool, open Thonny, then click on **Tools > Manage plug-ins...,** and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
+
+Then, click on **Tools > Manage packages...,** and search for `astro-pi-replay`. Select the correct package, then press **Install**. 
+
+If you have taken part in Mission Space Lab before and have already downloaded the Astro Pi Replay tool, you should re-install the `astro-pi-replay` library to make sure you have the latest version. To do this, remove the `~/.astro_pi_replay` directory in your home folder (e.g. using the command `rm -rf ~/.astro_pi_replay` in a Terminal window) and then follow the instructions above, as if you had not installed `astro-pi-replay` before.
+
+**You will need to close and restart Thonny for the installation to complete.**
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
+The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.
+{: width="50%"}
+
+**How to use the Astro Pi Replay plug-in**
+
+To run your code using the Astro Pi Replay plug-in, do **not** press the green **Run** button. Instead, open the **Run** menu, then click on **Astro-Pi-Replay**. This will run your code as if it was running on Astro Pi hardware.
+
+</p>
+
+--- /collapse ---
+
+**Note**: Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
+
+### Exploring alternative project guides
+
+To help you map out your program, you can look at full project guides designed around specific telemetry and imaging methods. Use these resources for inspiration on how to capture, format, and evaluate your data sets: 
+
+[NDVI (Normalized Difference Vegetation Index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0) Guide: Learn how to process visual light data to analyze plant health, vegetation density, and environmental features across the Earth's surface. 
+[ISS Speed Guide:](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) Learn how to track motion across successive image captures to calculate the relative speed of the Space Station in orbit.
+
+You can also test your scripts using historical data sets collected during previous challenge cycles: [Astro Pi Mission Space Lab photos](https://www.flickr.com/photos/raspberrypi/collections/72157722152451877/)
+
+Astro Pi Mission Space Lab data sheetsSimulate running your program in real timeYou may prefer to get started by using the sense_hat and picamzero libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool online or with Thonny.Taking measurements with the Sense HATIn order to gather experimental metrics, you may wish to gather data from the sensors on the Sense HAT. Check out our Getting started with the Sense HAT project guide to learn how to do this.Taking photos with the cameraYou may also wish to use the camera to take photos of the Earth to use in your program. You can use our Getting started with the Camera Module project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny:Code snippet# Import the Camera class from the picamzero module
 from picamzero import Camera
 
 # Create an instance of the Camera class
