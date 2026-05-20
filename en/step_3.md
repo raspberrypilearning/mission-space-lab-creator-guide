@@ -34,7 +34,7 @@ dir_path = Path(__file__).parent.resolve()
 
 # Create a safe file path inside your project directory
 data_file = dir_path / "data01.csv"
-
+```
 --- task ---
 
 Make sure all file creation routines in your main.py use dynamic pathlib resolution instead of hardcoded folder strings.
