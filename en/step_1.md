@@ -1,7 +1,7 @@
 ## Introduction
-this guide is designed to help you and your team create your program for Mission Space Lab 2025/26. In this Mission, your task is to create a program that will gather data using an Astro Pi computer's sensors and visual light camera and use this data to calculate the speed at which the International Space Station (ISS) is travelling. We will provide you with lots of supporting materials to help you write and develop your program, including an example project using historical photos. We will also help you to adapt and test your program so that it can run for 10 minutes on board the ISS and produce a value for the speed of the ISS, in real time.
+This guide is designed to help you and your team create your program for the Mission Space Lab 2026/27 open challenge. In this Mission, your task is to design a Python program that will gather data using an Astro Pi computer's sensors and camera. We will provide you with supporting materials to help you write and develop your program, including guidance on different approaches. We will also provide resources to test your program so that it can run autonomously for 10 minutes on board the International Space Station (ISS) and record your findings.
 
-This is not a complete step-by-step guide on how to create a program that will solve the problem posed in this Mission. You and your team will need to come up with ideas and solutions and work out how to implement them.
+This is not a complete step-by-step guide on how to create your program. You and your team will need to come up with unique ideas, define your goals, and work out how to implement them.
 
 ![A sequence of photos of the Earth's surface taken by an Astro Pi computer.](images/Atlas.gif)
 
