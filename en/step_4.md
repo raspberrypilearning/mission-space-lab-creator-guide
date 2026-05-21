@@ -1,12 +1,8 @@
-## Optimising your program for the ISS
+## Resources and tips to help write your program
 
 This section will provide you with help with writing and testing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which of the sensors and/or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
 
-### Exploring alternative project guides
-
-To help you map out your program, you can look at full project guides designed around specific telemetry and imaging methods. Use these resources for inspiration on how to capture, format, and evaluate your data sets: 
-
-#### Testing with historical data
+### Testing with historical data
 
 You may wish to start by learning how to write a program using historical photos taken by teams in previous years with our [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide. Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
 
@@ -18,11 +14,11 @@ You may wish to start by learning how to write a program using historical photos
 Don't forget that you will only be able to use the visual light camera on the ISS this year.
 </p>
 
-#### Taking measurements with the Sense HAT 
+### Taking measurements with the Sense HAT 
 
 You may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
 
-#### Taking photos with the camera
+### Taking photos with the camera
 
 You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
 
@@ -46,7 +42,7 @@ The `picamzero` library supports a variety of features and camera settings. You 
 
 While all features of the `picamzero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
 
-#### Capturing sequences
+### Capturing sequences
 
 Using `picamzero` it is very simple to take a sequence of pictures by calling the `capture_sequence` function. The example below takes three pictures in succession, with a 3 second gap between each one.
 
@@ -63,7 +59,7 @@ cam.capture_sequence("sequence", num_images=3, interval=3)
 ```
 Run this code using [Astro Pi Replay online](https://rpf.io/replay)), or with the Thonny plug-in by clicking on **Run > Astro-Pi-Replay**.
 
-#### Numbering plans for images and files
+### Numbering plans for images and files
 
 When dealing with lots of files of the same type, it is a good idea to follow a naming convention. In the example above, we use an obvious sequence number — `image1.png`, `image2.png`, etc. — to keep our files organised.
 
@@ -76,11 +72,11 @@ Update your `main.py` file to capture images or Sense HAT data in real time.
 --- /task --- 
 
 
-#### Using NDVI (Normalized Difference Vegetation Index
+### Using NDVI (Normalized Difference Vegetation Index
 
 Learn how to process visual light data to analyze plant health, vegetation density, and environmental features across the Earth's surface using this project guide:  [NDVI (Normalized Difference Vegetation Index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0) 
 
-#### Finding the location of the ISS
+### Finding the location of the ISS
 
 You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where exactly an image was taken, and this is something you can do easily with the `astro_pi_orbit` and `exif` libraries available on the Astro Pis.
 
@@ -116,7 +112,7 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 You may prefer to get started by using the `sense_hat` and `picamzero` libraries and simulating running your program in real time. To simulate reading data from the Sense HAT and capturing photos from the camera, you will use the Astro Pi Replay tool online or with Thonny.
 
-#### Closing resources 
+### Closing resources 
 
 When your program, it is a good idea to close all resources that you have open. For example, close all files that you have open: 
 
@@ -185,9 +181,6 @@ To run your code using the Astro Pi Replay plug-in, do **not** press the green *
 
 **Note:** Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
-
-
-
 
 
 ### Preparing for the unexpected
