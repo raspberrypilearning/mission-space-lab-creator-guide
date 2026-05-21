@@ -66,7 +66,7 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 **Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be **10-2 =** `8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
 
-#### Use the correct directory structure for your data files
+#### 5. Use the correct directory structure for your data files
 
 When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system). 
 
