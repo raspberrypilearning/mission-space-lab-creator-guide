@@ -4,11 +4,13 @@ The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitt
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
-With an understanding of what the available sensors on the Astro Pis can do, think creatively about how to use them to find the speed of the ISS. Don't worry about getting everything perfect at first. Try to think of different ways, even if they seem unusual. Either by yourself or as a team, how many ways can you think of to calculate the speed using these tools?
+To collect data that captures interesting, dynamic environmental changes in orbit, you should focus your program on sensors like the **camera, gyroscope, magnetometer, accelerometer, or light/colour sensors**. Basic environmental metrics like **temperature and humidity** remain relatively constant inside the ISS cabin, and the **PIR movement sensor** only measures crew activity near the Astro Pi, and while you are permitted to use them, we advise that these sensors are not the focus of your program.
 
 --- task ---
 
-Come up with several different ways of calculating the speed of the ISS using the Astro Pi hardware. Be creative, and try to think out of the box. Once you have a few options, discuss them as a team and choose the one you think will give the most accurate result.
+Come up with several ideas or data-logging concepts you could explore using the Astro Pi hardware (such as mapping geographical features with the camera, or analyzing variations in Earth's magnetic fields). Be creative, and try to think outside the box. 
+
+Remember that **no astronaut interaction is permitted**; your program must run completely autonomously from start to finish. It cannot rely on joystick inputs or button presses. Once you have a few options, discuss them as a team and choose concept you want to develop.
 
 --- /task --- 
 
@@ -74,7 +76,7 @@ title: astro_pi_orbit
 ---
 #### Usage
 
-The `astro_pi_orbit` library provides The `astro_pi_orbit` library provides functionality to assist Astro Pi Mission Space Lab participants in working with orbital data. It can be used to:
+The `astro_pi_orbit` library provides functionality to assist Astro Pi Mission Space Lab participants in working with orbital data. It can be used to:
 
 1) Find the current location of the ISS
 2) Access the `de421` or `de440s` ephemeris files (the files are too big to supply by yourself)
