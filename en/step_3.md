@@ -1,4 +1,4 @@
-## Writing your program and resources to help
+## Writing your program
 
 This section will help you get started with writing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which of the sensors and/or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect to make your calculations.
 
@@ -10,15 +10,84 @@ To keep everything organised, create a folder to store all your project files. F
 
 --- /task --- 
 
-### The main.py file
+### What your program must do to achieve flight status
 
-Every submission must include a file named `main.py`. This is the file from which your program will run, and which will be tested by Astro Pi Mission Control. When you run the finished program, it should do everything you need to estimate the speed of the ISS. Start by making a file for your main program, and add in the code that you get working as you go along.
+To pass the strict automated checking process run by Astro Pi Mission Control and achieve official flight status on board the ISS, your code must meet a baseline set of criteria. If your code causes errors or fails to comply with these core operational requirements, it will not be able to run on board the ISS.
+
+#### 1. Write `main.py`
+
+Every submission must include a file named `main.py`. This is the file from which your program will run, and which will be tested by Astro Pi Mission Control. Ideally, all of your functional code should be contained within this file, though additional background files are permitted. The program should write all data to file and finish before your alloted 10 minute window has ended.
 
 --- task ---
 
 Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 --- /task --- 
+
+#### 2. Capture sensor data
+
+Your program must capture data from at least one of the on board sensors or the camera. You can record data from as many sensors as you like. You can run a more complex program if you wish, as long as there is at least one sensor used in the capture. It is not permitted, for example, to use only the Skyfield library to log the position of the ISS, as this data comes from a predicted list of positions, and does not receive the actual position data from a sensor.
+
+#### 3. Log to file
+
+All data that you want to keep must be written to a file so that it can be downloaded back to Earth. Please see the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) for a list of acceptable file formats.
+
+#### 4. Finish within your 10 minute time limit
+
+Every program run on the Astro Pis has a 10-minute time slot in daylight. Your program will need to keep track of the time and shut down gracefully before the 10 minutes are over to make sure no data is lost.
+
+One way to stop a Python program after a specific length of time is using the `datetime` Python library. This library makes it easy to work with times and compare them. 
+
+By recording and storing the time at the start of the experiment, we can then check repeatedly to see if the current time is greater than that start time plus a certain number of minutes, seconds, or hours. In the program below, this is used to print "Hello from the ISS" every second for 1 minute: 
+
+```Python
+from datetime import datetime, timedelta
+from time import sleep
+
+# Create a variable to store the start time
+start_time = datetime.now()
+# Create a variable to store the current time
+# (these will be almost the same at the start)
+now_time = datetime.now()
+# Run a loop for 1 minute
+while (now_time < start_time + timedelta(minutes=1)):
+    print("Hello from the ISS")
+    sleep(1)
+    # Update the current time
+    now_time = datetime.now()
+# Out of the loop — stopping
+```
+
+--- task ---
+
+Update your `main.py` file to make use of the `datetime` library to stop your program before the 10-minute time slot has finished.
+
+--- /task ---
+
+**Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be **10-2 =** `8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
+
+#### Use the correct directory structure for your data files
+
+When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system). 
+
+To ensure that your logged data and photos end up in the correct directory, you must find the active folder dynamically using the special `__file__` variable alongside the `pathlib` library:
+
+```python
+from pathlib import Path
+
+# Resolve the directory where main.py is currently running
+dir_path = Path(__file__).parent.resolve()
+
+# Create a safe file path inside your project directory
+data_file = dir_path / "data01.csv"
+```
+--- task ---
+
+Make sure all file creation routines in your main.py use dynamic pathlib resolution instead of hardcoded folder strings.
+
+--- /task ---
+
+## Resources to help you write your program
 
 ### Test your program with the Astro Pi Replay Tool
 
@@ -78,9 +147,9 @@ To run your code using the Astro Pi Replay plug-in, do **not** press the green *
 </p>
 
 
-### Calculating with historical data
+### Testing with historical data
 
-You may wish to start by learning how to write a program that estimates the speed of the ISS using photos with our [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide. Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
+You may wish to start by learning how to write a program using historical photos taken by teams in previous years with our [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide. Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
 
 
 - [Astro Pi Mission Space Lab 2022/23 photos](https://www.flickr.com/photos/raspberrypi/collections/72157722152451877/)
@@ -96,7 +165,7 @@ You may prefer to get started by using the `sense_hat` and `picamzero` libraries
 
 ### Taking measurements with the Sense HAT 
 
-In order to calculate the speed of the ISS, you may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
+You may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
 
 ### Taking photos with the camera
 
