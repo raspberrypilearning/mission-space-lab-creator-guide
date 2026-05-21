@@ -1,6 +1,6 @@
 ## Writing your program and resources to help
 
-This section will help you get started with writing your program, and provide links to alternative project pathways that will help you develop the coding skills you need for your experiment. You can choose which reference guides to look at depending on which sensors and camera features you plan to use in your scientific investigation. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what target data streams you are going to collect.
+This section will help you get started with writing your program, and provide links to alternative project pathways that will help you develop the coding skills you need for your experiment. You can choose which reference guides to look at depending on which sensors and camera features you plan to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what target data streams you are going to collect.
 
 We recommend that you start writing your program in small steps, and that you do not try to do everything at once. 
 
