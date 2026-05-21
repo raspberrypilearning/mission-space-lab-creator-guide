@@ -103,7 +103,6 @@ The easiest way to test if your program will work on the ISS is to upload your m
 
 To upload your program simply, open the link and either drag and drop, or select, your main.py file and click run. The Replay tool will run your program in full, and show you the images and data you have captured, along with any files that your program outputs. 
 
-**Make sure your program has an output with your final speed estimate in kms (kilometres per second).**
 --- /collapse --- 
 
 
@@ -252,42 +251,4 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 </p>
 
-### Writing your result file 
 
-For your submission to pass testing by Astro Pi Mission Control, your program needs to write a file called `result.txt` that contains your estimate for the speed of the ISS. This file must be in text file format (`.txt`), and will contain your estimate to up to five significant figures. Please do not include any other data in this file, including units e.g. `km/s`.
-
-```Python
-7.1235
-```
-*Example result.txt for an average speed estimate.*
-
-The following is an example of a program that will write a .txt file called `result.txt` with an estimated speed value in kilometres per second (km/s) to 5 significant figures. You will have to adapt this code to suit your particular program.
-
-```Python
-estimate_kmps = 7.1234567890  # Replace with your estimate
-
-# Format the estimate_kmps to have a precision 
-# of 5 significant figures
-estimate_kmps_formatted = "{:.4f}".format(estimate_kmps)
-
-# Create a string to write to the file
-output_string = estimate_kmps_formatted
-
-# Write to the file
-file_path = "result.txt"  # Replace with your desired file path
-with open(file_path, 'w') as file:
-    file.write(output_string)
-
-print("Data written to", file_path)
-```
---- task --- 
-
-Update your `main.py` file so that it writes a file called `result.txt` when it is executed.
-
---- /task --- 
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-
-Make sure to check the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook) for rules on files and file names.
-
-</p>
