@@ -4,7 +4,7 @@ The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitt
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
-To collect data that captures interesting, dynamic environmental changes in orbit, you should focus your program on sensors like the **camera, gyroscope, magnetometer, accelerometer, or light/colour sensors**. Basic environmental metrics like **temperature and humidity** remain relatively constant inside the ISS cabin, and the **PIR movement sensor** only measures crew activity near the Astro Pi, so we advise that these sensors are not the focus of your program.
+To collect data that captures interesting, dynamic environmental changes in orbit, you should focus your program on sensors like the **camera, gyroscope, magnetometer, accelerometer, or light/colour sensors**. Basic environmental metrics like **temperature and humidity** remain relatively constant inside the ISS cabin, and the **PIR movement sensor** only measures crew activity near the Astro Pi, and while you are permitted to use them, we advise that these sensors are not the focus of your program.
 
 --- task ---
 
