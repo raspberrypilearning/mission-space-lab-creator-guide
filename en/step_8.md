@@ -7,9 +7,9 @@ There are a wealth of resources available to help you succeed at every stage of 
 Stuck? Please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
 </p>
 
-- [Getting started with PiCamera Moddule](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
+- [Getting started with PiCamera Module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
+- [Getting started with SenseHAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) 
 - [SenseHAT Data Logger](https://projects.raspberrypi.org/en/projects/sense-hat-data-logger)
-- [SenseHAT data logger](https://projects.raspberrypi.org/en/projects/sense-hat-data-logger) 
 - [Capture plant health with NDVI and Raspberry Pi](https://projects.raspberrypi.org/en/projects/astropi-ndvi)
 - [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed)
 - [Print a 3D Astro Pi flight case](https://projects.raspberrypi.org/en/projects/astro-pi-flight-case-mk2)
