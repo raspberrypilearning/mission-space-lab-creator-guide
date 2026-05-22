@@ -1,6 +1,6 @@
 ## Writing your program
 
-For astronauts, working in space means working under some very strict constraints, and the same applies to you! This section sets out how to ensure your code behaves as expected while running on the ISS, and how to manage things like resources and errors.
+Conducting science experiments in space means working under some very strict constraints. This applies to astronauts and to you! This section sets out how to ensure your code behaves as expected while running on the ISS, and how to manage things like resources and errors.
 
 We recommend that you start writing your program in small steps, and that you do not try to do everything at once. 
 
