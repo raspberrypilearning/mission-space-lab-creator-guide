@@ -12,7 +12,7 @@ To keep everything organised, create a folder to store all your project files. F
 
 ### What your program must do to achieve flight status
 
-To pass the strict automated checking process run by Astro Pi Mission Control and achieve official flight status on board the ISS, your code must meet a baseline set of criteria. If your code causes errors or fails to comply with these core operational requirements, it will not be able to run on board the ISS.
+Your code must meet a baseline set of criteria to pass the strict checking process run by Astro Pi Mission Control. If you pass then you will achieve official **flight status** and have your program run aboard the ISS. If your code causes errors or fails to comply with these core operational requirements, it will not run on the ISS. 
 
 #### 1. Write `main.py`
 
@@ -26,7 +26,7 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 #### 2. Capture sensor data
 
-Your program must capture data from at least one of the on board sensors or the camera. You can record data from as many sensors as you like. You can run a more complex program if you wish, as long as there is at least one sensor used in the capture. It is not permitted, for example, to use only the Skyfield library to log the position of the ISS, as this data comes from a predicted list of positions, and does not receive the actual position data from a sensor.
+Your program must capture data from at least one of the on board sensors or the camera. You can record data from as many sensors as you like. You can run a more complex program if you wish, as long as there is at least one sensor used in the capture. It is not permitted, for example, to use only the Skyfield library to log the position of the ISS, as this data comes from a predicted list of positions, and does not receive the actual position data from a sensor. This is particularly relevant if you are using it to calculate the speed of the ISS. 
 
 #### 3. Log to file
 
