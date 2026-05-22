@@ -254,3 +254,13 @@ We recommend that you always use the `logzero` library (for logging important ev
 </p>
 
 Once you have finished writing your program and you believe it provides the ISS speed estimate in the correct format and follows best practices like logging and handling errors, it is crucial to thoroughly test your program using the Astro Pi Replay Tool.
+
+### Averages 
+
+If your program calculates multiple readings from your sensor data (for example, by calculating the speed from sequences of two photos), then you may need to decide how to reduce these estimates into an averaged number. If you used a simple average ([mean](https://en.wikipedia.org/wiki/Mean)), could you explore the accuracy of other statistical measures, such as the median and other percentiles?
+
+There is a lot of scope for being creative when improving the accuracy of your data. One method is to be selective about which photos or data you use in your calculations. If you can determine that a specific sequence of data is the most reliable, then you could weight this data more highly in your final calculations. 
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
+Be cautious about training your program to be oversensitive to the exact sequence shown when using Astro Pi Replay — the sequence on the ISS will be different, and you want your program to be accurate on the ISS most of all!
