@@ -89,20 +89,9 @@ Make sure all file creation routines in your main.py use dynamic pathlib resolut
 
 #### 6. Choose your experiment
 
-There are many possibilities for the types of experiments you may choose to conduct using the Astro Pi sensors and cameras. To help you get started, here are a few examples of projects that Mission Space Lab teams did in the past: 
+There are many possible experiments you can conduct using the Astro Pi sensors and cameras. To help give you an idea of what's possible, here are a few examples of projects that Mission Space Lab teams did in the past: 
 
 - [Analysing vegetation using NDVI analysis and image stitching](https://esamultimedia.esa.int/docs/edu/aretusa.pdf)
 - [Identifying seaweed rafts in the Oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
 - [Measuring the Earth's magenetic field](https://esamultimedia.esa.int/docs/edu/dahspace.pdf)
-- [Analysing cloud types](https://esamultimedia.esa.int/docs/edu/t5clouds.pdf) 
-
-#### 7. Some useful project guides to help you get started
-
-There are lots of materials available to help you get writing the code you need for your experiments. If any of those reports have sparked some ideas then the following project guides will help you write the code you need. 
-
-- [Getting started with SenseHat](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat/0)
-- [Getting started with PiCamera module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
-- [SenseHat Data logger](https://projects.raspberrypi.org/en/projects/sense-hat-data-logger)
-- [Measuring the Speed that the ISS is travelling using cameras](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0)
-- [Capture plant health with NDVI and Raspberry Pi](https://projects.raspberrypi.org/en/projects/astropi-ndvi)
-- [Flight data analysis](https://projects.raspberrypi.org/en/projects/astro-pi-flight-data-analysis)
+- [Analysing cloud types](https://esamultimedia.esa.int/docs/edu/t5clouds.pdf)
