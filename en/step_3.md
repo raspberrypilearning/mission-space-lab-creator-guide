@@ -91,8 +91,8 @@ Make sure all file creation routines in your main.py use dynamic pathlib resolut
 
 There are many possibilities for the types of experiments you may choose to conduct using the Astro Pi sensors and cameras. To help you get started, here are a few examples of projects that Mission Space Lab teams did in the past: 
 
-- [Analysing vegegation using NDVI analysis and image stiching](https://esamultimedia.esa.int/docs/edu/aretusa.pdf)
-- [Identifying seaweed rafts in the oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
+- [Analysing vegetation using NDVI analysis and image stitching](https://esamultimedia.esa.int/docs/edu/aretusa.pdf)
+- [Identifying seaweed rafts in the Oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
 - [Measuring the Earth's magenetic field](https://esamultimedia.esa.int/docs/edu/dahspace.pdf)
 - [Analysing cloud types](https://esamultimedia.esa.int/docs/edu/t5clouds.pdf) 
 
