@@ -7,6 +7,12 @@ There are a wealth of resources available to help you succeed at every stage of 
 Stuck? Please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
 </p>
 
+- [Getting started with PiCamera Moddule](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
+- [SenseHAT Data Logger](https://projects.raspberrypi.org/en/projects/sense-hat-data-logger)
+- [SenseHAT data logger](https://projects.raspberrypi.org/en/projects/sense-hat-data-logger) 
+- [Capture plant health with NDVI and Raspberry Pi](https://projects.raspberrypi.org/en/projects/astropi-ndvi)
+- [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed)
+- [Print a 3D Astro Pi flight case](https://projects.raspberrypi.org/en/projects/astro-pi-flight-case-mk2)
 - The [OpenCV Python tutorials](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) explain how to do all sorts of cool things like machine learning, edge detection, and object tracking.
 - The [EarthPy examples gallery](https://earthpy.readthedocs.io/en/latest/gallery_vignettes/index.html) walks you through how to process satellite imagery.
 - This [GitHub page](https://github.com/orbitalindex/awesome-space) contains a curated list of space-related resources.
