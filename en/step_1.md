@@ -40,7 +40,7 @@ To complete this project, you will need:
 - **An internet connection.** You will need to access the internet to test and submit your program.
 - **A code editor.** This is where you will write and edit your Python code. Any text editor will work, but we recommend using a dedicated code editor like Thonny. In this guide, we will be using instructions for Thonny.
 
-- #### 6. Choose your experiment
+### What you could you make? 
 
 The Astro Pi computers offer lots of possibilities for different science projects. To illustrate what's possible, here are a few selected examples of projects that Mission Space Lab teams designed in the past: 
 
