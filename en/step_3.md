@@ -20,62 +20,37 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 Your program must use at least one on-board sensor or the camera to capture data (you can use more if you wish). Programs that rely solely on external libraries to predict data — such as using the Skyfield library to look up the ISS position — do not qualify as using sensor data.
 
-#### 3. Log to file
+##### Taking measurements with the Sense HAT 
+
+You may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
+
+##### Taking photos with the camera
+
+You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
+
+Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny: 
+```Python
+# Import the Camera class from the picamzero module
+from picamzero import Camera
+
+# Create an instance of the Camera class
+cam = Camera()
+
+# Capture an image
+cam.take_photo("image1.jpg")
+```
+
+This will simulate taking a picture on the ISS and save it in a file called `image1.jpg`. If you open this file, you should see the exact photo below. 
+
+![Photo of clouds above land.](images/image1.jpg)
+
+The `picamzero` library supports a variety of features and camera settings. You can see some examples by going to the ['Recipes' page](https://raspberrypifoundation.github.io/picamzero/recipes/) on the picamzero website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
+
+While all features of the `picamzero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
+
+#### 3. Log data to file
 
 All data that you want to keep must be written to a file so that it can be downloaded back to Earth. Please see the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) for a list of acceptable file formats.
-
-The `logzero` Python library makes it easy to monitor what's going on in your program. You can log as much information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`).
-
-Here's a basic example of how logzero can be used to keep track of loop iterations:
-
-```python
-from logzero import logger, logfile
-from pathlib import Path
-from time import sleep
-
-base_folder = Path(__file__).parent.resolve()
-logfile(base_folder/"events.log")
-
-for i in range(10):
-    logger.info(f"Loop number {i+1} started")
-    ...
-    sleep(60)
-```
-
-The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when you experience an unexpected error or handle an exception. There's also `logger.warning()` and `logger.debug()`.
-
-For example, if you had a function to detect night or dark from photos, you could log this information too:
-
-```python
-for i in range(10):
-    if night_or_dark() == 'night':
-        logger.info('night - wait 60 seconds')
-        sleep(60)
-    else:
-        ...
-```
-
-If you want to handle an exception, but log that you did so, you can use `logger.error`:
-
-```python
-try:
-    do_something()
- except Exception as e:
-    logger.error(f'{e.__class__.__name__}: {e})')
-```
-
-For example, dividing by zero in `do_something` would create the following log entry:
-
-```txt
-[E 190423 00:04:16 test:9] ZeroDivisionError: division by zero
-```
-
-Your program would continue without crashing, but rather than seeing no log entry, you see that an error occurred at this time.
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-It's a good idea to use **both** the `csv` library (for recording experiment data) and the `logzero` library (for logging important events that take place during your experiment).
-</p>
-
 
 #### 4. Finish within your 10 minute time limit
 
