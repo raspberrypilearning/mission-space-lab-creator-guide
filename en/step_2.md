@@ -1,14 +1,12 @@
 ## The Astro Pi computers
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers with Sense HAT add-on boards and cameras attached. They are housed in custom aluminium flight cases. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with powerful Raspberry Pi High Quality Cameras with 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
-To collect data that captures interesting, dynamic environmental changes in orbit, you should focus your program on sensors like the **camera, gyroscope, magnetometer, accelerometer, or light/colour sensors**. Basic environmental metrics like **temperature and humidity** remain relatively constant inside the ISS cabin, and the **PIR movement sensor** only measures crew activity near the Astro Pi, and while you are permitted to use them, we advise that these sensors are not the focus of your program.
+To collect data that captures interesting, dynamic environmental changes in orbit, you should focus your program on sensors like the **camera, gyroscope, magnetometer, accelerometer, or light/colour sensors**. Basic environmental metrics like **temperature and humidity** remain relatively constant inside the ISS cabin, and the **PIR movement sensor** only measures crew activity near the Astro Pi. While you are permitted to use them, we advise that these sensors are not the focus of your program.
 
 --- task ---
-
-Come up with several ideas or data-logging concepts you could explore using the Astro Pi hardware (such as mapping geographical features with the camera, or analyzing variations in Earth's magnetic fields). Be creative, and try to think outside the box. 
 
 Remember that **no astronaut interaction is permitted**; your program must run completely autonomously from start to finish. It cannot rely on joystick inputs or button presses. Once you have a few options, discuss them as a team and choose concept you want to develop.
 
