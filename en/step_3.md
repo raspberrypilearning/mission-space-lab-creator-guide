@@ -1,14 +1,6 @@
-## Writing your program
-
-Conducting science experiments in space means working under some very strict constraints. This applies to astronauts and to you! This section sets out how to ensure your code behaves as expected while running on the ISS, and how to manage things like resources and errors.
+## Minimum requirements for your program
 
 We recommend that you start writing your program in small steps, and that you do not try to do everything at once. 
-
---- task ---
-
-To keep everything organised, create a folder to store all your project files. For the name of the folder, you may wish to use your team name.
-
---- /task --- 
 
 ### What your program must do to achieve flight status
 
@@ -26,19 +18,76 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 #### 2. Capture sensor data
 
-Your program must capture data from at least one of the on board sensors or the camera. You can record data from as many sensors as you like. You can run a more complex program if you wish, as long as there is at least one sensor used in the capture. It is not permitted, for example, to use only the Skyfield library to log the position of the ISS, as this data comes from a predicted list of positions, and does not receive the actual position data from a sensor. This is particularly relevant if you are using it to calculate the speed of the ISS. 
+Your program must use at least one on-board sensor or the camera to capture data (you can use more if you wish). Programs that rely solely on external libraries to predict data — such as using the Skyfield library to look up the ISS position — do not qualify as using sensor data.
 
 #### 3. Log to file
 
 All data that you want to keep must be written to a file so that it can be downloaded back to Earth. Please see the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) for a list of acceptable file formats.
 
+The `logzero` Python library makes it easy to monitor what's going on in your program. You can log as much information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`).
+
+Here's a basic example of how logzero can be used to keep track of loop iterations:
+
+```python
+from logzero import logger, logfile
+from pathlib import Path
+from time import sleep
+
+base_folder = Path(__file__).parent.resolve()
+logfile(base_folder/"events.log")
+
+for i in range(10):
+    logger.info(f"Loop number {i+1} started")
+    ...
+    sleep(60)
+```
+
+The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when you experience an unexpected error or handle an exception. There's also `logger.warning()` and `logger.debug()`.
+
+For example, if you had a function to detect night or dark from photos, you could log this information too:
+
+```python
+for i in range(10):
+    if night_or_dark() == 'night':
+        logger.info('night - wait 60 seconds')
+        sleep(60)
+    else:
+        ...
+```
+
+If you want to handle an exception, but log that you did so, you can use `logger.error`:
+
+```python
+try:
+    do_something()
+ except Exception as e:
+    logger.error(f'{e.__class__.__name__}: {e})')
+```
+
+For example, dividing by zero in `do_something` would create the following log entry:
+
+```txt
+[E 190423 00:04:16 test:9] ZeroDivisionError: division by zero
+```
+
+Your program would continue without crashing, but rather than seeing no log entry, you see that an error occurred at this time.
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+It's a good idea to use **both** the `csv` library (for recording experiment data) and the `logzero` library (for logging important events that take place during your experiment).
+</p>
+
+
 #### 4. Finish within your 10 minute time limit
 
-Every program run on the Astro Pis has a 10-minute time slot in daylight. Your program will need to keep track of the time and shut down gracefully before the 10 minutes are over to make sure no data is lost.
+Each program runs for exactly 10 minutes during ISS daylight hours. Your program must track this time and close automatically before the 10 minutes end so you do not lose any data.
 
-One way to stop a Python program after a specific length of time is using the `datetime` Python library. This library makes it easy to work with times and compare them. 
+You can use the Python `datetime` library to stop your program automatically. Here is how it works:
 
-By recording and storing the time at the start of the experiment, we can then check repeatedly to see if the current time is greater than that start time plus a certain number of minutes, seconds, or hours. In the program below, this is used to print "Hello from the ISS" every second for 1 minute: 
+1. Save the exact time your experiment starts.
+2. Check the current time repeatedly during the experiment.
+3. Stop the program safely when the current time reaches your start time plus 10 minutes.
+
+In the program below, this is used to print "Hello from the ISS" every second for 1 minute: 
 
 ```Python
 from datetime import datetime, timedelta
