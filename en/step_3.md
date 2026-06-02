@@ -6,7 +6,7 @@ We recommend that you start writing your program in small steps, and that you do
 
 Your code must meet a baseline set of criteria to pass the strict checking process run by Astro Pi Mission Control. If you pass then you will achieve official **flight status** and have your program run aboard the ISS. If your code causes errors or fails to comply with these core operational requirements, it will not run on the ISS. 
 
-#### 1. Write `main.py`
+#### 1. Write your main.py file
 
 Every submission must include a file named `main.py`. This is the file from which your program will run, and which will be tested by Astro Pi Mission Control. Ideally, all of your functional code should be contained within this file, though additional background files are permitted. The program should write all data to file and finish before your alloted 10 minute window has ended.
 
