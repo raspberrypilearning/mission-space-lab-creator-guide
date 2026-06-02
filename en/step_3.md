@@ -86,12 +86,3 @@ data_file = dir_path / "data01.csv"
 Make sure all file creation routines in your main.py use dynamic pathlib resolution instead of hardcoded folder strings.
 
 --- /task ---
-
-#### 6. Choose your experiment
-
-There are many possible experiments you can conduct using the Astro Pi sensors and cameras. To help give you an idea of what's possible, here are a few examples of projects that Mission Space Lab teams did in the past: 
-
-- [Analysing vegetation using NDVI analysis and image stitching](https://esamultimedia.esa.int/docs/edu/aretusa.pdf)
-- [Identifying seaweed rafts in the Oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
-- [Measuring the Earth's magenetic field](https://esamultimedia.esa.int/docs/edu/dahspace.pdf)
-- [Analysing cloud types](https://esamultimedia.esa.int/docs/edu/t5clouds.pdf)
