@@ -20,11 +20,11 @@ Create a new file in Thonny and **Save as** `main.py` in your project folder.
 
 Your program must use at least one on-board sensor or the camera to capture data (you can use more if you wish). Programs that rely solely on external libraries to predict data — such as using the Skyfield library to look up the ISS position — do not qualify as using sensor data.
 
-##### Taking measurements with the Sense HAT 
+#### Taking measurements with the Sense HAT 
 
 You may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
 
-##### Taking photos with the camera
+#### Taking photos with the camera
 
 You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
 
