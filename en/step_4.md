@@ -1,34 +1,7 @@
-## Resources and tips to help write your program
+## Pro tips to improve your program
 
 This section will provide you with help with writing and testing your program, and provide links to other project guides that will help you develop some of the coding skills you may need. You can choose which project guides you want to look at depending on which of the sensors and/or camera you are going to use in your program. At this point, you should have already spent some time with your team and your team mentor to plan your program, and have decided what data you are going to collect and save. 
 
-### Taking measurements with the Sense HAT 
-
-You may wish to gather data from the sensors on the Sense HAT. Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn how to do this.
-
-### Taking photos with the camera
-
-You may also wish to use the camera to take photos of the Earth to use in your program. You can use our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn how to do this. However, if you do not have a Raspberry Pi and High Quality Camera to test your code on, you can still run the same code using the Astro Pi Replay Tool.
-
-Here is an example of a simple program to test the Astro Pi Replay plug-in, if you are using the offline version in Thonny: 
-```Python
-# Import the Camera class from the picamzero module
-from picamzero import Camera
-
-# Create an instance of the Camera class
-cam = Camera()
-
-# Capture an image
-cam.take_photo("image1.jpg")
-```
-
-This will simulate taking a picture on the ISS and save it in a file called `image1.jpg`. If you open this file, you should see the exact photo below. 
-
-![Photo of clouds above land.](images/image1.jpg)
-
-The `picamzero` library supports a variety of features and camera settings. You can see some examples by going to the ['Recipes' page](https://raspberrypifoundation.github.io/picamzero/recipes/) on the picamzero website, but be mindful that if your code is run on the ISS, it will be taking pictures of a variety of weather conditions with a range of clouds, landscapes, and lighting. However, your program is always guaranteed to be run in daylight.
-
-While all features of the `picamzero` library will be available on the Astro Pi in space, not all can be simulated by the Astro Pi Replay Tool.
 
 ### Capturing sequences
 
@@ -96,16 +69,12 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 </p>
 
-### Testing with historical data
+### Calculating the speed of the ISS 
 
 You may wish to start by learning how to write a program using historical photos taken by teams in previous years with our [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide. Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
 
 - [Astro Pi Mission Space Lab 2022/23 photos](https://www.flickr.com/photos/raspberrypi/collections/72157722152451877/)
 - [Astro Pi Mission Space Lab 2022/23 data](https://docs.google.com/spreadsheets/d/1RjPEp2IHVB6For65wuUQdWntsg1H5sHWpYUtLzK9LCM/edit?usp=sharing)
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-Don't forget that you will only be able to use the visual light camera on the ISS this year.
-</p>
 
 ### Simulate running your program in real time
 
