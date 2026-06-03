@@ -1,6 +1,6 @@
 ## Getting Started
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers with Sense HAT add-on boards and cameras attached. They are housed in custom aluminium flight cases. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with powerful Raspberry Pi High Quality Cameras with 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers with Sense HAT add-on boards and cameras attached. They are housed in custom aluminium flight cases. The Sense HAT (V2) has sensors for temperature, humidity, light/colour and a gyroscope, magnetometer, and accelerometer, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with Raspberry Pi High Quality Cameras with 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
@@ -8,22 +8,19 @@ To collect data that captures interesting, dynamic environmental changes in orbi
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
-Remember that **no astronaut interaction is permitted**; your program must run completely autonomously from start to finish. It cannot rely on joystick inputs or button presses. Once you have a few options, discuss them as a team and choose concept you want to develop.
-
+Remember that your program must run completely autonomously from start to finish, and cannot rely on joystick inputs or button presses from an astronaut.
 </p>
 
-There are many different Python libraries available that can help you with your project, and some that you cannot use for security reasons. You do not have to use all of the Python libraries in this section, only the ones that will help your program perform the way you want it to. 
 
 ### The Astro Pi Python environment
 
-The Astro Pi computers on the ISS have Python version 3.13 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer that do not work on the Astro Pis.
+The Astro Pi computers on the ISS have Python version 3.13 installed. If you are using a higher version, be aware that there may be some new functions that work on your computer that do not work on the Astro Pis.
 
-There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them, your program will not be accepted:
+There are some restrictions on which parts of the standard library that you can use. The following [disallowed libraries](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit) are not allowed, and if you do use them your program will not be accepted.
 
-[Disallowed libraries](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit)
+Alongside the Python standard libraries, the Astro Pis have extra packages installed to help you complete the Mission. Each one is explained briefly below with examples. There are also links for more details if you need them.
 
-Alongside the Python standard environment, the Astro Pis have extra libraries installed to help you complete the Mission. Each one is explained briefly below with examples. There are also links for more details if you need them. Remember to bookmark this page for later!
-
+There are many different Python libraries available that can help you with your project, and some that you cannot use for security reasons. You do not have to use all of the Python libraries in this section, only the ones that will help your program perform the way you want it to. 
 
 --- collapse ---
 ---
@@ -49,7 +46,7 @@ barycentric = mars.at(ts.now())
 print(barycentric)
 ```
 
-This snippet works but the ephemeris file (`de421.bsp`) is too big to submit in your final payload! To get around this, import the ephemeris from the `astro_pi_orbit` library, which will take care of importing the file for you:
+This snippet works but the ephemeris file (`de421.bsp`) is too big to submit in your final payload. To get around this, import the ephemeris from the `astro_pi_orbit` library, which will take care of importing the file for you:
 
 ```python
 from skyfield.api import load
@@ -111,7 +108,7 @@ for i in range(3*60):
 - [https://raspberrypifoundation.github.io/picamzero](https://raspberrypifoundation.github.io/picamzero)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay tool, either online or offline. To install picamzero on a Raspberry Pi, open the Shell in Thonny and run:
+The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay tool, either online or offline. To install picamzero on a Raspberry Pi, open the shell in Thonny and run:
 ```
 pip install picamzero
 ```
@@ -454,6 +451,10 @@ Select the correct file from the search results, then press **Install**.
 ![Screenshot of the package manager in Thonny, showing the "skyfield" library and the 'Install' button.](images/skyfield_2.png)
 
 If you are using a different IDE to write your code, you will need to follow local instructions for downloading the libraries you want from [PyPi](https://pypi.org/).
+
+
+If you 
+<!-- # TODO add --> 
 
 ### Looking ahead
 

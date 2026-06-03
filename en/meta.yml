@@ -11,8 +11,8 @@ steps:
 - title: "Getting started"
   completion:
     - engaged
-- title: "Minimum requirements for writing your program"
-- title: "Pro tips for improving your program"
+- title: "Writing your program"
+- title: "Improving your program"
 - title: "Testing your program"
 - title: "Submitting your work"
   completion:
