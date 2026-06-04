@@ -3,8 +3,6 @@ In Mission Space Lab your task is to write a Python program that will gather and
 
 This is not a complete step-by-step guide on how to create your program. You and your team will need to make decisions about what you want your code to do and work out how to implement them.
 
-In this guide we provide example code for using the sensors and cameras, plus links to related project guides to help you build a working program that completes within the 10 minute time limit. 
-
 ![A sequence of photos of the Earth's surface taken by an Astro Pi computer.](images/Atlas.gif)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
@@ -14,8 +12,6 @@ Head over to the [Astro Pi website](https://astro-pi.org/mission-space-lab/) for
 </p>
 
 Answers to many of the questions that arise can probably be found by searching online, and we encourage you to do some research and try out different solutions if you get stuck. We will also be running two livestreams where you can ask questions to the Astro Pi Mission Control team. 
-
-There are a wealth of resources available to help you succeed at every stage of your Astro Pi journey.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
