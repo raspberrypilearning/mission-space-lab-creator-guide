@@ -75,10 +75,11 @@ To test your program and simulate it running aboard the ISS, go to the [Astro Pi
 Your code should complete within 10 minutes.
 
 When it has finished, check how well your program performed by looking at the following items;
-[] Did yoru program create a file of the data you wanted to capture in your project folder?
-[] Where any other output files created by your project? 
-[] Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? 
-[] Check your logs for any errors.
+
+[ ] Did your program create a file of the data you wanted to capture in your project folder?
+[ ] Where any other output files created by your project? 
+[ ] Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? 
+[ ] Check your logs for any errors.
 
 If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
 
