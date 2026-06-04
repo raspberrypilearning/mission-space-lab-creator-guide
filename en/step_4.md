@@ -1,12 +1,12 @@
 # Enhancing your program
 
-This section provide tips for improving your program and links to other project guides that will help you use the data and images you will log to investigate certain scientific phenomena. You are not limited to these ideas though - you are free to conduct any scientific experiment you want, providing your program adheres to the Rulebook.
+This section provide tips for improving your program and links to other project guides that will help you use the data and images you will log to investigate certain scientific phenomena. You are not limited to these ideas though - you are free to conduct any scientific experiment you want, providing your program adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook)
 
 ## Predict the location of the ISS
 
 You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where in orbit an image was taken, and this is something you can do easily with the `astro_pi_orbit` and `exif` libraries available on the Astro Pis.
 
-The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `gps_image1.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
+The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `image_with_coordinates.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
 
 ```Python
 from astro_pi_orbit import ISS
@@ -14,7 +14,7 @@ from picamzero import Camera
 
 iss = ISS()
 
-def get_gps_coordinates(iss):
+def get_predicted_latlon_coordinates(iss):
     """
     Returns a tuple of latitude and longitude coordinates expressed
     in signed degrees minutes seconds.
@@ -23,19 +23,12 @@ def get_gps_coordinates(iss):
     return (point.latitude.signed_dms(), point.longitude.signed_dms())
 
 cam = Camera()
-cam.take_photo("gps_image1.jpg", gps_coordinates=get_gps_coordinates(iss))
+cam.take_photo("image_with_coordinates.jpg", gps_coordinates=get_predicted_latlon_coordinates(iss))
 ```
 
-You will need to use the [Astro Pi Replay tool](https://rpf.io/replay)
-to run this snippet.
+You will need to use the [Astro Pi Replay tool](https://rpf.io/replay) to run this snippet.
 
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-  
-Note that the latitude and longitude are `Angle` objects while the elevation is a `Distance`. The Skyfield documentation describes [how to switch between different angle representations](https://rhodesmill.org/skyfield/api-units.html#skyfield.units.Angle) and [how to express distance in different units](https://rhodesmill.org/skyfield/api-units.html#skyfield.units.Distance).
-
-</p>
-
-## Capturing sequences
+## Capturing sequences of images
 
 Using `picamzero` it is very simple to take a sequence of pictures by calling the `capture_sequence` function. The example below takes three pictures in succession, with a 3 second gap between each one:
 
@@ -49,38 +42,21 @@ cam = Camera()
 
 cam.capture_sequence("sequence", num_images=3, interval=3)
 ```
-Run this code using the [Astro Pi Replay Tool](https://rpf.io/replay)), and you should see that it takes 3 images.
+Run this code using the [Astro Pi Replay Tool](https://rpf.io/replay), and you should see that it takes 3 images.
 
 ## Numbering plans for images and files
 
-When dealing with lots of files of the same type, it is a good idea to follow a naming convention. In the example above, we use an obvious sequence number — `image1.png`, `image2.png`, etc. — to keep our files organised.
+When dealing with lots of files of the same type, it is a good idea to follow a naming convention. We recommend that you use an obvious sequence number that is padded with leading zeros - `image01.png`, `image02.png`, _etc._ - to keep your files organised.  You can use this code snippet to pad a number with leading zeros:
 
-If you need more help with using the camera, check out the ['Take still pictures with Python code' step](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/5) in our 'Getting started with the Camera Module' project guide.
-
-
-## Closing resources 
-
-When your program exits it is a good idea to close all resources that you have open. For example, close all files that you have open: 
-
-```Python
-file = open(file)
-file.close()
+```python
+file_number = 1
+filename = f"image_{file_number:03d}.jpg"
+print(filename)
 ```
---- task --- 
-
-Review your `main.py` file and update it so that it closes all resources appropriately.
-
---- /task --- 
-
-## Dealing with Errors and Exceptions
-
-When Python encounters an error, it will throw either an `Error` or an `Exception`. This can be very frustrating, as it will cause your program to crash. With some foresight and planning, though, it is possible for your program to deal with these issues instead of crashing and potentially losing the chance to capture data and images on the ISS. 
-
-Visit Ada Computer Science to learn more about [exception handling](https://adacomputerscience.org/concepts/design_exception?examBoard=all&stage=gcse).
 
 ## File buffering
 
-When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, we can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
+When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, you can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
 
 ```Python
 with open("some_file.txt", "w", buffering=1) as f:
@@ -88,15 +64,21 @@ with open("some_file.txt", "w", buffering=1) as f:
 ```
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-  
+
 **Note:** If you are writing bytes to a file (with argument `"wb"`), then you should tell Python to not use a buffer at all and to write the data to disk immediately. You can do this by setting the `buffering` argument to `0`.
 </p>
 
---- task --- 
+## Dealing with Errors and Exceptions
+
+When Python encounters an error, it will throw either an `Error` or an `Exception`. This can be very frustrating, as it will cause your program to crash. With some foresight and planning, though, it is possible for your program to deal with these issues instead of crashing and potentially losing the chance to capture data and images on the ISS.
+
+Visit Ada Computer Science to learn more about [exception handling](https://adacomputerscience.org/concepts/design_exception?examBoard=all&stage=gcse).
+
+--- task ---
 
 Review your program and consider if you need to set the buffering mode when writing to a file.
 
---- /task --- 
+--- /task ---
 
 ## Logging
 
@@ -120,10 +102,24 @@ The two main types of log entry you can use are `logger.info()` to log informati
 
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-  
+
 We recommend that you always use the `logzero` library (for logging important events that take place during your experiment), even if you also write sensor data to a file.
 
 </p>
+
+## Closing resources
+
+When your program exits it is a good idea to close all resources that you have open. For example, close all files that you have open:
+
+```Python
+file = open(file)
+file.close()
+```
+--- task ---
+
+Review your `main.py` file and update it so that it closes all resources appropriately.
+
+--- /task ---
 
 
 ## Using your data
@@ -132,10 +128,10 @@ If you want to, you can use the data and images that you have captured to conduc
 
 ### Using NDVI (Normalized Difference Vegetation Index
 
-Learn how to process visual light data to analyze plant health, vegetation density, and environmental features across the Earth's surface using this project guide:  [NDVI (Normalized Difference Vegetation Index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0) 
+Learn how to process visual light data to analyze plant health, vegetation density, and environmental features across the Earth's surface using this project guide:  [NDVI (Normalized Difference Vegetation Index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0)
 
 
-### Calculating the speed of the ISS 
+### Calculating the speed of the ISS
 
 You may wish to start by learning how to write a program using historical photos taken by teams in previous years with our [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide. Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
 

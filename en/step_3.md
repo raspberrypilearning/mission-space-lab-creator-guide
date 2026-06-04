@@ -10,13 +10,13 @@ Every submission must include a file named `main.py`. This file acts as the "lau
 
 Create a new file called `main.py` in your project folder and save it.
 
---- /task --- 
+--- /task ---
 
 ## 2. Capture sensor data
 
 Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Programs that rely solely on external libraries to predict data — such as using the `skyfield` library to look up the ISS position — do not qualify as using sensor data.
 
-### Taking measurements with the Sense HAT 
+### Taking measurements with the Sense HAT
 
 To gather environmental data from the ISS, you can use the sensors on the Sense HAT. Here is an example of a simple program that takes a colour and light-level reading:
 
@@ -40,7 +40,7 @@ camera = Camera()
 camera.take_photo("image.jpg")
 ```
 
-Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn more about how to use the camera. 
+Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn more about how to use the camera.
 
 ![Photo of clouds above land.](images/image1.jpg)
 
@@ -53,7 +53,7 @@ import csv
 
 data = 42
 with open("data.csv", "w") as csvfile:
-   writer = csv.writer(csvfile), 
+   writer = csv.writer(csvfile),
    writer.writerow([str(data)])
 ```
 
@@ -61,7 +61,7 @@ with open("data.csv", "w") as csvfile:
 
 ⚠️ There are strict rules about the types of files you are allowed to save. Make sure to check the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) to see which file types are allowed.
 
-</p> 
+</p>
 
 ## 4. Finish within your 10 minute time limit
 
@@ -73,7 +73,7 @@ You can use the Python `datetime` library to stop your program automatically. He
 2. Check the current time repeatedly during the experiment.
 3. Stop the program safely when the current time reaches your start time plus 10 minutes.
 
-In the program below, this is used to print "Hello from the ISS" every second for 1 minute: 
+In the program below, this is used to print "Hello from the ISS" every second for 1 minute:
 
 ```Python
 from datetime import datetime, timedelta
@@ -103,7 +103,7 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 ## 5. Use the correct directory structure for your data files
 
-When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system). 
+When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system).
 
 To ensure that your logged data and photos end up in the correct directory, you must find the active folder dynamically using the special `__file__` variable, which points to the location of the current file. The code snippet below uses the `__file__` variable and `pathlib` library to write files in the same directory as where the `main.py` file is stored:
 
@@ -125,22 +125,56 @@ Check that your code does not use absolute file paths.
 
 --- collapse ---
 ---
-title: Basic working example
+title: Basic full working example
 ---
 
-This example code will capture 1 photo and 5 readings from the magnetometor sensor before logging the data to file. Add more code to capture more images and sensor data to maximise the 10 minutes avaialble for your team.
+This example code will capture 1 photo and 5 readings from the magnetometer sensor before logging the data to file. Add more code to capture more images and sensor data to maximise the 10 minutes available for your team.
 
-main.py
+`main.py`
 
 ```python
+from picamzero import Camera
 from sense_hat import SenseHat
+import csv
+
+camera = Camera()
 sense_hat = SenseHat()
-rgb = sense_hat.colour.colour
-print(rgb)
+
+# take a photo and save it in a file called image.jpg
+camera.take_photo("image.jpg")
+
+# create a variable to store the sensor readings
+data = []
+
+# repeat 5 times
+for i in range(5):
+    # read the raw x,y,z data from the magnetometer.
+    # The contents of magnetometer_reading will be a dictionary
+    # that looks like this:
+    #
+    #   {
+    #     "x": 7.907470226287842,
+    #     "y": 5.466001033782959,
+    #     "z": 12.868783950805664
+    #   }
+    magnetometer_reading = sense_hat.get_compass_raw()
+
+    # Take the numeric values from the magnetometer_reading
+    # and put them in a list called magnetometer_values
+    magnetometer_values = list(magnetometer_reading.values())
+    # append the values to the data list to save later
+    data.append(magnetometer_values)
+
+# open a file called data.csv for writing
+with open("data.csv", "w") as csvfile:
+    writer = csv.writer(csvfile)
+
+    # write a header to explain what the columns mean
+    writer.writerow(["magnetometer_x", "magnetometer_y", "magnetometer_z"])
+    # write all 5 readings from the data list to data.csv
+    writer.writerows(data)
 
 ```
-
-
 --- /collapse ---
 
 

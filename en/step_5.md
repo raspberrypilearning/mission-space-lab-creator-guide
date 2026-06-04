@@ -1,12 +1,12 @@
 # Testing your program
 
-## Program Checklist  
+## Program Checklist
 
 Once you have finished writing your program, or even while you are writing it, it is crucial to test it to make sure it runs successfully. In particular, you should double-check that your program has the following basic functionality:
 
 Your program should
  [ ] contain a file called `main.py` containing your main logic.
- [ ] read from a SenseHAT sensor or takes a photo using the Astro Pi camera.
+ [ ] read from a SenseHAT sensor or take a photo using the Astro Pi camera.
  [ ] save a photo or sensor data to a file.
  [ ] stop before 10 minutes have elapsed.
 
@@ -26,17 +26,17 @@ The Astro Pi Replay tool works by replaying a set of old pictures taken on the I
 
 </p>
 
-There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool as it does not require any installation. 
+There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool as it does not require any installation.
 
---- collapse --- 
+--- collapse ---
 ---
-title: Accessing the Astro Pi Replay Tool online 
+title: Accessing the Astro Pi Replay Tool online
 ---
-The easiest way to test if your program will work on the ISS is to upload your `main.py` file to the online [Astro Pi Replay Tool](https://rpf.io/replay). 
+The easiest way to test if your program will work on the ISS is to upload your `main.py` file to the online [Astro Pi Replay Tool](https://rpf.io/replay).
 
-To run your program, open the link and either drag and drop or select your `main.py` file and click run. The Replay tool will run your program in full and show you the images and data you have captured along with any files that your program outputs. 
+To run your program, open the link and either drag and drop or select your `main.py` file and click run. The Replay tool will run your program in full and show you the images and data you have captured along with any files that your program outputs.
 
---- /collapse --- 
+--- /collapse ---
 
 --- collapse ---
 ---
@@ -49,14 +49,14 @@ If you have taken part in Mission Space Lab before and have previously installed
 To install the Astro Pi Replay tool, open Thonny, click on **Tools > Manage plug-ins...**, and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
 
 ![Screenshot of the plug-in manager in Thonny, showing search results for the "thonny-astro-pi-replay" library.](images/install_replay_1.png)
- 
+
 ![Screenshot of the plug-in manager in Thonny, showing the "thonny-astro-pi-replay" library and the 'Install' button.](images/install_replay_2.png)
 
 Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`. Select the correct package, then press **Install**.
 
 ![Screenshot of the package manager in Thonny, showing search results for the "astro-pi-replay" library.](images/install_replay_3.png)
 
-![Screenshot of the package manager in Thonny, showing the "astro-pi-replay" library and the 'Install' button.](images/install_replay_4.png) 
+![Screenshot of the package manager in Thonny, showing the "astro-pi-replay" library and the 'Install' button.](images/install_replay_4.png)
 
 **You will need to close and restart Thonny for the installation to complete.**
 
@@ -72,19 +72,18 @@ Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`.
 
 To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/replay) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
-Your code should complete within 10 minutes. 
+Your code should complete within 10 minutes.
 
 ![A demonstration of how to upload a file to the Astro Pi Replay tool online.](images/replay_tool.gif)
 
+If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
 
-When it has finished, check how well your program performed by looking at the following items;
+When your program has finished, check how well it performed by considering the following items:
 
 [ ] Did your program create a file of the data you wanted to capture in your project folder?
-[ ] Where any other output files created by your project? 
-[ ] Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? 
+[ ] Were any other output files created by your project?
+[ ] Did your saved files exceed the 250MB space limit, or include file types that are not allowed in the [rulebook](https://astro-pi.org/mission-space-lab/rulebook)?
 [ ] Check your logs for any errors.
-
-If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
 
 If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to make sure you have the best chance of achieving 'flight status'. You can rerun your experiment with the **Astro Pi Replay** tool as many times as needed until you are confident that your program works.
 
@@ -94,7 +93,7 @@ Test your program with the Astro Pi Replay Tool and check the output for any pro
 
 --- /task ---
 
-## Common mistakes 
+## Common mistakes
 
 Some Mission Space Lab teams have not had their programs run on the ISS due to some common mistakes or errors in their programs. Below you will find a list of common mistakes with descriptions of why they affect the programs running on the ISS.  Not all will be relevant to your program, but it is still worth taking the time to read through the list.
 
@@ -173,7 +172,7 @@ You are allowed to produce up to 250MB of data. Remember that the size of an ima
 --- collapse ---
 ---
 title: "Forgetting to call your function"
---- 
+---
 
 We have seen cases where teams have written a function but forgotten to call it in their `main.py` program — watch out!
 
@@ -182,7 +181,7 @@ We have seen cases where teams have written a function but forgotten to call it 
 --- collapse ---
 ---
 title: "Saving into directories that do not exist"
---- 
+---
 
 A number of teams want to organise their data into directories such as data, images, etc. This in and of itself is a really good thing, but it is easy to forget to make these directories before writing to them.
 
@@ -191,7 +190,7 @@ A number of teams want to organise their data into directories such as data, ima
 --- collapse ---
 ---
 title: "Networking"
---- 
+---
 
 For security reasons, your program is not allowed to access the network on the ISS. It should not attempt to open a socket, access the internet, or make a network connection of any kind. This includes local network connections back to the Astro Pi itself.
 
@@ -200,7 +199,7 @@ For security reasons, your program is not allowed to access the network on the I
 --- collapse ---
 ---
 title: "Trying to run another program"
---- 
+---
 
 In addition to not being able to use any networking, your program is not allowed to run another program or any command that you would normally type into the terminal window of the Raspberry Pi, such as `vcgencmd`.
 
@@ -209,7 +208,7 @@ In addition to not being able to use any networking, your program is not allowed
 --- collapse ---
 ---
 title: "Multiple threads"
---- 
+---
 
 If you need to do more than one thing at a time, you can use a multithreaded process. There are a number of Python libraries that allow this type of multitasking to be included in your code. However, to do this on the Astro Pis, you are only permitted to use the `threading` library.
 
@@ -220,7 +219,7 @@ Only use the `threading` library if absolutely necessary. Managing threads can b
 --- collapse ---
 ---
 title: "Setting the program execution time too short"
---- 
+---
 
 Some teams set their program execution time to a small value (e.g. 1 minute) for testing and then forget to change it back to an appropriate value. Make sure to use as much of your allocated time slot as possible.
 
@@ -295,7 +294,7 @@ This snippet tries to calculate the features in your images, but instead of cras
 --- /collapse ---
 
 
---- task --- 
+--- task ---
 
 Review your program again. Can you spot any of the common mistakes in your program?
 
