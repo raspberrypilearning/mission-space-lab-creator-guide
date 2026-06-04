@@ -68,7 +68,7 @@ Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`.
 **Note:** Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
 
-### Running your program
+### Testing your program
 
 To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/replay) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
