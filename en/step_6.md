@@ -1,26 +1,13 @@
-## Submitting your work
+# Submitting your work
 
 If you are happy with your program and have run it using Astro Pi Replay, have read the Mission Space Lab rulebook on the Astro Pi website, and have checked and double-checked the Mission Space Lab program checklist, all that is left to do is to zip up your work and ask your team mentor to submit it to us.
 
-### Preparing a zip file
+## Preparing a zip file
 
 You need to submit your program as a zip file containing your `main.py` file. If you do not know how to compress your project folder into a zip file, speak to your mentor, who will be able to tell you the correct process for your operating system.
 
 More information on submitting your program is availble in the [Mission Space Lab mentor guide](https://astro-pi.org/mission-space-lab/mentor-guide-4). 
 
-### Removing unnecessary files
-
-Your zip file must not be more than 3MB in size. This means, for example, that you cannot supply your own ephemeris files (e.g. [de421.bsp](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp) or [de440s.bsp](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp)), since they are above the size limit.
-
-Both `de421.bsp` and `de440s.bsp` files are available on the Astro Pis. If your program needs them, you can access them via the included `astro_pi_orbit` library, as seen in the following code:
-
-```Python
-from astro_pi_orbit import de421, de440s
-print(de421)
-print(de440s)
-```
-
-If you are not using a Raspberry Pi you will need to run this snippet using the Astro Pi Replay tool in order to access the `astro_pi_orbit` library.
 
 --- task ---
 
