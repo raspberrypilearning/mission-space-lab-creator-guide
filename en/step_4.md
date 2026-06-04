@@ -1,10 +1,10 @@
-## Improving your program
+# Enhancing your program
 
-This section provide tips for improving your program and links to other project guides that will help you use the data and images you will log to investigate certain scientific phenomena. You are not limited to these ideas though - you are free to conduct any scientific experiment you want, providing your program adheres to the Rulebook
+This section provide tips for improving your program and links to other project guides that will help you use the data and images you will log to investigate certain scientific phenomena. You are not limited to these ideas though - you are free to conduct any scientific experiment you want, providing your program adheres to the Rulebook.
 
-### Finding the location of the ISS
+## Predict the location of the ISS
 
-You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where exactly an image was taken, and this is something you can do easily with the `astro_pi_orbit` and `exif` libraries available on the Astro Pis.
+You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where in orbit an image was taken, and this is something you can do easily with the `astro_pi_orbit` and `exif` libraries available on the Astro Pis.
 
 The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `gps_image1.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
 
@@ -35,7 +35,7 @@ Note that the latitude and longitude are `Angle` objects while the elevation is 
 
 </p>
 
-### Capturing sequences
+## Capturing sequences
 
 Using `picamzero` it is very simple to take a sequence of pictures by calling the `capture_sequence` function. The example below takes three pictures in succession, with a 3 second gap between each one:
 
@@ -51,14 +51,14 @@ cam.capture_sequence("sequence", num_images=3, interval=3)
 ```
 Run this code using the [Astro Pi Replay Tool](https://rpf.io/replay)), and you should see that it takes 3 images.
 
-### Numbering plans for images and files
+## Numbering plans for images and files
 
 When dealing with lots of files of the same type, it is a good idea to follow a naming convention. In the example above, we use an obvious sequence number — `image1.png`, `image2.png`, etc. — to keep our files organised.
 
 If you need more help with using the camera, check out the ['Take still pictures with Python code' step](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/5) in our 'Getting started with the Camera Module' project guide.
 
 
-### Closing resources 
+## Closing resources 
 
 When your program exits it is a good idea to close all resources that you have open. For example, close all files that you have open: 
 
@@ -72,13 +72,13 @@ Review your `main.py` file and update it so that it closes all resources appropr
 
 --- /task --- 
 
-### Dealing with `Error`s and `Exception`s
+## Dealing with Errors and Exceptions
 
 When Python encounters an error, it will throw either an `Error` or an `Exception`. This can be very frustrating, as it will cause your program to crash. With some foresight and planning, though, it is possible for your program to deal with these issues instead of crashing and potentially losing the chance to capture data and images on the ISS. 
 
 Visit Ada Computer Science to learn more about [exception handling](https://adacomputerscience.org/concepts/design_exception?examBoard=all&stage=gcse).
 
-### File buffering
+## File buffering
 
 When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, we can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
 
@@ -98,7 +98,7 @@ Review your program and consider if you need to set the buffering mode when writ
 
 --- /task --- 
 
-### Logging
+## Logging
 
 If your program fails, then it is always helpful to have a record of what happened, so that you can fix it for next time. The `logzero` Python library ([documentation here](https://logzero.readthedocs.io/en/latest/)) makes it easy to make notes about what's going on in your program. You can log lots of information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`). But remember that you cannot download more than 250MB of data from the ISS.
 
@@ -122,20 +122,11 @@ The two main types of log entry you can use are `logger.info()` to log informati
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
 We recommend that you always use the `logzero` library (for logging important events that take place during your experiment), even if you also write sensor data to a file.
+
 </p>
 
-### Weighted Averages 
-
-If your program calculates multiple readings from your sensor data (for example, by calculating the speed from sequences of two photos), then you may need to decide how to reduce these estimates into an averaged number. If you used a simple average ([mean](https://en.wikipedia.org/wiki/Mean)), could you explore the accuracy of other statistical measures, such as the median and other percentiles?
-
-There is a lot of scope for being creative when improving the accuracy of your data. One method is to be selective about which photos or data you use in your calculations. If you can determine that a specific sequence of data is the most reliable, then you could weight this data more highly in your final calculations. 
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-  
-Be cautious about training your program to be oversensitive to the exact sequence shown when using Astro Pi Replay — the sequence on the ISS will be different, and you want your program to be accurate on the ISS most of all!
 
 ## Using your data
-
 
 If you want to, you can use the data and images that you have captured to conduct some scientific research! You can conduct any scientific experiment that you want, providing that your program adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook). Though, if you'd rather follow a ready-made guide, you can pick either of the projects below.
 
