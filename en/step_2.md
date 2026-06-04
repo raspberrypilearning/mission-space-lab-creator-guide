@@ -1,4 +1,4 @@
-## Getting Started
+# Getting Started
 
 The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers with Sense HAT add-on boards and cameras attached. They are housed in custom aluminium flight cases. The Sense HAT (V2) has sensors for temperature, humidity, light/colour and a gyroscope, magnetometer, and accelerometer, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with Raspberry Pi High Quality Cameras with 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
@@ -12,7 +12,7 @@ Remember that your program must run completely autonomously from start to finish
 </p>
 
 
-### The Astro Pi Python environment
+## The Astro Pi Python environment
 
 The Astro Pi computers on the ISS have Python version 3.13 installed. If you are using a higher version, be aware that there may be some new functions that work on your computer that do not work on the Astro Pis.
 
@@ -432,7 +432,7 @@ print(f"tflite: {np.squeeze(output_data)}")
 Because there are lots of security restrictions when running a program on board the ISS, these are the only third-party libraries that you will be allowed to use if your program runs on the Astro Pis. Please [contact us](enquiries@astro-pi.org) if you think anything is missing or have any suggestions.
 </p>
 
-### Setting up your programming environment 
+## Setting up your programming environment 
 
 We recommend using Thonny to create your program. 
 
@@ -452,6 +452,6 @@ Select the correct file from the search results, then press **Install**.
 
 If you are using a different IDE to write your code, you will need to follow local instructions for downloading the libraries you want from [PyPi](https://pypi.org/).
 
-### Looking ahead
+## Looking ahead
 
 Now that you have set up your coding environment it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
