@@ -57,7 +57,11 @@ with open("data.csv", "w") as csvfile:
    writer.writerow([str(data)])
 ```
 
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
 ⚠️ There are strict rules about the types of files you are allowed to save. Make sure to check the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) to see which file types are allowed.
+
+</p> 
 
 ## 4. Finish within your 10 minute time limit
 
