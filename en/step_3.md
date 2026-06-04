@@ -1,10 +1,10 @@
-## Writing your program
+# Writing your program
 
 We recommend that you write your Python program in small, incremental steps rather than trying to write everything at once. By following the steps below, you will develop the core elements of your Mission Space Lab submission.
 
-#### 1. Write your main.py file
+## 1. Write your main.py file
 
-Every submission must include a file named `main.py`. This file acts as the "launchpad" for your program, and it is the exact file that the automated system on the ISS will look for and run. You are allowed to include extra Python files in your submission, but your main code logic _must_ start in your `main.py` file. Unless you already know how to work with multiple Python files, we recommend that you put all of your functional code into the `main.py` file.
+Every submission must include a file named `main.py`. This file acts as the "launchpad" for your program, and it is the exact file that the automated system on the ISS will look for and run. You may include extra Python files in your submission, but your main code logic _must_ start in your `main.py` file. Unless you already know how to work with multiple Python files, we recommend that you put all of your functional code into the `main.py` file.
 
 --- task ---
 
@@ -12,11 +12,11 @@ Create a new file called `main.py` in your project folder and save it.
 
 --- /task --- 
 
-#### 2. Capture sensor data
+## 2. Capture sensor data
 
 Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Programs that rely solely on external libraries to predict data — such as using the `skyfield` library to look up the ISS position — do not qualify as using sensor data.
 
-#### Taking measurements with the Sense HAT 
+### Taking measurements with the Sense HAT 
 
 To gather environmental data from the ISS, you can use the sensors on the Sense HAT. Here is an example of a simple program that takes a colour and light-level reading:
 
@@ -29,7 +29,7 @@ print(rgb)
 
 Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn more about how to take sensor readings using the Sense HAT.
 
-#### Taking photos with the camera
+### Taking photos with the camera
 
 To take a photo of Earth from the ISS you can use the Astro Pi's camera. Here is an example of a simple program that takes a photo:
 
@@ -44,9 +44,9 @@ Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamer
 
 ![Photo of clouds above land.](images/image1.jpg)
 
-#### 3. Log data to file
+## 3. Log data to file
 
-Your program must write some sensor data to a file or save an image. This will allow the data to be downloaded back to Earth and let you look for patterns and run your own experiments. You can save your data into a file using this code snippet:
+Your program must write some sensor data to a file or save an image. This will allow the data to be downloaded back to Earth for you to analyse and enjoy. You can save your data into a file using this code snippet:
 
 ```python
 import csv
@@ -59,7 +59,7 @@ with open("data.csv", "w") as csvfile:
 
 ⚠️ There are strict rules about the types of files you are allowed to save. Make sure to check the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) to see which file types are allowed.
 
-#### 4. Finish within your 10 minute time limit
+## 4. Finish within your 10 minute time limit
 
 Each Mission Space Lab program is allocated exactly 10 minutes during ISS daylight hours. Your program must track how much time has elapsed and close automatically before the 10 minutes end so you do not lose any data.
 
@@ -97,7 +97,7 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 **Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be **10-2 =** `8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
 
-#### 5. Use the correct directory structure for your data files
+## 5. Use the correct directory structure for your data files
 
 When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system). 
 
@@ -114,6 +114,29 @@ data_file = dir_path / "data01.csv"
 ```
 --- task ---
 
-Make sure all file creation routines in your main.py use dynamic pathlib resolution instead of hardcoded folder strings.
+Check that your code does not use absolute file paths.
 
 --- /task ---
+
+
+--- collapse ---
+---
+title: Basic working example
+---
+
+This example code will capture 1 photo and 5 readings from the magnetometor sensor before logging the data to file. Add more code to capture more images and sensor data to maximise the 10 minutes avaialble for your team.
+
+main.py
+
+```python
+from sense_hat import SenseHat
+sense_hat = SenseHat()
+rgb = sense_hat.colour.colour
+print(rgb)
+
+```
+
+
+--- /collapse ---
+
+
