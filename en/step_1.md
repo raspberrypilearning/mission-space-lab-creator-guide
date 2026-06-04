@@ -7,7 +7,10 @@ This is not a complete step-by-step guide on how to create your program. You and
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
+### Getting help
+
 Head over to the [Astro Pi website](https://astro-pi.org/mission-space-lab/) for more information about Mission Space Lab.
+
 
 If you get stuck, please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
 
