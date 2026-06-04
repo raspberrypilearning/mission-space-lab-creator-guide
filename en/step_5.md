@@ -1,6 +1,6 @@
-## Testing your program
+# Testing your program
 
-### Program Checklist  
+## Program Checklist  
 
 Once you have finished writing your program, or even while you are writing it, it is crucial to test it to make sure it runs successfully. In particular, you should double-check that your program has the following basic functionality:
 
@@ -10,22 +10,21 @@ Your program should
  [ ] save a photo or sensor data to a file.
  [ ] stop before 10 minutes have elapsed.
 
-Your program will also be analysed by Astro Pi Mission Control to make sure that it adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook). 
-
-If you haven't already done so, take the time now to read it and re-review your program to ensure it is compliant.
-
 --- task ---
 
-Check your program against the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook).
+Check your program adheres to the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook).
 
 --- /task ---
 
-### Astro Pi Replay Tool
-
+## Astro Pi Replay Tool
 
 It may seem difficult to test your program properly without access to an Astro Pi and to the ISS, but you can use the [Astro Pi Replay Tool](https://rpf.io/replay) to test your program without needing any special hardware.
 
-The Astro Pi Replay Tool acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
+The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.
+
+</p>
 
 There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool as it does not require any installation. 
 
@@ -41,7 +40,7 @@ To run your program, open the link and either drag and drop or select your `main
 
 --- collapse ---
 ---
-title: Installing Astro Pi Replay Tool on Raspberry Pi OS
+title: Installing Astro Pi Replay Tool Thonny plug-in
 ---
 If you are on Raspberry Pi OS you will need to follow the instructions on how to configure Thonny to use a virtual environment on the [raspberrypi website](https://www.raspberrypi.com/documentation/computers/os.html#using-the-thonny-editor) before proceeding with the instructions below.
 
@@ -69,21 +68,18 @@ Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`.
 **Note:** Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
 
-#### Running your program using the Astro Pi Replay Tool
-
-You should now test your program using **[Astro Pi Replay](https://rpf.io/replay)**. Doing this gives your entry the best chance of success and of ensuring that it will work aboard the ISS. When Astro Pi Mission Control receives your program, it will be tested and evaluated using Astro Pi Replay, and if it succeeds, on an Astro Pi on Earth. Hundreds of teams submit programs to Mission Space Lab each year and, unfortunately, there is not enough time to check for mistakes or debug code errors. If your program has errors when we test it, your program will not be eligible to run on the ISS.
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-
-The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.
-
-</p>
+### Running your program
 
 To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/replay) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
 Your code should complete within 10 minutes.
 
-When it has finished, double-check that it created a file of the data you wanted to capture in your project folder with a valid structure. Additionally, observe any other output files created by your project. Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? Finally, check your logs for any errors.
+When it has finished, check how well your program performed by looking at the following items;
+[] Did yoru program create a file of the data you wanted to capture in your project folder?
+[] Where any other output files created by your project? 
+[] Did your saved files exceed the 250MB limit, or include file types that are not allowed in the rules? 
+[] Check your logs for any errors.
+
 If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
 
 If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to make sure you have the best chance of achieving 'flight status'. You can rerun your experiment with the **Astro Pi Replay** tool as many times as needed until you are confident that your program works.
@@ -94,64 +90,16 @@ Test your program with the Astro Pi Replay Tool and check the output for any pro
 
 --- /task ---
 
-### Common mistakes 
+## Common mistakes 
 
-Many Mission Space Lab teams have not had their programs run on the ISS due to some common mistakes or errors in their programs. Below you will find a list of common mistakes with descriptions of why they affect the programs running on the ISS.  Not all will be relevant to your program, but it is still worth taking the time to read through the list.
-
---- collapse ---
----
-title: "ZeroDivisionError when calculating the speed"
----
-
-If your program tries to calculate the speed of the ISS you'll need to make sure that it doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
-
-To stop this, you can add a `sleep` command to your code. This makes sure there is at least a one second gap between each photo:
-
-```python
-from time import sleep
-from picamzero import Camera
-
-camera = Camera()
-camera.take_photo("image1.jpg")
-sleep(1)
-camera.take_photo("image2.jpg")
-```
-
---- /collapse ---
+Some Mission Space Lab teams have not had their programs run on the ISS due to some common mistakes or errors in their programs. Below you will find a list of common mistakes with descriptions of why they affect the programs running on the ISS.  Not all will be relevant to your program, but it is still worth taking the time to read through the list.
 
 --- collapse ---
 ---
-title: "cv2.error when calculating image features"
+title: "Logging `skyfield` or `astro_pi_orbit` ISS coordinates instead of using a sensor"
 ---
 
-If you are following the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project and the photos you are comparing lack enough contrast, the `calculate_features` function might return `None` instead of the image descriptor data. This is a common cause of bugs, as later functions like `calculate_matches` expect a `numpy` array and will crash if they receive `None` instead.
-
-To stop your program from crashing when this happens, you can wrap your code in a `try-except` statement like this:
-
-```python
-cv_error_count = 0
-max_cv_errors = 5
-
-for i in range(10):
-    try:
-        time_difference = get_time_difference(image_1, image_2) # Get time difference between images
-        image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # Create OpenCV image objects
-        keypoints_1, keypoints_2, descriptors_1, descriptors_2 = calculate_features(image_1_cv, image_2_cv, 1000) # Get keypoints and descriptors
-        matches = calculate_matches(descriptors_1, descriptors_2) # Match descriptors
-        display_matches(image_1_cv, keypoints_1, image_2_cv, keypoints_2, matches) # Display matches
-        coordinates_1, coordinates_2 = find_matching_coordinates(keypoints_1, keypoints_2, matches)
-        average_feature_distance = calculate_mean_distance(coordinates_1, coordinates_2)
-        speed = calculate_speed_in_kmps(average_feature_distance, 12648, time_difference)
-
-        # successfully calculated the speed - reset counts
-        cv_error_count = 0
-    except cv2.error as e:
-        cv_error_count += 1
-        if cv_error_count >= max_cv_errors:
-            raise e
-```
-
-This snippet tries to calculate the features in your images, but instead of crashing when it hits a `cv2.error` it will skip and try again. Because the landscape and lighting are always changing below the ISS, the problem will often fix itself in the next iteration - but this is unfortunately not absolutely guaranteed. For this reason, the snippet counts the number of errors encountered and re-raises the `cv2.error` if more than 4 errors are encountered in a row. Should this happen, Astro Pi Mission Control will do their best to re-run your code in better conditions.
+Your code must use record some data from a sensor or capture a photo to a file to get Flight Status. Using `skyfield` or `astro_pi_orbit` to log the current ISS coordinates does not count because this method looks up the ISS position in a table of predicted positions, and does not actually use a sensor or camera.
 
 --- /collapse ---
 
@@ -161,17 +109,6 @@ title: "Opening and closing the camera repeatedly"
 ---
 
 If you create multiple `Camera` objects, for example in a loop, you are likely to make the Raspberry Pi run out of memory and not have your program accepted by Astro Pi Mission Control.
-
---- /collapse ---
-
---- collapse ---
----
-title: "Not using full-resolution images when calculating ISS speed"
----
-
-If you are using code from the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project, beware that the ground sampling distance (GSD) changes with image resolution.
-
-The value used in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide is only valid for images in full resolution, `(4056x3040)`, but not necessarily for smaller resolutions. For this reason, we recommend that you capture full-resolution images.
 
 --- /collapse ---
 
@@ -199,28 +136,6 @@ title: "Using the LED matrix"
 ---
 
 Your program is not allowed to use the LED matrix.
-
---- /collapse ---
-
---- collapse ---
----
-title: "Poor documentation"
----
-
-When you have created a useful piece of software and you want to share it with other people, a crucial step is creating documentation that helps people understand what the program does, how it works, and how they can use it. Make sure your program contains comments and the method used to determine the speed of the ISS is well explained.
-
-[This project guide](https://projects.raspberrypi.org/en/projects/documenting-your-code/) shows you the recommended way to add useful comments to your program.
-
-**Note:** Any attempt to hide, or make it difficult to understand, what a piece of code is doing may result in disqualification. And of course, there should be no bad language or rudeness in your code.
-
---- /collapse ---
-
---- collapse ---
----
-title: "Logging `skyfield` or `astro_pi_orbit` ISS coordinates instead of using a sensor"
----
-
-Your code must use record some data from a sensor or capture a photo to a file to get Flight Status. Using `skyfield` or `astro_pi_orbit` to log the current ISS coordinates does not count because this method looks up the ISS position in a table of predicted positions, and does not actually use a sensor or camera.
 
 --- /collapse ---
 
@@ -306,6 +221,75 @@ title: "Setting the program execution time too short"
 Some teams set their program execution time to a small value (e.g. 1 minute) for testing and then forget to change it back to an appropriate value. Make sure to use as much of your allocated time slot as possible.
 
 --- /collapse ---
+
+--- collapse ---
+---
+title: "ZeroDivisionError"
+---
+
+If your program tries to calculate the speed of the ISS you'll need to make sure that it doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
+
+To stop this, you can add a `sleep` command to your code. This makes sure there is at least a one second gap between each photo:
+
+```python
+from time import sleep
+from picamzero import Camera
+
+camera = Camera()
+camera.take_photo("image1.jpg")
+sleep(1)
+camera.take_photo("image2.jpg")
+```
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: "Not using full-resolution images when calculating ISS speed"
+---
+
+If you are using code from the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project, beware that the ground sampling distance (GSD) changes with image resolution.
+
+The value used in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide is only valid for images in full resolution, `(4056x3040)`, but not necessarily for smaller resolutions. For this reason, we recommend that you capture full-resolution images.
+
+--- /collapse ---
+
+--- collapse ---
+---
+title: "cv2.error when calculating image features"
+---
+
+If you are following the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project and the photos you are comparing lack enough contrast, the `calculate_features` function might return `None` instead of the image descriptor data. This is a common cause of bugs, as later functions like `calculate_matches` expect a `numpy` array and will crash if they receive `None` instead.
+
+To stop your program from crashing when this happens, you can wrap your code in a `try-except` statement like this:
+
+```python
+cv_error_count = 0
+max_cv_errors = 5
+
+for i in range(10):
+    try:
+        time_difference = get_time_difference(image_1, image_2) # Get time difference between images
+        image_1_cv, image_2_cv = convert_to_cv(image_1, image_2) # Create OpenCV image objects
+        keypoints_1, keypoints_2, descriptors_1, descriptors_2 = calculate_features(image_1_cv, image_2_cv, 1000) # Get keypoints and descriptors
+        matches = calculate_matches(descriptors_1, descriptors_2) # Match descriptors
+        display_matches(image_1_cv, keypoints_1, image_2_cv, keypoints_2, matches) # Display matches
+        coordinates_1, coordinates_2 = find_matching_coordinates(keypoints_1, keypoints_2, matches)
+        average_feature_distance = calculate_mean_distance(coordinates_1, coordinates_2)
+        speed = calculate_speed_in_kmps(average_feature_distance, 12648, time_difference)
+
+        # successfully calculated the speed - reset counts
+        cv_error_count = 0
+    except cv2.error as e:
+        cv_error_count += 1
+        if cv_error_count >= max_cv_errors:
+            raise e
+```
+
+This snippet tries to calculate the features in your images, but instead of crashing when it hits a `cv2.error` it will skip and try again. Because the landscape and lighting are always changing below the ISS, the problem will often fix itself in the next iteration - but this is unfortunately not absolutely guaranteed. For this reason, the snippet counts the number of errors encountered and re-raises the `cv2.error` if more than 4 errors are encountered in a row. Should this happen, Astro Pi Mission Control will do their best to re-run your code in better conditions.
+
+--- /collapse ---
+
 
 --- task --- 
 
