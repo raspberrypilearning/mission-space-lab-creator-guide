@@ -1,8 +1,83 @@
 ## Testing your program
 
+### Program Checklist  
+
+Once you have finished writing your program, or even while you are writing it, it is crucial to test it to make sure it runs successfully. In particular, you should double-check that your program has the following basic functionality:
+
+Your program should
+ [ ] contain a file called `main.py` containing your main logic.
+ [ ] read from a SenseHAT sensor or takes a photo using the Astro Pi camera.
+ [ ] save a photo or sensor data to a file.
+ [ ] stop before 10 minutes have elapsed.
+
+Your program will also be analysed by Astro Pi Mission Control to make sure that it adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook). 
+
+If you haven't already done so, take the time now to read it and re-review your program to ensure it is compliant.
+
+--- task ---
+
+Check your program against the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook).
+
+--- /task ---
+
+### Astro Pi Replay Tool
+
+
+It may seem difficult to test your program properly without access to an Astro Pi and to the ISS, but you can use the [Astro Pi Replay Tool](https://rpf.io/replay) to test your program without needing any special hardware.
+
+The Astro Pi Replay Tool acts as a kind of simulator you can use on Earth that will make your program act as if it is running on an Astro Pi on board the ISS. It allows you to test your code before it goes to space without needing to have a Raspberry Pi, camera, or Sense HAT. The simulation is not perfect, however, and will only produce photos and sensor data from within its own data set, but it should still allow you to test that your program would work when running on board the ISS.
+
+There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool as it does not require any installation. 
+
+--- collapse --- 
+---
+title: Accessing the Astro Pi Replay Tool online 
+---
+The easiest way to test if your program will work on the ISS is to upload your `main.py` file to the online [Astro Pi Replay Tool](https://rpf.io/replay). 
+
+To run your program, open the link and either drag and drop or select your `main.py` file and click run. The Replay tool will run your program in full and show you the images and data you have captured along with any files that your program outputs. 
+
+--- /collapse --- 
+
+--- collapse ---
+---
+title: Installing Astro Pi Replay Tool on Raspberry Pi OS
+---
+If you are on Raspberry Pi OS you will need to follow the instructions on how to configure Thonny to use a virtual environment on the [raspberrypi website](https://www.raspberrypi.com/documentation/computers/os.html#using-the-thonny-editor) before proceeding with the instructions below.
+
+If you have taken part in Mission Space Lab before and have previously installed the Astro Pi Replay tool, you should re-install the `astro-pi-replay` library to make sure you have the latest version. To do this, remove the `~/.astro_pi_replay` directory in your home folder (e.g. using the command `rm -rf ~/.astro_pi_replay` in a Terminal window) and then follow the instructions below.
+
+To install the Astro Pi Replay tool, open Thonny, click on **Tools > Manage plug-ins...**, and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
+
+![Screenshot of the plug-in manager in Thonny, showing search results for the "thonny-astro-pi-replay" library.](images/install_replay_1.png)
+ 
+![Screenshot of the plug-in manager in Thonny, showing the "thonny-astro-pi-replay" library and the 'Install' button.](images/install_replay_2.png)
+
+Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`. Select the correct package, then press **Install**.
+
+![Screenshot of the package manager in Thonny, showing search results for the "astro-pi-replay" library.](images/install_replay_3.png)
+
+![Screenshot of the package manager in Thonny, showing the "astro-pi-replay" library and the 'Install' button.](images/install_replay_4.png) 
+
+**You will need to close and restart Thonny for the installation to complete.**
+
+
+--- /collapse ---
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
+**Note:** Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
+</p>
+
+#### Running your program using the Astro Pi Replay Tool
+
 You should now test your program using **[Astro Pi Replay](https://rpf.io/replay)**. Doing this gives your entry the best chance of success and of ensuring that it will work aboard the ISS. When Astro Pi Mission Control receives your program, it will be tested and evaluated using Astro Pi Replay, and if it succeeds, on an Astro Pi on Earth. Hundreds of teams submit programs to Mission Space Lab each year and, unfortunately, there is not enough time to check for mistakes or debug code errors. If your program has errors when we test it, your program will not be eligible to run on the ISS.
 
-If you have been following this creator guide from the start, you should have already seen the online [Astro Pi Replay Tool](https://rpf.io/replay), or installed the offline version as a Thonny plug-in. The installation instructions can be found earlier in this guide and in the Astro Pi Replay documentation.
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
+The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.
+
+</p>
 
 To test your program and simulate it running aboard the ISS, go to the [Astro Pi Replay Tool](https://rpf.io/replay) and submit your program file. If you are using the Astro Pi Replay plug-in with Thonny, run your `main.py` code through the Astro Pi Replay plug-in by opening the **Run** menu and clicking on **Astro-Pi-Replay**.
 
@@ -15,30 +90,20 @@ If you see any errors, or the program does not do what you expected it to, you w
 
 --- task ---
 
-Test your program with **[Astro Pi Replay](https://rpf.io/replay)** and check the output for any problems or unexpected behaviour.
+Test your program with the Astro Pi Replay Tool and check the output for any problems or unexpected behaviour.
 
 --- /task ---
-
-### Program checklist
-
-Your program will also be analysed to make sure that it adheres to the rulebook. Take the time now to read it and re-review your program to ensure it fits the bill.
-
---- task ---
-
-Check your program against the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook).
-
---- /task ---
-
-Many Mission Space Lab teams have not had their programs run on the ISS due to some common mistakes or errors in their programs. Below you will find a list of common mistakes with descriptions of why they affect the programs running on the ISS. 
 
 ### Common mistakes 
+
+Many Mission Space Lab teams have not had their programs run on the ISS due to some common mistakes or errors in their programs. Below you will find a list of common mistakes with descriptions of why they affect the programs running on the ISS.  Not all will be relevant to your program, but it is still worth taking the time to read through the list.
 
 --- collapse ---
 ---
 title: "ZeroDivisionError when calculating the speed"
 ---
 
-You'll need to make sure that your program doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
+If your program tries to calculate the speed of the ISS you'll need to make sure that it doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
 
 To stop this, you can add a `sleep` command to your code. This makes sure there is at least a one second gap between each photo:
 
@@ -95,18 +160,18 @@ This snippet tries to calculate the features in your images, but instead of cras
 title: "Opening and closing the camera repeatedly"
 ---
 
-If you create mutliple `Camera` objects, for example in a loop, you are likely to make the Raspberry Pi run out of memory and not have your program accepted by Astro Pi Mission Control.
+If you create multiple `Camera` objects, for example in a loop, you are likely to make the Raspberry Pi run out of memory and not have your program accepted by Astro Pi Mission Control.
 
 --- /collapse ---
 
 --- collapse ---
 ---
-title: "Not using full-resolution images"
+title: "Not using full-resolution images when calculating ISS speed"
 ---
 
-Beware that the ground sampling distance, or GSD, can change with the final resolution of the image.
+If you are using code from the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project, beware that the ground sampling distance (GSD) changes with image resolution.
 
-The value used in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide is valid for images in full resolution, `(4056x3040)`, but not necessarily for smaller resolutions. For this reason, we recommend that you capture full-resolution images.
+The value used in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide is only valid for images in full resolution, `(4056x3040)`, but not necessarily for smaller resolutions. For this reason, we recommend that you capture full-resolution images.
 
 --- /collapse ---
 
@@ -152,10 +217,10 @@ When you have created a useful piece of software and you want to share it with o
 
 --- collapse ---
 ---
-title: "Overfitting to the replayed data"
+title: "Logging `skyfield` or `astro_pi_orbit` ISS coordinates instead of using a sensor"
 ---
 
-Your code must be responsive to the images and sensor data on the ISS and not rely on specific landmarks or geographic areas shown in the sequence(s) used in Astro Pi Replay.
+Your code must use record some data from a sensor or capture a photo to a file to get Flight Status. Using `skyfield` or `astro_pi_orbit` to log the current ISS coordinates does not count because this method looks up the ISS position in a table of predicted positions, and does not actually use a sensor or camera.
 
 --- /collapse ---
 
