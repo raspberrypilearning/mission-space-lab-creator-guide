@@ -23,7 +23,7 @@ def get_predicted_latlon_coordinates(iss):
     return (point.latitude.signed_dms(), point.longitude.signed_dms())
 
 cam = Camera()
-cam.take_photo("image_with_coordinates.jpg", gps_coordinates=get_predicted_latlon_coordinates(iss))
+cam.take_photo("image_with_coordinates.jpg", latlon_coordinates=get_predicted_latlon_coordinates(iss))
 ```
 
 You will need to use the [Astro Pi Replay tool](https://rpf.io/replay) to run this snippet.
