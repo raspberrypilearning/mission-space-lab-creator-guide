@@ -279,7 +279,7 @@ title: OpenCV
 title: exif
 ---
 
-`exif` allows you to read and modify image Exif metadata using Python. You may want to use it to embed GPS data into any images you take, or to [analyse photos taken aboard the ISS](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/1).
+`exif` allows you to read and modify image Exif metadata using Python. You may want to use it to embed latitude and longitude coordinate data into any images you take, or to [analyse photos taken aboard the ISS](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/1).
 
 #### Documentation
 
