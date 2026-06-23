@@ -461,6 +461,11 @@ Select the correct file from the search results, then press **Install**.
 
 If you are using a different IDE to write your code, you will need to follow local instructions for downloading the libraries you want from [PyPi](https://pypi.org/).
 
-## Looking ahead
+## Planning your project
 
-Now that you have set up your coding environment it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
+Now that you have set up your programming environment, it's time to start planning your Mission Space Lab project.
+
+Work with your team to decide what you want to investigate, how you will collect and analyse your data, and how you will divide up the work. Creating a plan before you start coding will help you stay organised and make steady progress.
+
+Be sure to discuss your ideas, progress, and any challenges with your team mentor. They can help you refine your plans, solve problems, and keep your project moving forward.
+
