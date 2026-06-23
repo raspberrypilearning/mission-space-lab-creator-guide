@@ -2,7 +2,9 @@
 
 ## Program Checklist
 
-Once you have finished writing your program, or even while you are writing it, it is crucial to test it to make sure it runs successfully. In particular, you should double-check that your program has the following basic functionality:
+Whether you have just started writing your program or have nearly finished it, regular testing is essential. Testing as you go helps you identify problems early and gives you confidence that your code will run successfully on the ISS.
+
+Double-check that your program has the following basic functionality:
 
 Your program should
  [ ] contain a file called `main.py` containing your main logic.
@@ -18,15 +20,21 @@ Check your program adheres to the [Mission Space Lab rulebook](https://astro-pi.
 
 ## Astro Pi Replay Tool
 
-It may seem difficult to test your program properly without access to an Astro Pi and to the ISS, but you can use the [Astro Pi Replay Tool](https://rpf.io/replay) to test your program without needing any special hardware.
+Testing a program designed to run on the ISS might seem difficult when you don't have access to an Astro Pi. That's why we have created the [Astro Pi Replay Tool](https://rpf.io/replay) to test your program without you needing any special hardware.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
-The Astro Pi Replay tool works by replaying a set of old pictures taken on the ISS. When your code goes to take a picture, instead of accessing some camera hardware, the library selects a picture to replay and acts as if it has just been captured 'live'.
+The Astro Pi Replay Tool simulates the Astro Pi environment using data collected during previous Astro Pi missions. For example, when your program takes a photo, the Replay Tool provides one of a set of historical images captured on the ISS instead of accessing a real camera. To your code, it appears as though the image has just been taken, allowing you to develop and test your programs without needing access to Astro Pi hardware.
 
 </p>
 
-There is an online version and an offline version, available as a Thonny plug-in, for you to test your program. We recommend you use the online version of the tool as it does not require any installation.
+The Replay Tool is available in two versions:
+
+* An **online version**, which runs in your web browser
+* An **offline version**, available as a Thonny plug-in
+
+We recommend using the online version, as it requires no installation and is the quickest way to start testing your program.
+
 
 --- collapse ---
 ---
@@ -78,14 +86,16 @@ Your code should complete within 10 minutes.
 
 If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
 
-When your program has finished, check how well it performed by considering the following items:
+Once your program has finished, review the output and check the following:
 
-[ ] Did your program create a file of the data you wanted to capture in your project folder?
-[ ] Were any other output files created by your project?
-[ ] Did your saved files exceed the 250MB space limit, or include file types that are not allowed in the [rulebook](https://astro-pi.org/mission-space-lab/rulebook)?
-[ ] Check your logs for any errors.
+[ ] Did your program create a data file(s) you expected in your project folder? 
+[ ] Were any additional output files created?
+[ ] Do your saved files comply with the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook), including the 250MB storate limit and permitted file types?
+[ ] do you log files contain any warnings or errors? 
 
-If you see any errors, or the program does not do what you expected it to, you will need to address this before you submit your code, to make sure you have the best chance of achieving 'flight status'. You can rerun your experiment with the **Astro Pi Replay** tool as many times as needed until you are confident that your program works.
+If you find any errors, warnings, or unexpected behaviour, make changes to your code and test it again. The Astro Pi Replay Tool can be used as many times as you like, so keep refining your program until you are confident that it works reliably and is ready for submission.
+
+Thorough testing will give your team the best chance of achieving **flight status** and having your program run on the ISS.
 
 --- task ---
 
@@ -95,7 +105,10 @@ Test your program with the Astro Pi Replay Tool and check the output for any pro
 
 ## Common mistakes
 
-Some Mission Space Lab teams have not had their programs run on the ISS due to some common mistakes or errors in their programs. Below you will find a list of common mistakes with descriptions of why they affect the programs running on the ISS.  Not all will be relevant to your program, but it is still worth taking the time to read through the list.
+Some Mission Space Lab teams have encountered issues that prevented their programs from achieving flight status or running successfully on the ISS.
+
+The list below highlights some of the most common mistakes and explains why they can cause problems in the flight environment. Not every item will apply to your project, but reviewing the list carefully may help you identify issues before you submit your code.
+
 
 --- collapse ---
 ---
