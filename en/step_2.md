@@ -1,10 +1,18 @@
-# Getting Started
+# Astro Pi Hardware
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers with Sense HAT add-on boards and cameras attached. They are housed in custom aluminium flight cases. The Sense HAT (V2) has sensors for temperature, humidity, light/colour and a gyroscope, magnetometer, and accelerometer, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with Raspberry Pi High Quality Cameras with 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory.  Each one is fitted with a Sense HAT and a camera, and are housed in a custom aluminium flight case. 
+
+The Sense HAT (V2) includes sensors that can measure temperature, humidity, light and colour, as well as motion and orientation using a gyroscope, magnetometer, and accelerometer. This allows you to investigate things such as movement, acceleration and the local magnetic field. 
+
+The Astro Pis are also equipped with Raspberry Pi high quality cameras with 5mm lens, which can be used to take amazing pictures of the Earth from space.You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
-To collect data that captures interesting, dynamic environmental changes in orbit, you should focus your program on sensors like the **camera, gyroscope, magnetometer, accelerometer, or light/colour sensors**. Basic environmental metrics like **temperature and humidity** remain relatively constant inside the ISS cabin, and the **PIR movement sensor** only measures crew activity near the Astro Pi. While you are permitted to use them, these sensors will not capture many data fluctuations. 
+To collect data that changes over time as the ISS orbits the Earth, you should focus on sensors such as the camera, gyroscope, magnetometer, accelerometer, or light and colour sensors.
+
+Measurements such as temperature and humidity tend to stay fairly constant inside the ISS, while the PIR movement sensor mainly detects crew activity near the Astro Pi. Although you can use these sensors in your project, they are less likely to produce data that changes significantly during your 10-minute experiment.
+
+Choosing sensors that capture changing conditions will give you more interesting data to analyse.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
   
@@ -14,13 +22,12 @@ Remember that your program must run completely autonomously from start to finish
 
 ## The Astro Pi Python environment
 
-The Astro Pi computers on the ISS have Python version 3.13 installed. If you are using a higher version, be aware that there may be some new functions that work on your computer that do not work on the Astro Pis.
+The Astro Pi computers on the ISS use Python v3.13. If you are using a newer version on your own computer, be aware that some of the newer features may not work on the Astro Pis.
+In addition to the Python standard library, the Astro Pis have several extra packages installed to help you complete your Mission Space Lab project. These are introduced below, with examples and links to more detailed documentation.
 
-There are some restrictions on which parts of the standard library that you can use. The following [disallowed libraries](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit) are not allowed, and if you do use them your program will not be accepted.
+There are many different Python libraries available that can help you with your project.. Choose the libraries that best support your project and help you achieve your investigation goals.
 
-Alongside the Python standard libraries, the Astro Pis have extra packages installed to help you complete the Mission. Each one is explained briefly below with examples. There are also links for more details if you need them.
-
-There are many different Python libraries available that can help you with your project, and some that you cannot use for security reasons. You do not have to use all of the Python libraries in this section, only the ones that will help your program perform the way you want it to. 
+For security reasons, there are restrictions on which Python libraries you can use. [These library modules](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit) are not permitted, and programs that use them will not be accepted.
 
 --- collapse ---
 ---
@@ -429,7 +436,9 @@ print(f"tflite: {np.squeeze(output_data)}")
 
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-Because there are lots of security restrictions when running a program on board the ISS, these are the only third-party libraries that you will be allowed to use if your program runs on the Astro Pis. Please [contact us](enquiries@astro-pi.org) if you think anything is missing or have any suggestions.
+  
+Because of the strict security requirements for software running on the ISS, only the third-party libraries listed above can be used in your program. If you think something important is missing, or have suggestions for additional libraries, please let us know.
+  
 </p>
 
 ## Setting up your programming environment 
