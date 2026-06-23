@@ -35,7 +35,7 @@ Generate a zip file for your project, and ask your mentor to submit it to us bef
 
 --- /task ---
 
-# Submitting your project
+## Submitting your project
 
 If you are satisfied with your program, have tested it using Astro Pi Replay, have read the Mission Space Lab Rulebook, and have completed the checklist above, your project is ready for submission.
 
