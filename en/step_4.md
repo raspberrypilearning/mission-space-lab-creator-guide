@@ -1,6 +1,8 @@
 # Enhancing your program
 
-This section provide tips for improving your program and links to other project guides that will help you use the data and images you will log to investigate certain scientific phenomena. You are not limited to these ideas though - you are free to conduct any scientific experiment you want, providing your program adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook)
+This section provides ideas for improving your program, along with links to other project guides that show how data and images collected on the ISS can be used to investigate different scientific phenomena. 
+
+These guides are intended to inspire your ideas, but you are not limited to the projects described here. You are free to design and carry out your own scientific investigation, provided that your program follows the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook).
 
 ## Predict the location of the ISS
 
