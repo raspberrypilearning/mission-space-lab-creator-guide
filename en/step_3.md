@@ -1,10 +1,14 @@
 # Writing your program
 
-We recommend that you write your Python program in small, incremental steps rather than trying to write everything at once. By following the steps below, you will develop the core elements of your Mission Space Lab submission.
+We recommend writing your Python program in small, manageable steps rather than trying to build everything at once.
 
-## 1. Write your main.py file
+By following the sections below, you will create the core parts of your Mission Space Lab submission and test each part as you go.
 
-Every submission must include a file named `main.py`. This file acts as the "launchpad" for your program, and it is the exact file that the automated system on the ISS will look for and run. You may include extra Python files in your submission, but your main code logic _must_ start in your `main.py` file. Unless you already know how to work with multiple Python files, we recommend that you put all of your functional code into the `main.py` file.
+## 1. Create your main.py file
+
+Every submission must include a file called `main.py`. This file acts as the starting point for your program, and it is the file that the automated system on the ISS will look for and run. 
+
+You can include additional Python files in your submission, but your program must begin execution from main.py. If you are new to Python or have not worked with multiple files before, we recommend keeping all of your code in main.py. This will make your program easier to develop, test, and submit.
 
 --- task ---
 
@@ -14,11 +18,13 @@ Create a new file called `main.py` in your project folder and save it.
 
 ## 2. Capture sensor data
 
-Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Programs that rely solely on external libraries to predict data — such as using the `skyfield` library to look up the ISS position — do not qualify as using sensor data.
+Using external libraries to calculate or predict values does not count as collecting sensor data. For example, a program that only uses the `skyfield` library to determine the ISS's position would not meet this requirement, because it is using a model rather than measurements from the Astro Pi's hardware.
 
 ### Taking measurements with the Sense HAT
 
-To gather environmental data from the ISS, you can use the sensors on the Sense HAT. Here is an example of a simple program that takes a colour and light-level reading:
+One way to collect data on the ISS is to use the sensors on the Sense HAT. These sensors can measure things such as light levels, colour, temperature, humidity, and movement.
+
+The example below shows a simple program that takes a colour reading and displays it as an RGB code:
 
 ```python
 from sense_hat import SenseHat
@@ -31,7 +37,9 @@ Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.
 
 ### Taking photos with the camera
 
-To take a photo of Earth from the ISS you can use the Astro Pi's camera. Here is an example of a simple program that takes a photo:
+Another way to collect data on the ISS is by using the Astro Pi's camera. The camera can be used to capture images of the Earth, which can then be analysed as part of your investigation.
+
+The example below shows a simple program that takes a photo:
 
 ```python
 from picamzero import Camera
@@ -46,7 +54,10 @@ Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamer
 
 ## 3. Log data to file
 
-Your program must write some sensor data to a file or save an image. This will allow the data to be downloaded back to Earth for you to analyse and enjoy. You can save your data into a file using this code snippet:
+Your program must save the data it collects so that it can be returned to Earth for analysis. This could be sensor readings written to a file or images captured by the camera.
+
+The example below shows how to save data to a CSV file:
+
 
 ```python
 import csv
@@ -65,15 +76,15 @@ with open("data.csv", "w") as csvfile:
 
 ## 4. Finish within your 10 minute time limit
 
-Each Mission Space Lab program is allocated exactly 10 minutes during ISS daylight hours. Your program must track how much time has elapsed and close automatically before the 10 minutes end so you do not lose any data.
+Each Mission Space Lab program is allocated **exactly 10 minutes** to run on the ISS during daylight hours. Your program must track of how much time it has been running and stop automatically before the 10 minutes are up. This helps to ensure that your program finishes cleanly and that any data you have collected is saved correctly.
 
-You can use the Python `datetime` library to stop your program automatically. Here is how it works:
+One way to do this is to use Python's `datetime` library:
 
-1. Save the exact time your experiment starts.
-2. Check the current time repeatedly during the experiment.
-3. Stop the program safely when the current time reaches your start time plus 10 minutes.
+1. Record the time when your experiment starts.
+2. Regularly check the current time while your program is running.
+3. Stop the program when 10 minutes have elapsed.
 
-In the program below, this is used to print "Hello from the ISS" every second for 1 minute:
+The example below uses this approach to print "Hello from the ISS" every second for 1 minute:
 
 ```Python
 from datetime import datetime, timedelta
@@ -99,13 +110,17 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 --- /task ---
 
-**Note:** When deciding on the runtime for your program, make sure you take into account how long it takes for your loop to complete a cycle. For example, if you want to make use of the full 10-minute slot available, but each loop through your code takes 2 minutes to complete, then your `timedelta` should be **10-2 =** `8` minutes, to ensure that your program finishes before 10 minutes have elapsed.
+**Note:** When choosing how long your program should run, remember to account for the time taken to complete one iteration.
+
+For example, if each cycle of your loop takes around 2 minutes to complete, you should not set your stop time to exactly 10 minutes. Instead, you should stop the loop after about 8 minutes. This gives the final iteration enough time to finish and ensures that your program exits before the 10-minute limit is reached.
 
 ## 5. Use the correct directory structure for your data files
 
-When your code is run on the ISS, it will be started and stopped by an automated system. Because of this, you must never use absolute or specific file paths in your code (for example, paths like `/home/pi/Desktop` will cause your program to crash because they do not exist on the flight system).
+When your code runs on the ISS, it will be started automatically by the Astro Pi flight operating system. This means you **must not use hard-coded file paths** in your code such as `/home/pi/Desktop`, as these locations may not exist on the flight computer.
 
-To ensure that your logged data and photos end up in the correct directory, you must find the active folder dynamically using the special `__file__` variable, which points to the location of the current file. The code snippet below uses the `__file__` variable and `pathlib` library to write files in the same directory as where the `main.py` file is stored:
+Instead, use the special `__file__` variable to find the location of your `main.py` file and save any data files or photos relative to that location. This ensures that your files are stored in the correct place, regardless of where your program is run.
+
+The example below uses the pathlib library and the `__file__` variable to save files in the same directory as `main.py`: 
 
 ```python
 from pathlib import Path
@@ -128,7 +143,9 @@ Check that your code does not use absolute file paths.
 title: Basic full working example
 ---
 
-This example code will capture 1 photo and 5 readings from the magnetometer sensor before logging the data to file. Add more code to capture more images and sensor data to maximise the 10 minutes available for your team.
+This example code captures one photo and five readings from the magnetometer, then saves the data to a file.
+
+You can adapt the code to capture more images and sensor readings, making the most of the 10 minutes available to your team.
 
 `main.py`
 
