@@ -70,59 +70,6 @@ with open("some_file.txt", "w", buffering=1) as f:
 **Note:** If you are writing bytes to a file (with argument `"wb"`), then you should tell Python to not use a buffer at all and to write the data to disk immediately. You can do this by setting the `buffering` argument to `0`.
 </p>
 
-## Dealing with Errors and Exceptions
-
-When Python encounters an error, it will throw either an `Error` or an `Exception`. This can be very frustrating, as it will cause your program to crash. With some foresight and planning, though, it is possible for your program to deal with these issues instead of crashing and potentially losing the chance to capture data and images on the ISS.
-
-Visit Ada Computer Science to learn more about [exception handling](https://adacomputerscience.org/concepts/design_exception?examBoard=all&stage=gcse).
-
---- task ---
-
-Review your program and consider if you need to set the buffering mode when writing to a file.
-
---- /task ---
-
-## Logging
-
-If your program fails, then it is always helpful to have a record of what happened, so that you can fix it for next time. The `logzero` Python library ([documentation here](https://logzero.readthedocs.io/en/latest/)) makes it easy to make notes about what's going on in your program. You can log lots of information about what happens in your program — every loop iteration, every time an important function is called — and if you have conditionals in your program, `logzero` will log which route the program went (`if` or `else`). But remember that you cannot download more than 250MB of data from the ISS.
-
-Here is a basic example of how `logzero` can be used to keep track of loop iterations:
-
-```Python
-from logzero import logger, logfile
-from time import sleep
-
-logfile("events.log")
-
-for i in range(10):
-    logger.info(f"Loop number {i+1} started")
-    ...
-    sleep(60)
-```
-
-The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when your program experiences an unexpected error or handles an exception. There is also `logger.warning()` and `logger.debug()`.
-
-
-<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-
-We recommend that you always use the `logzero` library (for logging important events that take place during your experiment), even if you also write sensor data to a file.
-
-</p>
-
-## Closing resources
-
-When your program exits it is a good idea to close all resources that you have open. For example, close all files that you have open:
-
-```Python
-file = open(file)
-file.close()
-```
---- task ---
-
-Review your `main.py` file and update it so that it closes all resources appropriately.
-
---- /task ---
-
 
 ## Using your data
 
