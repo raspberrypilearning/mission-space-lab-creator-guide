@@ -18,6 +18,7 @@ Check your program adheres to the [Mission Space Lab rulebook](https://astro-pi.
 
 --- /task ---
 
+
 ## Astro Pi Replay Tool
 
 Testing a program designed to run on the ISS might seem difficult when you don't have access to an Astro Pi. That's why we have created the [Astro Pi Replay Tool](https://rpf.io/replay) to test your program without you needing any special hardware.
@@ -73,6 +74,7 @@ Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
+
 **Note:** Although all of the functions of the `picamzero` library are available, many of the `picamzero` settings and parameters that would normally result in a different picture being captured are silently ignored when the code is executed using Astro Pi Replay. Additionally, most attributes on the `Camera` object are ignored. For example, setting the resolution attribute to anything other than `(4056,3040)` has no effect when simulated on Astro Pi Replay, but would change the resolution when run on an Astro Pi in space.
 </p>
 
@@ -102,6 +104,76 @@ Thorough testing will give your team the best chance of achieving **flight statu
 Test your program with the Astro Pi Replay Tool and check the output for any problems or unexpected behaviour.
 
 --- /task ---
+
+## Dealing with Errors and Exceptions
+
+When Python encounters a problem, it may raise an error or an exception. If your program does not handle this situation, it may stop running unexpectedly.
+
+By anticipating potential problems and using exception handling, you can make your program more reliable. Instead of crashing, your code can respond to the issue and continue running, reducing the risk of missing out on valuable data or images during its time on the ISS.
+
+Visit Ada Computer Science to learn more about [exception handling](https://adacomputerscience.org/concepts/design_exception?examBoard=all&stage=gcse).
+
+--- task ---
+
+Review your program and consider if you need to set the buffering mode when writing to a file.
+
+--- /task ---
+
+## Logging
+
+If your program encounters a problem, it can be very useful to have a record of what happened. Logging allows you to keep track of your program's behaviour and can help you identify and fix issues when analysing your results after the mission.
+
+The `logzero` library ([documentation here](https://logzero.readthedocs.io/en/latest/))provides a simple way to record information about what your program is doing. For example, you might log:
+
+* Each iteration of a loop
+* When an important function is called
+* Sensor readings or key calculations
+* Which branch of an if/else statement was executed
+
+Be careful not to log more information than you need. All logged data counts towards your download allowance, and **teams can download a maximum of 250 MB of data** from the ISS.
+
+The example below uses `logzero` to record each iteration of a loop:
+
+```Python
+from logzero import logger, logfile
+from time import sleep
+
+logfile("events.log")
+
+for i in range(10):
+    logger.info(f"Loop number {i+1} started")
+    ...
+    sleep(60)
+```
+
+The two main types of log entry you can use are `logger.info()` to log information, and `logger.error()` when your program experiences an unexpected error or handles an exception. There is also `logger.warning()` and `logger.debug()`.
+
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+
+We recommend using the `logzero` library in all Mission Space Lab projects. Logging important events can help you understand what happened during your experiment and diagnose problems, even if you are already recording sensor data elsewhere.
+
+</p>
+
+## Closing resources
+
+When your program finishes, it is good practice to close any resources that are still open. This includes files, cameras, and other objects that use system resources.
+
+Closing resources helps ensure that all data is saved correctly and that your program exits cleanly.
+
+For example, if you have opened a file, you should close it when you have finished writing to it:
+
+
+```Python
+file = open(file)
+file.close()
+```
+--- task ---
+
+Review your `main.py` file and update it so that it closes all resources appropriately.
+
+--- /task ---
+
 
 ## Common mistakes
 
