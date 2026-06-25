@@ -33,6 +33,7 @@ rgb = sense_hat.colour.colour
 print(rgb)
 ```
 
+
 Check out our [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) project guide to learn more about how to take sensor readings using the Sense HAT.
 
 ### Taking photos with the camera
@@ -48,9 +49,12 @@ camera = Camera()
 camera.take_photo("image.jpg")
 ```
 
+
 Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamera) project guide to learn more about how to use the camera.
 
+
 ![Photo of clouds above land.](images/image1.jpg)
+
 
 ## 3. Log data to file
 
@@ -68,11 +72,13 @@ with open("data.csv", "w") as csvfile:
    writer.writerow([str(data)])
 ```
 
+
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
 ⚠️ There are strict rules about the types of files you are allowed to save. Make sure to check the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook) to see which file types are allowed.
 
 </p>
+
 
 ## 4. Finish within your 10 minute time limit
 
@@ -131,6 +137,7 @@ dir_path = Path(__file__).parent.resolve()
 # Create a safe file path inside your project directory
 data_file = dir_path / "data01.csv"
 ```
+
 --- task ---
 
 Check that your code does not use absolute file paths.
