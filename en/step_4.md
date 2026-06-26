@@ -8,7 +8,7 @@ These guides are intended to inspire your ideas, but you are not limited to the 
 
 You will be able to download up to 42 pictures that you take on the ISS. It can be nice to know where in orbit an image was taken, and this is something you can do easily with the `astro_pi_orbit` and `exif` libraries available on the Astro Pis.
 
-The following is an example of a program that will, when run using the Astro Pi Replay Tool, create a new image called `image_with_coordinates.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
+The following is an example of a program that will create a new image called `image_with_coordinates.jpg`. The `picamzero` library will have set the Exif metadata for the image to include the current latitude and longitude of the ISS.
 
 ```Python
 from astro_pi_orbit import ISS
