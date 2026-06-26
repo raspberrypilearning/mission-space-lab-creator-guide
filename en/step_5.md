@@ -7,10 +7,10 @@ Whether you have just started writing your program or have nearly finished it, r
 Double-check that your program has the following basic functionality:
 
 Your program should
- [ ] contain a file called `main.py` containing your main logic.
- [ ] read from a SenseHAT sensor or take a photo using the Astro Pi camera.
- [ ] save a photo or sensor data to a file.
- [ ] stop before 10 minutes have elapsed.
+ * Contain a file called `main.py` containing your main logic.
+ * Read from a SenseHAT sensor or take a photo using the Astro Pi camera.
+ * Save a photo or sensor data to a file.
+ * Stop before 10 minutes have elapsed.
 
 --- task ---
 
@@ -90,10 +90,10 @@ If you are using the online version of Astro Pi Replay, you may download a zip f
 
 Once your program has finished, review the output and check the following:
 
-[ ] Did your program create a data file(s) you expected in your project folder? 
-[ ] Were any additional output files created?
-[ ] Do your saved files comply with the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook), including the 250MB storate limit and permitted file types?
-[ ] do you log files contain any warnings or errors? 
+* Did your program create a data file(s) you expected in your project folder? 
+* Were any additional output files created?
+* Do your saved files comply with the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook), including the 250MB storate limit and permitted file types?
+* Do you log files contain any warnings or errors? 
 
 If you find any errors, warnings, or unexpected behaviour, make changes to your code and test it again. The Astro Pi Replay Tool can be used as many times as you like, so keep refining your program until you are confident that it works reliably and is ready for submission.
 
@@ -104,6 +104,10 @@ Thorough testing will give your team the best chance of achieving **flight statu
 Test your program with the Astro Pi Replay Tool and check the output for any problems or unexpected behaviour.
 
 --- /task ---
+
+# Troubleshooting
+
+If your program encounters some errors and doesn't work first time you test it, there are some useful programming tips that can help you to identify and fix them. 
 
 ## Dealing with Errors and Exceptions
 
