@@ -1,5 +1,5 @@
 # Introduction
-In Mission Space Lab, your challenge is to design and carry out a scientific investigation using an Astro Pi on board the International Space Station (ISS). To do this, you will write a Python program that gathers and logs data using the Astro Pi's sensors and camera. These tools give you the opportunity to investigate questions about the environment on the ISS and collect real data from space.
+In Mission Space Lab, your challenge is to design and write a Python program that gathers and logs data using the Astro Pi's sensors and camera. These sensors give you the opportunity to investigate questions about the environment on the ISS and collect real data from space.
 
 Your program will run autonomously for 10 minutes aboard the ISS. During this time, it must collect data using the Astro Pi's sensors or camera and save that data to a file for later analysis.
 
