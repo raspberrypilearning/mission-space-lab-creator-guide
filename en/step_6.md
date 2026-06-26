@@ -6,15 +6,15 @@ Before submitting your project, check that your program meets the following requ
 
 Your program should:
 
-[ ] Include a file called main.py that contains the main entry point for your code.
-[ ] Collect data using at least one Sense HAT sensor or take a photo using the Astro Pi camera.
-[ ] Save sensor data to a file or save at least one image captured by the camera.
-[ ] Stop running before the 10-minute time limit is reached.
-[ ] Run successfully without errors when tested.
+* Include a file called main.py that contains the main entry point for your code.
+* Collect data using at least one Sense HAT sensor or take a photo using the Astro Pi camera.
+* Save sensor data to a file or save at least one image captured by the camera.
+* Stop running before the 10-minute time limit is reached.
+* Run successfully without errors when tested.
 
 --- task ---
 
-Don't forget to also check that your program adheres to the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook). 
+Check that your program adheres to the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook). 
 
 --- /task ---
 
