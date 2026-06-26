@@ -18,7 +18,7 @@ Create a new file called `main.py` in your project folder and save it.
 
 ## 2. Capture sensor data
 
-Using external libraries to calculate or predict values does not count as collecting sensor data. For example, a program that only uses the `skyfield` library to determine the ISS's position would not meet this requirement, because it is using a model rather than measurements from the Astro Pi's hardware.
+Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Using external libraries to calculate or predict values does not count as collecting sensor data. For example, a program that only uses the `skyfield` library to determine the ISS's position would not meet this requirement, because it is using a model rather than measurements from the Astro Pi's hardware.
 
 ### Taking measurements with the Sense HAT
 
@@ -82,7 +82,7 @@ with open("data.csv", "w") as csvfile:
 
 ## 4. Finish within your 10 minute time limit
 
-Each Mission Space Lab program is allocated **exactly 10 minutes** to run on the ISS during daylight hours. Your program must track of how much time it has been running and stop automatically before the 10 minutes are up. This helps to ensure that your program finishes cleanly and that any data you have collected is saved correctly.
+Each Mission Space Lab program is allocated **exactly 10 minutes** to run on the ISS during daylight hours. Your program must keep track of how much time it has been running and stop automatically before the 10 minutes are up. This helps to ensure that your program finishes cleanly and that any data you have collected is saved correctly.
 
 One way to do this is to use Python's `datetime` library:
 
