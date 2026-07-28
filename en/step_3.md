@@ -18,7 +18,7 @@ Create a new file called `main.py` in your project folder and save it.
 
 ## 2. Capture sensor data
 
-Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Using external libraries to calculate or predict values does not count as collecting sensor data. For example, a program that only uses the `skyfield` library to determine the ISS's position would not meet this requirement, because it is using a model rather than measurements from the Astro Pi's hardware.
+Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Using external libraries to calculate or predict values does not count as collecting sensor or camera data. For example, a program that only uses the `skyfield` library to determine the ISS's position would not meet this requirement, because it is using a model rather than measurements from the Astro Pi's hardware.
 
 ### Taking measurements with the Sense HAT
 

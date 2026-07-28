@@ -4,7 +4,7 @@ The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB 
 
 The Sense HAT (V2) includes sensors that can measure temperature, humidity, light, and colour, as well as motion and orientation using a gyroscope, magnetometer, and accelerometer. This allows you to investigate things such as movement, acceleration, and the local magnetic field. 
 
-The Astro Pis are also equipped with high-quality Raspberry Pi cameras with 5mm lenses, which can be used to take amazing pictures of the Earth from space.You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis are also equipped with high-quality Raspberry Pi cameras with 5mm lenses, which can be used to take amazing pictures of the Earth from space. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
@@ -159,7 +159,7 @@ while True:
 title: SciPy
 ---
 
-SciPy is a free, open-source Python library used for scientific computing and technical computing. SciPy contains modules for optimisation, linear algebra, integration, interpolation, special functions, FFT (Fast Fourrier Transform), signal and image processing, ODE (Ordinary Differential Equations) solvers, and other tasks common in science and engineering. You may need to use this library to solve a particular equation.
+SciPy is a free, open-source Python library used for scientific computing and technical computing. SciPy contains modules for optimisation, linear algebra, integration, interpolation, special functions, FFT (fast Fourier transform), signal and image processing, ODE (ordinary differential equations) solvers, and other tasks common in science and engineering. You may need to use this library to solve a particular equation.
 
 #### Documentation
 
@@ -365,7 +365,7 @@ This output shows that the ISS is currently over Hamilton, New York:
 ])]
 ```
 
-Note: The library `reverse-geocoder` can not be run using the online Replay Tool as it uses multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plugin version of the Replay Tool.
+Note: The library `reverse-geocoder` cannot be run using the online Replay Tool as it uses multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plug-in version of the Replay Tool.
 
 #### Documentation
 

@@ -191,7 +191,7 @@ The list below highlights some of the most common mistakes and explains why they
 title: "Logging `skyfield` or `astro_pi_orbit` ISS coordinates instead of using a sensor"
 ---
 
-Your code must use record some data from a sensor or capture a photo to a file to get Flight Status. Using `skyfield` or `astro_pi_orbit` to log the current ISS coordinates does not count because this method looks up the ISS position in a table of predicted positions, and does not actually use a sensor or camera.
+Your code must record some data from a sensor or save a photo to a file to get flight status. Using `skyfield` or `astro_pi_orbit` to log the current ISS coordinates does not count because this method looks up the ISS position in a table of predicted positions, and does not actually use a sensor or camera.
 
 --- /collapse ---
 
@@ -290,7 +290,7 @@ For security reasons, your program is not allowed to access the network on the I
 title: "Trying to run another program"
 ---
 
-In addition to not being able to use any networking, your program is not allowed to run another program or any command that you would normally type into the terminal window of the Raspberry Pi, such as `vcgencmd`.
+In addition to not being allowed to use any networking, your program is not allowed to run another program or any command that you would normally type into the terminal window of the Raspberry Pi, such as `vcgencmd`.
 
 --- /collapse ---
 
@@ -378,7 +378,7 @@ for i in range(10):
             raise e
 ```
 
-This snippet tries to calculate the features in your images, but instead of crashing when it hits a `cv2.error` it will skip and try again. Because the landscape and lighting are always changing below the ISS, the problem will often fix itself in the next iteration - but this is unfortunately not absolutely guaranteed. For this reason, the snippet counts the number of errors encountered and re-raises the `cv2.error` if more than 4 errors are encountered in a row. Should this happen, Astro Pi Mission Control will do their best to re-run your code in better conditions.
+This snippet tries to calculate the features in your images, but instead of crashing when it hits a `cv2.error` it will skip and try again. Because the landscape and lighting are always changing below the ISS, the problem will often fix itself in the next iteration — but this is unfortunately not absolutely guaranteed. For this reason, the snippet counts the number of errors encountered and re-raises the `cv2.error` if more than 4 errors are encountered in a row. Should this happen, Astro Pi Mission Control will do their best to re-run your code in better conditions.
 
 --- /collapse ---
 

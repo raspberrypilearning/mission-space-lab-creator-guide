@@ -48,7 +48,7 @@ Run this code using the [Astro Pi Replay Tool](https://rpf.io/replay), and you s
 
 ## Numbering plans for images and files
 
-When dealing with lots of files of the same type, it is a good idea to follow a naming convention. We recommend that you use an obvious sequence number that is padded with leading zeros — `image01.png`, `image02.png`, etc. — to keep your files organised. You can use this code snippet to pad a number with leading zeros:
+When dealing with lots of files of the same type, it is a good idea to follow a naming convention. We recommend that you use an obvious sequence number that is padded with leading zeros — `image01.png`, `image02.png`, etc. — to keep your files organised. You can use this code snippet to pad numbers with leading zeros:
 
 ```python
 file_number = 1
@@ -58,7 +58,7 @@ print(filename)
 
 ## File buffering
 
-When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter to us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, you can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
+When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to be saved in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter to us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, you can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
 
 ```Python
 with open("some_file.txt", "w", buffering=1) as f:
@@ -77,12 +77,12 @@ If you want to, you can use the data and images that you have captured to conduc
 
 ### Using NDVI (normalised difference vegetation index)
 
-Learn how to process visual light data to analyse plant health, vegetation density, and environmental features across the Earth's surface using this project guide: [NDVI (normalised difference vegetation index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0).
+Learn how to process visual light data to analyse plant health, vegetation density, and environmental features across the Earth's surface using our ['Capture plant health with NDVI and Raspberry Pi' project guide](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0).
 
 
 ### Calculating the speed of the ISS
 
-You may wish to start by learning how to write a program using historical photos taken by teams in previous years with our [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0) project guide. Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
+You may wish to start by learning how to write a program using historical photos taken by teams in previous years with our ['Calculate the speed of the ISS using photos' project guide](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/0). Once you have written a program, you can try it out using different images or data sets to improve the accuracy of your estimate. Here are some examples of images and data you can use:
 
 - [Astro Pi Mission Space Lab 2022/23 photos](https://www.flickr.com/photos/raspberrypi/collections/72157722152451877/)
 - [Astro Pi Mission Space Lab 2022/23 data](https://docs.google.com/spreadsheets/d/1RjPEp2IHVB6For65wuUQdWntsg1H5sHWpYUtLzK9LCM/edit?usp=sharing)
