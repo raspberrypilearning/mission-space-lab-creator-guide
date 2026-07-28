@@ -8,7 +8,7 @@ By following the sections below, you will create the core parts of your Mission 
 
 Every submission must include a file called `main.py`. This file acts as the starting point for your program, and it is the file that the automated system on the ISS will look for and run. 
 
-You can include additional Python files in your submission, but your program must begin execution from main.py. If you are new to Python or have not worked with multiple files before, we recommend keeping all of your code in main.py. This will make your program easier to develop, test, and submit.
+You can include additional Python files in your submission, but your program must begin execution from `main.py`. If you are new to Python or have not worked with multiple files before, we recommend keeping all of your code in `main.py`. This will make your program easier to develop, test, and submit.
 
 --- task ---
 
@@ -58,7 +58,7 @@ Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamer
 
 ## 3. Log data to file
 
-Your program must save the data it collects so that it can be returned to Earth for analysis. This could be sensor readings written to a file or images captured by the camera.
+Your program must save the data it collects so that it can be returned to Earth for analysis. This data could be sensor readings written to a file or images captured by the camera.
 
 The example below shows how to save data to a CSV file:
 
@@ -80,15 +80,15 @@ with open("data.csv", "w") as csvfile:
 </p>
 
 
-## 4. Finish within your 10 minute time limit
+## 4. Finish within your 10-minute time limit
 
-Each Mission Space Lab program is allocated **exactly 10 minutes** to run on the ISS during daylight hours. Your program must keep track of how much time it has been running and stop automatically before the 10 minutes are up. This helps to ensure that your program finishes cleanly and that any data you have collected is saved correctly.
+Each Mission Space Lab program is allocated **exactly 10 minutes** to run on the ISS during daylight hours. Your program must keep track of how much time it has been running and stop automatically before the 10 minutes are up. This will help to ensure that your program finishes cleanly and that any data you have collected is saved correctly.
 
 One way to do this is to use Python's `datetime` library:
 
-1. Record the time when your experiment starts.
-2. Regularly check the current time while your program is running.
-3. Stop the program when 10 minutes have elapsed.
+1. Record the time when your experiment starts
+2. Regularly check the current time while your program is running
+3. Stop the program when 10 minutes have elapsed
 
 The example below uses this approach to print "Hello from the ISS" every second for 1 minute:
 
@@ -118,13 +118,13 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 **Note:** When choosing how long your program should run, remember to account for the time taken to complete one iteration.
 
-For example, if each cycle of your loop takes around 2 minutes to complete, you should not set your stop time to exactly 10 minutes. Instead, you should stop the loop after about 8 minutes. This gives the final iteration enough time to finish and ensures that your program exits before the 10-minute limit is reached.
+For example, if each cycle of your loop takes around 2 minutes to complete, you should not set your stop time to exactly 10 minutes. Instead, you should stop the loop after about 8 minutes. This will give the final iteration enough time to finish and ensure that your program exits before the 10-minute limit is reached.
 
 ## 5. Use the correct directory structure for your data files
 
 When your code runs on the ISS, it will be started automatically by the Astro Pi flight operating system. This means you **must not use hard-coded file paths** in your code such as `/home/pi/Desktop`, as these locations may not exist on the flight computer.
 
-Instead, use the special `__file__` variable to find the location of your `main.py` file and save any data files or photos relative to that location. This ensures that your files are stored in the correct place, regardless of where your program is run.
+Instead, use the special `__file__` variable to find the location of your `main.py` file and save any data files or photos relative to that location. This will ensure that your files are stored in the correct place, regardless of where your program is run.
 
 The example below uses the pathlib library and the `__file__` variable to save files in the same directory as `main.py`: 
 

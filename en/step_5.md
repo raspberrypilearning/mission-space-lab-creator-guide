@@ -1,27 +1,27 @@
 # Testing your program
 
-## Program Checklist
+## Program checklist
 
 Whether you have just started writing your program or have nearly finished it, regular testing is essential. Testing as you go helps you identify problems early and gives you confidence that your code will run successfully on the ISS.
 
 Double-check that your program has the following basic functionality:
 
-Your program should
- * Contain a file called `main.py` containing your main logic.
- * Read from a SenseHAT sensor or take a photo using the Astro Pi camera.
- * Save a photo or sensor data to a file.
- * Stop before 10 minutes have elapsed.
+Your program should:
+ * Contain a file called `main.py` containing your main logic
+ * Read from a Sense HAT sensor or take a photo using the Astro Pi camera
+ * Save a photo or sensor data to a file
+ * Stop before 10 minutes have elapsed
 
 --- task ---
 
-Check your program adheres to the [Mission Space Lab rulebook](https://astro-pi.org/mission-space-lab/rulebook).
+Check your program adheres to the [Mission Space Lab Rulebook](https://astro-pi.org/mission-space-lab/rulebook).
 
 --- /task ---
 
 
 ## Astro Pi Replay Tool
 
-Testing a program designed to run on the ISS might seem difficult when you don't have access to an Astro Pi. That's why we have created the [Astro Pi Replay Tool](https://rpf.io/replay) to test your program without you needing any special hardware.
+Testing a program designed to run on the ISS might seem difficult when you don't have access to an Astro Pi. That's why we've created the [Astro Pi Replay Tool](https://rpf.io/replay). With this tool, you can test your program without needing any special hardware.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
@@ -31,7 +31,7 @@ The Astro Pi Replay Tool simulates the Astro Pi environment using data collected
 
 The Replay Tool is available in two versions:
 
-* An **online version**, which runs in your web browser
+* An **online version**, which runs on your web browser
 * An **offline version**, available as a Thonny plug-in
 
 We recommend using the online version, as it requires no installation and is the quickest way to start testing your program.
@@ -43,7 +43,7 @@ title: Accessing the Astro Pi Replay Tool online
 ---
 The easiest way to test if your program will work on the ISS is to upload your `main.py` file to the online [Astro Pi Replay Tool](https://rpf.io/replay).
 
-To run your program, open the link and either drag and drop or select your `main.py` file and click run. The Replay tool will run your program in full and show you the images and data you have captured along with any files that your program outputs.
+To run your program, open the link and either drag and drop or select your `main.py` file and click **Run**. The Replay Tool will run your program in full and show you the images and data you have captured along with any files that your program outputs.
 
 --- /collapse ---
 
@@ -51,21 +51,21 @@ To run your program, open the link and either drag and drop or select your `main
 ---
 title: Installing Astro Pi Replay Tool Thonny plug-in
 ---
-If you are on Raspberry Pi OS you will need to follow the instructions on how to configure Thonny to use a virtual environment on the [raspberrypi website](https://www.raspberrypi.com/documentation/computers/os.html#using-the-thonny-editor) before proceeding with the instructions below.
+If you are on Raspberry Pi OS, you will need to follow the instructions on how to configure Thonny to use a virtual environment on the [Raspberry Pi website](https://www.raspberrypi.com/documentation/computers/os.html#using-the-thonny-editor) before proceeding with the instructions below.
 
-If you have taken part in Mission Space Lab before and have previously installed the Astro Pi Replay tool, you should re-install the `astro-pi-replay` library to make sure you have the latest version. To do this, remove the `~/.astro_pi_replay` directory in your home folder (e.g. using the command `rm -rf ~/.astro_pi_replay` in a Terminal window) and then follow the instructions below.
+If you have taken part in Mission Space Lab before and have previously installed the Astro Pi Replay Tool, you should re-install the `astro-pi-replay` library to make sure you have the latest version. To do this, remove the `~/.astro_pi_replay` directory in your home folder (e.g. using the command `rm -rf ~/.astro_pi_replay` in a Terminal window) and then follow the instructions below.
 
-To install the Astro Pi Replay tool, open Thonny, click on **Tools > Manage plug-ins...**, and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
+To install the Astro Pi Replay Tool, open Thonny, click on **Tools > Manage plug-ins...**, and search for `thonny-astro-pi-replay`. Select the correct plug-in, then press **Install**.
 
-![Screenshot of the plug-in manager in Thonny, showing search results for the "thonny-astro-pi-replay" library.](images/install_replay_1.png)
+![Screenshot of the plug-in manager in Thonny, showing search results for the 'thonny-astro-pi-replay' library.](images/install_replay_1.png)
 
-![Screenshot of the plug-in manager in Thonny, showing the "thonny-astro-pi-replay" library and the 'Install' button.](images/install_replay_2.png)
+![Screenshot of the plug-in manager in Thonny, showing the 'thonny-astro-pi-replay' library and the 'Install' button.](images/install_replay_2.png)
 
-Then, click on **Tools > Manage packages...**, and search for `astro-pi-replay`. Select the correct package, then press **Install**.
+Next, click on **Tools > Manage packages...**, and search for `astro-pi-replay`. Select the correct package, then press **Install**.
 
-![Screenshot of the package manager in Thonny, showing search results for the "astro-pi-replay" library.](images/install_replay_3.png)
+![Screenshot of the package manager in Thonny, showing search results for the 'astro-pi-replay' library.](images/install_replay_3.png)
 
-![Screenshot of the package manager in Thonny, showing the "astro-pi-replay" library and the 'Install' button.](images/install_replay_4.png)
+![Screenshot of the package manager in Thonny, showing the 'astro-pi-replay' library and the 'Install' button.](images/install_replay_4.png)
 
 **You will need to close and restart Thonny for the installation to complete.**
 
@@ -84,16 +84,16 @@ To test your program and simulate it running aboard the ISS, go to the [Astro Pi
 
 Your code should complete within 10 minutes.
 
-![A demonstration of how to upload a file to the Astro Pi Replay tool online.](images/replay_tool.gif)
+![A demonstration of how to upload a file to the Astro Pi Replay Tool online.](images/replay_tool.gif)
 
-If you are using the online version of Astro Pi Replay, you may download a zip file of the output of your program.
+If you are using the online version of the Astro Pi Replay Tool, you may download a zip file of the output of your program.
 
 Once your program has finished, review the output and check the following:
 
-* Did your program create a data file(s) you expected in your project folder? 
+* Did your program create the data file(s) you expected in your project folder? 
 * Were any additional output files created?
 * Do your saved files comply with the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook), including the 250MB storate limit and permitted file types?
-* Do you log files contain any warnings or errors? 
+* Do your log files contain any warnings or errors? 
 
 If you find any errors, warnings, or unexpected behaviour, make changes to your code and test it again. The Astro Pi Replay Tool can be used as many times as you like, so keep refining your program until you are confident that it works reliably and is ready for submission.
 
@@ -107,9 +107,9 @@ Test your program with the Astro Pi Replay Tool and check the output for any pro
 
 # Troubleshooting
 
-If your program encounters some errors and doesn't work first time you test it, there are some useful programming tips that can help you to identify and fix them. 
+If your program encounters some errors and doesn't work the first time you test it, there are some useful programming tips that can help you to identify and fix them. 
 
-## Dealing with Errors and Exceptions
+## Dealing with errors and exceptions
 
 When Python encounters a problem, it may raise an error or an exception. If your program does not handle this situation, it may stop running unexpectedly.
 
@@ -125,16 +125,16 @@ Review your program and consider if you need to set the buffering mode when writ
 
 ## Logging
 
-If your program encounters a problem, it can be very useful to have a record of what happened. Logging allows you to keep track of your program's behaviour and can help you identify and fix issues when analysing your results after the mission.
+If your program encounters a problem, it can be useful to have a record of what happened. Logging allows you to keep track of your program's behaviour and can help you identify and fix issues when analysing your results after the mission.
 
-The `logzero` library ([documentation here](https://logzero.readthedocs.io/en/latest/))provides a simple way to record information about what your program is doing. For example, you might log:
+The `logzero` library ([documentation here](https://logzero.readthedocs.io/en/latest/)) provides a simple way to record information about what your program is doing. For example, you might log:
 
 * Each iteration of a loop
 * When an important function is called
 * Sensor readings or key calculations
 * Which branch of an if/else statement was executed
 
-Be careful not to log more information than you need. All logged data counts towards your download allowance, and **teams can download a maximum of 250 MB of data** from the ISS.
+Be careful not to log more information than you need. All logged data counts towards your download allowance, and **teams can download a maximum of 250MB of data** from the ISS.
 
 The example below uses `logzero` to record each iteration of a loop:
 
@@ -319,9 +319,9 @@ Some teams set their program execution time to a small value (e.g. 1 minute) for
 title: "ZeroDivisionError"
 ---
 
-If your program tries to calculate the speed of the ISS you'll need to make sure that it doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields field are rounded to the nearest second (such as when using the `datetime_digitized` field as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
+If your program tries to calculate the speed of the ISS, you will need to make sure that it doesn't try to divide by zero when it tries to calculate the speed. This can happen when the image time fields are rounded to the nearest second (such as when using the `datetime_digitized` field, as in the [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed) project). If your code takes two photos in less than one second, they might appear to have the same timestamp, which will cause a `ZeroDivisionError` and make your program crash.
 
-To stop this, you can add a `sleep` command to your code. This makes sure there is at least a one second gap between each photo:
+To stop this, you can add a `sleep` command to your code. This will ensure that there is at least a 1-second gap between each photo:
 
 ```python
 from time import sleep

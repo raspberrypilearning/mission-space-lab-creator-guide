@@ -1,16 +1,16 @@
-# Astro Pi Hardware
+# Astro Pi hardware
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory.  Each one is fitted with a Sense HAT and a camera, and are housed in a custom aluminium flight case. 
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory. Each one is fitted with a Sense HAT and a camera, and are housed in a custom aluminium flight case. 
 
-The Sense HAT (V2) includes sensors that can measure temperature, humidity, light and colour, as well as motion and orientation using a gyroscope, magnetometer, and accelerometer. This allows you to investigate things such as movement, acceleration and the local magnetic field. 
+The Sense HAT (V2) includes sensors that can measure temperature, humidity, light, and colour, as well as motion and orientation using a gyroscope, magnetometer, and accelerometer. This allows you to investigate things such as movement, acceleration, and the local magnetic field. 
 
-The Astro Pis are also equipped with Raspberry Pi high quality cameras with 5mm lens, which can be used to take amazing pictures of the Earth from space.You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis are also equipped with high-quality Raspberry Pi cameras with 5mm lenses, which can be used to take amazing pictures of the Earth from space.You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
 To collect data that changes over time as the ISS orbits the Earth, you should focus on sensors such as the camera, gyroscope, magnetometer, accelerometer, or light and colour sensors.
 
-Measurements such as temperature and humidity tend to stay fairly constant inside the ISS, while the PIR movement sensor mainly detects crew activity near the Astro Pi. Although you can use these sensors in your project, they are less likely to produce data that changes significantly during your 10-minute experiment.
+Measurements such as temperature and humidity tend to stay fairly constant inside the ISS, while the PIR movement sensor mainly detects crew activity near the Astro Pis. Although you can use movement, temperature, and humidity sensors in your project, they are less likely to produce data that changes significantly during your 10-minute experiment.
 
 Choosing sensors that capture changing conditions will give you more interesting data to analyse.
 
@@ -25,7 +25,7 @@ Remember that your program must run completely autonomously from start to finish
 The Astro Pi computers on the ISS use Python v3.13. If you are using a newer version on your own computer, be aware that some of the newer features may not work on the Astro Pis.
 In addition to the Python standard library, the Astro Pis have several extra packages installed to help you complete your Mission Space Lab project. These are introduced below, with examples and links to more detailed documentation.
 
-There are many different Python libraries available that can help you with your project.. Choose the libraries that best support your project and help you achieve your investigation goals.
+There are many different Python libraries available that can help you with your project. Choose the libraries that best support your project and help you achieve your investigation goals.
 
 For security reasons, there are restrictions on which Python libraries you can use. [These library modules](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit) are not permitted, and programs that use them will not be accepted.
 
@@ -115,7 +115,7 @@ for i in range(3*60):
 - [https://raspberrypifoundation.github.io/picamzero](https://raspberrypifoundation.github.io/picamzero)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay tool, either online or offline. To install picamzero on a Raspberry Pi, open the shell in Thonny and run:
+The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay Tool, either online or offline. To install picamzero on a Raspberry Pi, open the shell in Thonny and run:
 ```
 pip install picamzero
 ```
@@ -128,7 +128,7 @@ pip install picamzero
 title: GPIO Zero
 ---
 
-GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. Most of its functionality is restricted aboard the ISS — for example, the only pin you are allowed to access is GPIO pin 12, where the motion sensor is connected. However, some of its other features can be handy in your experiment, such as the internal device `CPUTemperature`.
+GPIO Zero is a simple but powerful GPIO (general-purpose input/output) library. Most of its functionality is restricted aboard the ISS — for example, the only pin you are allowed to access is GPIO pin 12, where the motion sensor is connected. However, some of its other features can be handy in your experiment, such as the internal device `CPUTemperature`.
 
 #### Usage
 
@@ -325,7 +325,7 @@ title: scikit-image
 title: reverse-geocoder
 ---
 
-`reverse-geocoder` takes a latitude/longitude coordinate and returns the nearest town/city.
+`reverse-geocoder` takes a latitude or longitude coordinate and returns the nearest town or city.
 
 #### Usage
 
@@ -365,7 +365,7 @@ This output shows that the ISS is currently over Hamilton, New York:
 ])]
 ```
 
-Note: The library `reverse-geocoder` can not be run using the online Replay Tool as it using multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plugin version of the Replay tool
+Note: The library `reverse-geocoder` can not be run using the online Replay Tool as it uses multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plugin version of the Replay Tool.
 
 #### Documentation
 
@@ -402,7 +402,7 @@ print(str(sense.get_humidity()))
 title: "ai_edge_rt"
 ---
 
-The `ai_edge_litert` library allows you to run machine learning and AI inference on the Astro Pis CPUs. It is the successor library to `tflite` and `pycoral`, both of which are no longer supported by Google.
+The `ai_edge_litert` library allows you to run machine learning and AI inference on the CPUs of the Astro Pis. It is the successor library to `tflite` and `pycoral`, both of which are no longer supported by Google.
 
 #### Usage
 

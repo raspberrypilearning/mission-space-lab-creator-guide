@@ -1,5 +1,5 @@
 # Introduction
-In Mission Space Lab, your challenge is to design and write a Python program that gathers and logs data using the Astro Pi's sensors and camera. These sensors give you the opportunity to investigate questions about the environment on the ISS and collect real data from space.
+In Mission Space Lab, your challenge is to design and write a Python program that gathers and logs data using the Astro Pi's sensors and camera. The sensors and camera give you the opportunity to investigate questions about the environment on the ISS and collect real data from space.
 
 Your program will run autonomously for 10 minutes aboard the ISS. During this time, it must collect data using the Astro Pi's sensors or camera and save that data to a file for later analysis.
 
@@ -21,7 +21,7 @@ Head over to the [Astro Pi website](https://astro-pi.org/mission-space-lab/) for
 
 If you get stuck, please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
 
-We will also be running two livestreams where you can ask questions to the Astro Pi Mission Control team.
+We will also be running two livestreams where you can put your questions to the Astro Pi Mission Control team.
 
 </p>
 
@@ -29,12 +29,12 @@ We will also be running two livestreams where you can ask questions to the Astro
 
 ## What could you investigate?
 
-With an Astro Pi on board the ISS, there are many different scientific questions you could explore. The sensors and camera allow you to collect real data from space and use it to investigate a topic that interests you. 
+With an Astro Pi on board the ISS, there are many different scientific questions that you could explore. The sensors and camera allow you to collect real data from space and use it to investigate a topic that interests you. 
 
 To give you some inspiration, here are a few examples of projects created by previous Mission Space Lab teams:
 
 - [Analysing vegetation using NDVI analysis and image stitching](https://esamultimedia.esa.int/docs/edu/aretusa.pdf)
-- [Identifying seaweed rafts in the Oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
+- [Identifying seaweed rafts in the oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
 - [Measuring the Earth's magenetic field](https://esamultimedia.esa.int/docs/edu/dahspace.pdf)
 - [Analysing cloud types](https://esamultimedia.esa.int/docs/edu/t5clouds.pdf)
 
@@ -45,5 +45,5 @@ To give you some inspiration, here are a few examples of projects created by pre
 To complete this project, you will need:
 
 - **A computer running Python 3.13 or above.** You can use a Raspberry Pi or any computer that runs Microsoft Windows, macOS, or Linux. You can find [instructions for installing Python here](https://projects.raspberrypi.org/en/projects/generic-python-install-python3). A full description of the Python requirements for Mission Space Lab appears later in this guide.
-- **An internet connection.** You will need to access the internet to use the [Astro Pi Replay Tool](https://rpf.io/replay) to simulate your code running live on the Astro Pis on the ISS. You will also need internet access to submit your program.
+- **An internet connection.** You will need to access the internet to use the online version of the [Astro Pi Replay Tool](https://rpf.io/replay) to simulate your code running live on the Astro Pis on the ISS. You will also need internet access to submit your program.
 - **A code editor.** This is where you will write and edit your Python code. Any text editor will work, but we recommend using a dedicated code editor like Thonny. In this guide, our examples will use Thonny.

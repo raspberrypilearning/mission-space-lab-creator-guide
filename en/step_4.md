@@ -28,11 +28,11 @@ cam = Camera()
 cam.take_photo("image_with_coordinates.jpg", latlon_coordinates=get_predicted_latlon_coordinates(iss))
 ```
 
-You will need to use the [Astro Pi Replay tool](https://rpf.io/replay) to run this snippet.
+You will need to use the [Astro Pi Replay Tool](https://rpf.io/replay) to run this snippet.
 
 ## Capturing sequences of images
 
-Using `picamzero` it is very simple to take a sequence of pictures by calling the `capture_sequence` function. The example below takes three pictures in succession, with a 3 second gap between each one:
+With `picamzero` it is very simple to take a sequence of pictures by calling the `capture_sequence` function. The example below takes three pictures in succession, with a 3-second gap between each one:
 
 
 ```Python
@@ -48,7 +48,7 @@ Run this code using the [Astro Pi Replay Tool](https://rpf.io/replay), and you s
 
 ## Numbering plans for images and files
 
-When dealing with lots of files of the same type, it is a good idea to follow a naming convention. We recommend that you use an obvious sequence number that is padded with leading zeros - `image01.png`, `image02.png`, _etc._ - to keep your files organised.  You can use this code snippet to pad a number with leading zeros:
+When dealing with lots of files of the same type, it is a good idea to follow a naming convention. We recommend that you use an obvious sequence number that is padded with leading zeros — `image01.png`, `image02.png`, etc. — to keep your files organised. You can use this code snippet to pad a number with leading zeros:
 
 ```python
 file_number = 1
@@ -58,7 +58,7 @@ print(filename)
 
 ## File buffering
 
-When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, you can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
+When you write to a file using the `open` function, Python normally does not save the file to disk immediately. Instead, it keeps the file contents to save in a temporary storage area in the computer's memory called a buffer. Python does this so that it can choose the best time to write to the disk — something that normally does not matter to us. But while the data is in the buffer and not yet saved to the disk, there is a chance that it could be lost if an error occurs. To prevent this from happening, you can tell Python to save the buffer to disk at the end of every line of text by setting the `buffering` argument to `1`:
 
 ```Python
 with open("some_file.txt", "w", buffering=1) as f:
@@ -73,11 +73,11 @@ with open("some_file.txt", "w", buffering=1) as f:
 
 ## Using your data
 
-If you want to, you can use the data and images that you have captured to conduct some scientific research! You can conduct any scientific experiment that you want, providing that your program adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook). Though, if you'd rather follow a ready-made guide, you can pick either of the projects below.
+If you want to, you can use the data and images that you have captured to conduct some scientific research! You can conduct any scientific experiment that you want, providing that your program adheres to the [Rulebook](https://astro-pi.org/mission-space-lab/rulebook). If you'd rather follow a ready-made guide instead, you can pick either of the projects below.
 
-### Using NDVI (Normalized Difference Vegetation Index
+### Using NDVI (normalised difference vegetation index)
 
-Learn how to process visual light data to analyze plant health, vegetation density, and environmental features across the Earth's surface using this project guide:  [NDVI (Normalized Difference Vegetation Index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0)
+Learn how to process visual light data to analyse plant health, vegetation density, and environmental features across the Earth's surface using this project guide: [NDVI (normalised difference vegetation index)](https://projects.raspberrypi.org/en/projects/astropi-ndvi/0).
 
 
 ### Calculating the speed of the ISS
