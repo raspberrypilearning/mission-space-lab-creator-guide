@@ -10,7 +10,7 @@ The Astro Pis are also equipped with high-quality Raspberry Pi cameras with 5mm 
 
 To collect data that changes over time as the ISS orbits the Earth, you should focus on sensors such as the camera, gyroscope, magnetometer, accelerometer, or light and colour sensors.
 
-Measurements such as temperature and humidity tend to stay fairly constant inside the ISS, while the PIR movement sensor mainly detects crew activity near the Astro Pis. Although you can use movement, temperature, and humidity sensors in your project, they are less likely to produce data that changes significantly during your 10-minute experiment.
+Measurements such as temperature and humidity tend to stay fairly constant inside the ISS, while the passive infrared (PIR) movement sensor mainly detects crew activity near the Astro Pis. Although you can use movement, temperature, and humidity sensors in your project, they are less likely to produce data that changes significantly during your 10-minute experiment.
 
 Choosing sensors that capture changing conditions will give you more interesting data to analyse.
 
@@ -429,8 +429,8 @@ print(f"tflite: {np.squeeze(output_data)}")
 ```
 #### Documentation
 
-- [https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models]()
-- [https://ai.google.dev/edge/litert/migration#:~:text=Because%20LiteRT%20fully%20supports%20the,migration%20guides%20for%20specific%20platforms.]()
+- [https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models](https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models)
+- [https://ai.google.dev/edge/litert/migration#:~:text=Because%20LiteRT%20fully%20supports%20the,migration%20guides%20for%20specific%20platforms](https://developers.google.com/edge/litert/migration?_gl=1*1mlz13z*_up*MQ..*_ga*MzQ4NTMwNDUzLjE3ODU1MDQzMjk.*_ga_SM8HXJ53K2*czE3ODU1MDQzMjgkbzEkZzAkdDE3ODU1MDQzMjgkajYwJGwwJGgw)
 
 --- /collapse ---
 
