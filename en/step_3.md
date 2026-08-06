@@ -1,10 +1,10 @@
-# Writing your program
+## Writing your program
 
 We recommend writing your Python program in small, manageable steps rather than trying to build everything at once.
 
 By following the sections below, you will create the core parts of your Mission Space Lab submission and test each part as you go.
 
-## 1. Create your main.py file
+### 1. Create your main.py file
 
 Every submission must include a file called `main.py`. This file acts as the starting point for your program, and it is the file that the automated system on the ISS will look for and run. 
 
@@ -16,7 +16,7 @@ Create a new file called `main.py` in your project folder and save it.
 
 --- /task ---
 
-## 2. Capture sensor data
+### 2. Capture sensor data
 
 Your program must use at least one of the Astro Pi's sensors or the camera to capture data. Using external libraries to calculate or predict values does not count as collecting sensor or camera data. For example, a program that only uses the `skyfield` library to determine the ISS's position would not meet this requirement, because it is using a model rather than measurements from the Astro Pi's hardware.
 
@@ -56,7 +56,7 @@ Check out our [Getting started with the Camera Module](https://rpf.io/gswpicamer
 ![Photo of clouds above land.](images/image1.jpg)
 
 
-## 3. Log data to file
+### 3. Log data to file
 
 Your program must save the data it collects so that it can be returned to Earth for analysis. This data could be sensor readings written to a file or images captured by the camera.
 
@@ -80,7 +80,7 @@ with open("data.csv", "w") as csvfile:
 </p>
 
 
-## 4. Finish within your 10-minute time limit
+### 4. Finish within your 10-minute time limit
 
 Each Mission Space Lab program is allocated **exactly 10 minutes** to run on the ISS during daylight hours. Your program must keep track of how much time it has been running and stop automatically before the 10 minutes are up. This will help to ensure that your program finishes cleanly and that any data you have collected is saved correctly.
 
@@ -120,7 +120,7 @@ Update your `main.py` file to make use of the `datetime` library to stop your pr
 
 For example, if each cycle of your loop takes around 2 minutes to complete, you should not set your stop time to exactly 10 minutes. Instead, you should stop the loop after about 8 minutes. This will give the final iteration enough time to finish and ensure that your program exits before the 10-minute limit is reached.
 
-## 5. Use the correct directory structure for your data files
+### 5. Use the correct directory structure for your data files
 
 When your code runs on the ISS, it will be started automatically by the Astro Pi flight operating system. This means you **must not use hard-coded file paths** in your code such as `/home/pi/Desktop`, as these locations may not exist on the flight computer.
 
