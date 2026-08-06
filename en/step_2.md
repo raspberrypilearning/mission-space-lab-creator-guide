@@ -76,7 +76,7 @@ print(barycentric)
 ---
 title: astro_pi_orbit
 ---
-#### Usage
+### Usage
 
 The `astro_pi_orbit` library provides functionality to assist Astro Pi Mission Space Lab participants in working with orbital data. It can be used to:
 
