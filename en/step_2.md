@@ -1,4 +1,4 @@
-# Astro Pi hardware
+## Astro Pi hardware
 
 The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory. Each one is fitted with a Sense HAT and a camera, and are housed in a custom aluminium flight case. 
 
@@ -20,7 +20,7 @@ Remember that your program must run completely autonomously from start to finish
 </p>
 
 
-## The Astro Pi Python environment
+### The Astro Pi Python environment
 
 The Astro Pi computers on the ISS use Python v3.13. If you are using a newer version on your own computer, be aware that some of the newer features may not work on the Astro Pis.
 In addition to the Python standard library, the Astro Pis have several extra packages installed to help you complete your Mission Space Lab project. These are introduced below, with examples and links to more detailed documentation.
