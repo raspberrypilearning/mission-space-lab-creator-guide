@@ -1,6 +1,6 @@
 ## Astro Pi hardware
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory. Each one is fitted with a Sense HAT and a camera, and are housed in a custom aluminium flight case. 
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory. Each one is fitted with a Sense HAT (that stands for ‘Hardware Attached on Top’) and a camera, and are housed in a custom aluminium flight case. 
 
 The Sense HAT (V2) includes sensors that can measure temperature, humidity, light, and colour, as well as motion and orientation using a gyroscope, magnetometer, and accelerometer. This allows you to investigate things such as movement, acceleration, and the local magnetic field. 
 
