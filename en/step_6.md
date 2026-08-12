@@ -25,8 +25,6 @@ When you submit your project, you will need to provide a zip file containing you
 
 If you are unsure how to create a zip file, speak to your team mentor.
 
-More information on submitting your program is available in the [Mission Space Lab Mentor Guide](https://astro-pi.org/mission-space-lab/mentor-guide-4).
-
 If you are using the online version of Astro Pi Replay, you can download a zip file containing the output generated during your test runs. This is **not** the zip file that should be uploaded as your submission.
 
 --- task ---
@@ -39,6 +37,6 @@ Generate a zip file for your project, and ask your mentor to submit it to us bef
 
 If you are satisfied with your program, have tested it using Astro Pi Replay, have read the Mission Space Lab Rulebook, and have completed the checklist above, your project is ready for submission.
 
-Ask your team mentor to submit your zip file to the Astro Pi team on behalf of your team.
+Ask your team mentor to submit your zip file on behalf of your team.
 
 More information on submitting your program is available in the [Mission Space Lab Mentor Guide.](https://astro-pi.org/mission-space-lab/mentor-guide-4) 
