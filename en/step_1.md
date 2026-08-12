@@ -17,11 +17,9 @@ This is not a complete step-by-step guide to creating your program. Instead, it 
 
 Getting help
 
-Head over to the [Astro Pi website](https://astro-pi.org/mission-space-lab/) for more information about Mission Space Lab.
-
 If you get stuck, please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
 
-We will also be running two livestreams where you can put your questions to the Astro Pi Mission Control team.
+We will also be running two livestreams where you can ask your questions to the Astro Pi Mission Control team.
 
 </p>
 
@@ -35,7 +33,7 @@ To give you some inspiration, here are a few examples of projects created by pre
 
 - [Analysing vegetation using NDVI analysis and image stitching](https://esamultimedia.esa.int/docs/edu/aretusa.pdf)
 - [Identifying seaweed rafts in the oceans](https://esamultimedia.esa.int/docs/edu/stmarks.pdf)
-- [Measuring the Earth's magenetic field](https://esamultimedia.esa.int/docs/edu/dahspace.pdf)
+- [Measuring the Earth's magnetic field](https://esamultimedia.esa.int/docs/edu/dahspace.pdf)
 - [Analysing cloud types](https://esamultimedia.esa.int/docs/edu/t5clouds.pdf)
 
 **Please note:** These projects were designed under previous Mission Space Lab rules, which allowed programs to run for up to 3 hours on the ISS. In the current challenge, your program must run for no more than 10 minutes, so you would need to adapt these ideas to fit within the time limit.
