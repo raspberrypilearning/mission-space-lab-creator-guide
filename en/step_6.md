@@ -1,5 +1,3 @@
-# Submitting your work
-
 ## Program checklist
 
 Before submitting your project, check that your program meets the following requirements:
