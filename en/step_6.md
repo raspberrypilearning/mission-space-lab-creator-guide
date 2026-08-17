@@ -1,4 +1,6 @@
-## Program checklist
+## Submitting your program
+
+### Program checklist
 
 Before submitting your project, check that your program meets the following requirements:
 
@@ -17,7 +19,7 @@ Check that your program adheres to the [Mission Space Lab Rulebook](https://astr
 --- /task ---
 
 
-## Preparing your submission
+### Preparing your submission
 
 When you submit your project, you will need to provide a zip file containing your program files, including your `main.py` file.
 
@@ -31,7 +33,7 @@ Generate a zip file for your project, and ask your mentor to submit it to us bef
 
 --- /task ---
 
-## Submitting your project
+### Submitting your project
 
 If you are satisfied with your program, have tested it using Astro Pi Replay, have read the Mission Space Lab Rulebook, and have completed the checklist above, your project is ready for submission.
 
