@@ -1,4 +1,6 @@
-## Program checklist
+## Testing Your Program
+
+### Program checklist
 
 Whether you have just started writing your program or have nearly finished it, regular testing is essential. Testing as you go helps you identify problems early and gives you confidence that your code will run successfully on the ISS.
 
@@ -17,7 +19,7 @@ Check your program adheres to the [Mission Space Lab Rulebook](https://astro-pi.
 --- /task ---
 
 
-## Astro Pi Replay Tool
+### Astro Pi Replay Tool
 
 Testing a program designed to run on the ISS might seem difficult when you don't have access to an Astro Pi. That's why we've created the [Astro Pi Replay Tool](https://rpf.io/replay). With this tool, you can test your program without needing any special hardware.
 
@@ -103,11 +105,11 @@ Test your program with the Astro Pi Replay Tool and check the output for any pro
 
 --- /task ---
 
-# Troubleshooting
+### Troubleshooting
 
 If your program encounters some errors and doesn't work the first time you test it, there are some useful programming tips that can help you to identify and fix them. 
 
-## Dealing with errors and exceptions
+#### Dealing with errors and exceptions
 
 When Python encounters a problem, it may raise an error or an exception. If your program does not handle this situation, it may stop running unexpectedly.
 
@@ -121,7 +123,7 @@ Review your program and consider if you need to set the buffering mode when writ
 
 --- /task ---
 
-## Logging
+### Logging
 
 If your program encounters a problem, it can be useful to have a record of what happened. Logging allows you to keep track of your program's behaviour and can help you identify and fix issues when analysing your results after the mission.
 
@@ -157,7 +159,7 @@ We recommend using the `logzero` library in all Mission Space Lab projects. Logg
 
 </p>
 
-## Closing resources
+### Closing resources
 
 When your program finishes, it is good practice to close any resources that are still open. This includes files, cameras, and other objects that use system resources.
 
@@ -177,7 +179,7 @@ Review your `main.py` file and update it so that it closes all resources appropr
 --- /task ---
 
 
-## Common mistakes
+### Common mistakes
 
 Some Mission Space Lab teams have encountered issues that prevented their programs from achieving flight status or running successfully on the ISS.
 
