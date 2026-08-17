@@ -1,4 +1,4 @@
-### Other resources
+## Other resources
 
 There are a wealth of resources available to help you succeed at every stage of your Astro Pi journey.
 
