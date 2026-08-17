@@ -1,5 +1,3 @@
-# Testing your program
-
 ## Program checklist
 
 Whether you have just started writing your program or have nearly finished it, regular testing is essential. Testing as you go helps you identify problems early and gives you confidence that your code will run successfully on the ISS.
