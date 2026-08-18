@@ -1,27 +1,24 @@
-## Submitting your work
+## Other resources
 
-If you are happy with your program and have run it using Astro Pi Replay, have read the Mission Space Lab rulebook on the Astro Pi website, and have checked and double-checked the Mission Space Lab program checklist, all that is left to do is to zip up your work and ask your team mentor to submit it to us.
+There are a wealth of resources available to help you succeed at every stage of your Astro Pi journey.
 
-### Preparing a zip file
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 
-If you do not know how to compress your project folder into a zip file, speak to your mentor, who will be able to tell you the correct process for your operating system.
+Stuck? Please [contact us](mailto:enquiries@astro-pi.org) and we will do our best to help you!
+</p>
 
-### Removing unnecessary files
+- [Getting started with the Camera Module](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
+- [Getting started with the Sense HAT](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) 
+- [Sense HAT data logger](https://projects.raspberrypi.org/en/projects/sense-hat-data-logger)
+- [Capture plant health with NDVI and Raspberry Pi](https://projects.raspberrypi.org/en/projects/astropi-ndvi)
+- [Calculate the speed of the ISS using photos](https://projects.raspberrypi.org/en/projects/astropi-iss-speed)
+- [3D-Printed Astro Pi Mark II Flight Case](https://projects.raspberrypi.org/en/projects/astro-pi-flight-case-mk2)
+- The [OpenCV Python tutorials](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) explain how to do all sorts of cool things like machine learning, edge detection, and object tracking
+- The [EarthPy examples gallery](https://earthpy.readthedocs.io/en/latest/gallery_vignettes/index.html) walks you through how to process satellite imagery
+- This [GitHub page](https://github.com/orbitalindex/awesome-space) contains a curated list of space-related resources
+- This [list of annotated satellite data sets](https://github.com/Seyed-Ali-Ahmadi/Awesome_Satellite_Benchmark_Datasets) can be used to train any machine learning model
+- Teams wanting a greater challenge will find a [comprehensive resource on using machine learning with aerial and satellite imagery here](https://github.com/robmarkcole/satellite-image-deep-learning#datasets) — be aware that it is quite advanced
 
-Your zip file must not be more than 3MB in size, unless it includes a .tflite model, in which case it is allowed to be up to 7MB in size to accommodate the size of the model. This means, for example, that you cannot supply your own ephemeris files (e.g. [de421.bsp](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/de421.bsp) or [de440s.bsp](https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp)), since they are above the size limit.
+Finally, don't forget that links to the documentation for each library are available in the [Astro Pi Python environment](1) section if you need specific information on how to use a particular library.
 
-Both `de421.bsp` and `de440s.bsp` files are available on the Astro Pis. If your program needs them, you can access them via the included `astro_pi_orbit` library, as seen in the following code:
-
-```Python
-from astro_pi_orbit import de421, de440s
-print(de421)
-print(de440s)
-```
-
-If you are not using a Raspberry Pi you will need to run this snippet using the Astro Pi Replay tool in order to access the `astro_pi_orbit` library.
-
---- task ---
-
-Generate a zip file for your project, and ask your mentor to submit it to us before the deadline.
-
---- /task --- 
+**Good luck!** 

@@ -8,12 +8,11 @@ copyedit: false
 last_tested: '2023-08-08'
 steps:
 - title: "Introduction"
-- title: "The Astro Pi computers"
+- title: "Getting started"
   completion:
     - engaged
-- title: "Writing your program and resources to help"
-- title: "Optimising your program for the ISS"
-- title: "Improving the accuracy of your program"
+- title: "Writing your program"
+- title: "Enhancing your program"
 - title: "Testing your program"
 - title: "Submitting your work"
   completion:

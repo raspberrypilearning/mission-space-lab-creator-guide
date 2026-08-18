@@ -1,36 +1,40 @@
-## The Astro Pi computers
+## Astro Pi hardware
 
-The Astro Pis aboard the ISS are two modified Raspberry Pi 4 8GB computers, kitted out with a Sense HAT add-on board and camera, and packed into a custom aluminium flight case. The Sense HAT (V2) includes sensors such as temperature, humidity, gyroscope, magnetometer, accelerometer, and light/colour sensors, allowing you to measure things like the local magnetic field and acceleration. The computers are equipped with a powerful Raspberry Pi High Quality Camera with a 5mm lens that can take amazing pictures of the Earth. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
+The Astro Pis aboard the ISS are two modified Raspberry Pi 4 computers with 8GB of memory. Each one is fitted with a Sense HAT (that stands for ‘Hardware Attached on Top’) and a camera, and are housed in a custom aluminium flight case. 
+
+The Sense HAT (V2) includes sensors that can measure temperature, humidity, light, and colour, as well as motion and orientation using a gyroscope, magnetometer, and accelerometer. This allows you to investigate things such as movement, acceleration, and the local magnetic field. 
+
+The Astro Pis are also equipped with high-quality Raspberry Pi cameras with 5mm lenses, which can be used to take amazing pictures of the Earth from space. You can [find out more about the computers and sensors here](https://astro-pi.org/about/the-computers).
 
 ![Animation of the Astro Pi computers being taken apart.](images/AstroPi2-animation.gif)
 
-With an understanding of what the available sensors on the Astro Pis can do, think creatively about how to use them to find the speed of the ISS. Don't worry about getting everything perfect at first. Try to think of different ways, even if they seem unusual. Either by yourself or as a team, how many ways can you think of to calculate the speed using these tools?
+To collect data that changes over time as the ISS orbits the Earth, you should focus on sensors such as the camera, gyroscope, magnetometer, accelerometer, or light and colour sensors.
 
---- task ---
+Measurements such as temperature and humidity tend to stay fairly constant inside the ISS, while the passive infrared (PIR) movement sensor mainly detects crew activity near the Astro Pis. Although you can use movement, temperature, and humidity sensors in your project, they are less likely to produce data that changes significantly during your 10-minute experiment.
 
-Come up with several different ways of calculating the speed of the ISS using the Astro Pi hardware. Be creative, and try to think out of the box. Once you have a few options, discuss them as a team and choose the one you think will give the most accurate result.
+Choosing sensors that capture changing conditions will give you more interesting data to analyse.
 
---- /task --- 
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+  
+Remember that your program must run completely autonomously from start to finish, and cannot rely on joystick inputs or button presses from an astronaut.
+</p>
 
-In the next section, you will learn about the different Python libraries available that can help you with your project, and also about some that you cannot use for security reasons. You do not have to use all of the Python libraries in this section, only the ones that you decide to use in your program to help it perform the way you want it to. 
 
 ### The Astro Pi Python environment
 
-The Astro Pi computers on the ISS have Python version 3.11 installed, so you will need to be using this version, or higher. If you are using a higher version, be aware that there may be some new functions that work on your computer but not on the Astro Pis.
+The Astro Pi computers on the ISS use Python v3.13. If you are using a newer version on your own computer, be aware that some of the newer features may not work on the Astro Pis.
+In addition to the Python standard library, the Astro Pis have several extra packages installed to help you complete your Mission Space Lab project. These are introduced below, with examples and links to more detailed documentation.
 
-There are some restrictions on the modules (parts) of the standard library that you can use. The following modules are not allowed, and if you do use them, your program will not be accepted:
+There are many different Python libraries available that can help you with your project. Choose the libraries that best support your project and help you achieve your investigation goals.
 
-[Disallowed libraries](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit)
-
-Alongside the Python standard environment, the Astro Pis have extra libraries installed to help you complete the Mission. Each one is explained briefly below with examples. There are also links for more details if you need them. Remember to bookmark this page for later!
-
+For security reasons, there are restrictions on which Python libraries you can use. [These library modules](https://docs.google.com/spreadsheets/u/0/d/1EoVzgA8gOiDXsJ1k9dQBdPyFC8U3bXFca2dRmdKNbcI/edit) are not permitted, and programs that use them will not be accepted.
 
 --- collapse ---
 ---
 title: Skyfield
 ---
 
-#### Usage
+### Usage
 
 Skyfield is an astronomy package that computes the positions of stars, planets, and satellites in orbit around the Earth.
 
@@ -49,7 +53,7 @@ barycentric = mars.at(ts.now())
 print(barycentric)
 ```
 
-This snippet works but the ephemeris file (`de421.bsp`) is too big to submit in your final payload! To get around this, import the ephemeris from the `astro_pi_orbit` library, which will take care of importing the file for you:
+This snippet works but the ephemeris file (`de421.bsp`) is too big to submit in your final payload. To get around this, import the ephemeris from the `astro_pi_orbit` library, which will take care of importing the file for you:
 
 ```python
 from skyfield.api import load
@@ -62,7 +66,7 @@ barycentric = mars.at(ts.now())
 print(barycentric)
 ```
 
-#### Documentation
+### Documentation
 
 - [rhodesmill.org/skyfield](https://rhodesmill.org/skyfield/)
 
@@ -72,15 +76,15 @@ print(barycentric)
 ---
 title: astro_pi_orbit
 ---
-#### Usage
+### Usage
 
-The `astro_pi_orbit` library provides The `astro_pi_orbit` library provides functionality to assist Astro Pi Mission Space Lab participants in working with orbital data. It can be used to:
+The `astro_pi_orbit` library provides functionality to assist Astro Pi Mission Space Lab participants in working with orbital data. It can be used to:
 
 1) Find the current location of the ISS
 2) Access the `de421` or `de440s` ephemeris files (the files are too big to supply by yourself)
 3) Access the trajectory of the ISS
 
-#### Documentation
+### Documentation
 - [https://astro-pi.github.io/astro-pi-orbit/]
 
 --- /collapse ---
@@ -92,7 +96,7 @@ title: picamzero
 
 The Python library for controlling the Raspberry Pi Camera Module on the Astro Pis is `picamzero`. To get started, check out this [project guide](https://raspberrypifoundation.github.io/picamzero/hello_world/) for a handy walkthrough of how to use it.
 
-#### Usage
+### Usage
 
 ```python
 from picamzero import Camera
@@ -106,12 +110,12 @@ for i in range(3*60):
     sleep(60)
 ```
 
-#### Documentation
+### Documentation
 
 - [https://raspberrypifoundation.github.io/picamzero](https://raspberrypifoundation.github.io/picamzero)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay tool, either online or offline. To install picamzero on a Raspberry Pi, open the Shell in Thonny and run:
+The picamzero library is listed in Thonny, but it won’t install on Windows or macOS because it controls Raspberry Pi hardware and relies on Linux-only components. This is expected and won't stop you from developing your experiment — you can still run your code using the Astro Pi Replay Tool, either online or offline. To install picamzero on a Raspberry Pi, open the shell in Thonny and run:
 ```
 pip install picamzero
 ```
@@ -124,9 +128,9 @@ pip install picamzero
 title: GPIO Zero
 ---
 
-GPIO Zero is a simple but powerful GPIO (General-Purpose Input/Output) library. Most of its functionality is restricted aboard the ISS — for example, the only pin you are allowed to access is GPIO pin 12, where the motion sensor is connected. However, some of its other features can be handy in your experiment, such as the internal device `CPUTemperature`.
+GPIO Zero is a simple but powerful GPIO (general-purpose input/output) library. Most of its functionality is restricted aboard the ISS — for example, the only pin you are allowed to access is GPIO pin 12, where the motion sensor is connected. However, some of its other features can be handy in your experiment, such as the internal device `CPUTemperature`.
 
-#### Usage
+### Usage
 
 Compare the Raspberry Pi's CPU temperature to the Sense HAT's temperature reading:
 
@@ -142,7 +146,7 @@ while True:
     print(f'Sense HAT: {sense.temperature}')
 ```
 
-#### Documentation
+### Documentation
 
 - [gpiozero.readthedocs.io](https://gpiozero.readthedocs.io)
 
@@ -155,9 +159,9 @@ while True:
 title: SciPy
 ---
 
-SciPy is a free, open-source Python library used for scientific computing and technical computing. SciPy contains modules for optimisation, linear algebra, integration, interpolation, special functions, FFT (Fast Fourrier Transform), signal and image processing, ODE (Ordinary Differential Equations) solvers, and other tasks common in science and engineering. You may need to use this library to solve a particular equation.
+SciPy is a free, open-source Python library used for scientific computing and technical computing. SciPy contains modules for optimisation, linear algebra, integration, interpolation, special functions, FFT (fast Fourier transform), signal and image processing, ODE (ordinary differential equations) solvers, and other tasks common in science and engineering. You may need to use this library to solve a particular equation.
 
-#### Documentation
+### Documentation
 
 - [docs.scipy.org/doc](https://docs.scipy.org/doc/)
 
@@ -170,7 +174,7 @@ title: pandas
 
 `pandas` is an open-source library providing high-performance, easy-to-use data structures and data analysis tools.
 
-#### Usage
+### Usage
 
 ```python
 import pandas as pd
@@ -179,7 +183,7 @@ df = pd.read_csv("my_test_data.csv")
 df.describe()
 ```
 
-#### Documentation
+### Documentation
 
 - [pandas.pydata.org](https://pandas.pydata.org/)
 
@@ -192,7 +196,7 @@ title: logzero
 
 `logzero` is a library used to make logging easier. Logs are records of what happened while a program was running, and can be really useful for debugging.
 
-#### Usage
+### Usage
 
 Logs are categorised into different levels according to severity. By using the various levels appropriately, you will be able to tune the amount of information you get about your program according to your debugging needs.
 
@@ -205,7 +209,7 @@ logger.warning("warning")
 logger.error("error")
 ```
 
-#### Documentation
+### Documentation
 
 - [logzero.readthedocs.io](https://logzero.readthedocs.io/en/latest/)
 
@@ -218,7 +222,7 @@ title: Matplotlib
 
 `matplotlib` is a 2D plotting library that produces publication-quality figures in a variety of hard copy formats and interactive environments. You may want to use it to analyse the results of your test runs.
 
-#### Usage
+### Usage
 
 ```python
 from sense_hat import SenseHat
@@ -243,7 +247,7 @@ plt.show()
 
 ![The output of the program is a temperature plot generated using matplotlib.](images/matplotlib_Figure_1.png)
 
-#### Documentation
+### Documentation
 
 - [matplotlib.org](https://matplotlib.org/)
 
@@ -258,7 +262,7 @@ Pillow is an image processing library. It provides extensive file format support
 
 The core image library is designed for fast access to data stored in a few basic pixel formats. It should provide a solid foundation for a general image processing tool.
 
-#### Documentation
+### Documentation
 
 - [pillow.readthedocs.io](https://pillow.readthedocs.io/)
 
@@ -271,7 +275,7 @@ title: OpenCV
 
 `opencv` is an open-source computer vision library. You may want to use OpenCV for [edge detection](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/3), for example.
 
-#### Documentation
+### Documentation
 
 - [docs.opencv.org](https://docs.opencv.org/master/)
 
@@ -282,9 +286,9 @@ title: OpenCV
 title: exif
 ---
 
-`exif` allows you to read and modify image Exif metadata using Python. You may want to use it to embed GPS data into any images you take, or to [analyse photos taken aboard the ISS](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/1).
+`exif` allows you to read and modify image Exif metadata using Python. You may want to use it to embed latitude and longitude coordinate data into any images you take, or to [analyse photos taken aboard the ISS](https://projects.raspberrypi.org/en/projects/astropi-iss-speed/1).
 
-#### Documentation
+### Documentation
 
 - [pypi.org/project/exif](https://pypi.org/project/exif/)
 
@@ -297,7 +301,7 @@ title: scikit-learn
 
 `scikit-learn` is a set of simple and efficient tools for data mining and data analysis that are accessible to everybody, and reusable in various contexts. It is designed to work with `numpy`, `scipy`, and `matplotlib`.
 
-#### Documentation
+### Documentation
 
 - [scikit-learn.org](https://scikit-learn.org)
 
@@ -310,7 +314,7 @@ title: scikit-image
 
 `scikit-image` is an open-source image processing library. It includes algorithms for segmentation, geometric transformations, colour space manipulation, analysis, filtering, morphology, feature detection, and more.
 
-#### Documentation
+### Documentation
 
 - [scikit-image.org](https://scikit-image.org/)
 
@@ -321,9 +325,9 @@ title: scikit-image
 title: reverse-geocoder
 ---
 
-`reverse-geocoder` takes a latitude/longitude coordinate and returns the nearest town/city.
+`reverse-geocoder` takes a latitude or longitude coordinate and returns the nearest town or city.
 
-#### Usage
+### Usage
 
 When used with `skyfield`, `reverse-geocoder` can determine where the ISS currently is:
 
@@ -361,9 +365,9 @@ This output shows that the ISS is currently over Hamilton, New York:
 ])]
 ```
 
-Note: The library `reverse-geocoder` can not be run using the online Replay Tool as it using multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plugin version of the Replay tool
+Note: The library `reverse-geocoder` cannot be run using the online Replay Tool as it uses multiprocessing, which is incompatible with the environment of the tool. If you wish to use this library, you will have to test the relevent sections of your code locally in your code editor, or using the Thonny plug-in version of the Replay Tool.
 
-#### Documentation
+### Documentation
 
 - [github.com/thampiman/reverse-geocoder](https://github.com/thampiman/reverse-geocoder)
 
@@ -375,7 +379,7 @@ title: sense_hat
 ---
 The `sense_hat` library is the main library used to collect data using the Astro Pi Sense HAT. Look at [this project guide](https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat) to get started. 
 
-#### Usage
+### Usage
 
 You can print the humidity using the code below:
 
@@ -385,7 +389,7 @@ sense = SenseHat()
 print(str(sense.get_humidity()))
 ```
 
-#### Documentation
+### Documentation
 
 - [https://sense-hat.readthedocs.io/en/latest/](https://sense-hat.readthedocs.io/en/latest/)
 - [Additional documentation for the light and colour sensor](https://gist.github.com/boukeas/e46ab3558b33d2f554192a9b4265b85f)
@@ -398,9 +402,9 @@ print(str(sense.get_humidity()))
 title: "ai_edge_rt"
 ---
 
-The `ai_edge_litert` library allows you to run machine learning and AI inference on the Astro Pis CPUs. It is the successor library to `tflite` and `pycoral`, both of which are no longer supported by Google.
+The `ai_edge_litert` library allows you to run machine learning and AI inference on the CPUs of the Astro Pis. It is the successor library to `tflite` and `pycoral`, both of which are no longer supported by Google.
 
-#### Usage
+### Usage
 
 The example below shows how to load and execute the mobilenet v1 model:
 
@@ -423,16 +427,18 @@ interpreter.invoke()
 output_data = interpreter.get_tensor(output_details[0]["index"])
 print(f"tflite: {np.squeeze(output_data)}")
 ```
-#### Documentation
+### Documentation
 
-- [https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models]()
-- [https://ai.google.dev/edge/litert/migration#:~:text=Because%20LiteRT%20fully%20supports%20the,migration%20guides%20for%20specific%20platforms.]()
+- [https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models](https://ai.google.dev/edge/litert/conversion/tensorflow/pretrained_models)
+- [https://ai.google.dev/edge/litert/migration#:~:text=Because%20LiteRT%20fully%20supports%20the,migration%20guides%20for%20specific%20platforms](https://developers.google.com/edge/litert/migration?_gl=1*1mlz13z*_up*MQ..*_ga*MzQ4NTMwNDUzLjE3ODU1MDQzMjk.*_ga_SM8HXJ53K2*czE3ODU1MDQzMjgkbzEkZzAkdDE3ODU1MDQzMjgkajYwJGwwJGgw)
 
 --- /collapse ---
 
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-Because there are lots of security restrictions when running a program on board the ISS, these are the only third-party libraries that you will be allowed to use if your program runs on the Astro Pis. Please [contact us](enquiries@astro-pi.org) if you think anything is missing or have any suggestions.
+  
+Because of the strict security requirements for software running on the ISS, only the third-party libraries listed above can be used in your program. If you think something important is missing, or have suggestions for additional libraries, please let us know.
+  
 </p>
 
 ### Setting up your programming environment 
@@ -455,6 +461,11 @@ Select the correct file from the search results, then press **Install**.
 
 If you are using a different IDE to write your code, you will need to follow local instructions for downloading the libraries you want from [PyPi](https://pypi.org/).
 
-### Looking ahead
+### Planning your project
 
-Now that you have set up your coding environment it's time to think about how your team is going to approach this Mission. Discuss how you will choose your method, divide up the tasks, and plan your program. Speak to your team mentor about your ideas, your progress, and any obstacles along the way. They will have lots of ideas to help you plan.
+Now that you have set up your programming environment, it's time to start planning your Mission Space Lab project.
+
+Work with your team to decide what you want to investigate, how you will collect and analyse your data, and how you will divide up the work. Creating a plan before you start coding will help you stay organised and make steady progress.
+
+Be sure to discuss your ideas, progress, and any challenges with your team mentor. They can help you refine your plans, solve problems, and keep your project moving forward.
+
