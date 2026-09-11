@@ -4,6 +4,12 @@ We recommend writing your Python program in small, manageable steps rather than 
 
 By following the sections below, you will create the core parts of your Mission Space Lab submission and test each part as you go.
 
+#### Using AI in Your Code
+
+If your team uses AI tools (such as ChatGPT or Gemini) to help write code or troubleshoot problems, you must clearly explain how you used it. You can do this by:
+* Adding clear comments in your Python code next to any AI-generated sections.
+* Describing your use of AI in the code submission form.
+
 ### 1. Create your main.py file
 
 Every submission must include a file called `main.py`. This file acts as the starting point for your program, and it is the file that the automated system on the ISS will look for and run. 
