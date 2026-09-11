@@ -4,7 +4,7 @@ We recommend writing your Python program in small, manageable steps rather than 
 
 By following the sections below, you will create the core parts of your Mission Space Lab submission and test each part as you go.
 
-#### Using AI in Your Code
+**Using AI in Your Code**
 
 If your team uses AI tools (such as ChatGPT or Gemini) to help write code or troubleshoot problems, you must clearly explain how you used it. You can do this by:
 * Adding clear comments in your Python code next to any AI-generated sections.
