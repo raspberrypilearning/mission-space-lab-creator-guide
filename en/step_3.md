@@ -206,4 +206,4 @@ with open("data.csv", "w") as csvfile:
 ```
 --- /collapse ---
 
-
+[Download our printable Mission Space Lab worksheet](https://drive.google.com/file/d/1vLHWmQJv__SYIqCfWDahycPdLtWZw5gc/view) to use in your classroom or Code Club. It includes the complete worked example, alongside guided prompts for young people to predict, investigate, and modify their programs.
