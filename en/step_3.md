@@ -73,7 +73,7 @@ import csv
 
 data = 42
 with open("data.csv", "w") as csvfile:
-   writer = csv.writer(csvfile),
+   writer = csv.writer(csvfile)
    writer.writerow([str(data)])
 ```
 
